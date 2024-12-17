@@ -2,6 +2,7 @@ import { Shield, Globe, CheckSquare, Package, HeadphonesIcon, PiggyBank } from '
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import FeatureCard from '../components/FeatureCard';
+import Categories from '../components/Categories';
 import Footer from '../components/Footer';
 
 const Index = () => {
@@ -60,6 +61,8 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      <Categories />
       
       <Footer />
     </div>
