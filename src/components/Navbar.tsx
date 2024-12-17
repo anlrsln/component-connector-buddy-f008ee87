@@ -45,7 +45,7 @@ const Navbar = () => {
             <Button variant="outline" className="text-white border-white hover:bg-white/10">
               Sign In
             </Button>
-            <Button className="bg-secondary hover:bg-accent text-white font-medium transition-colors">
+            <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium transition-colors">
               Sign Up
             </Button>
           </div>
@@ -80,7 +80,7 @@ const Navbar = () => {
             <Button variant="outline" className="w-full text-white border-white hover:bg-white/10">
               Sign In
             </Button>
-            <Button className="w-full bg-secondary hover:bg-accent text-white transition-colors">
+            <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground transition-colors">
               Sign Up
             </Button>
           </div>
