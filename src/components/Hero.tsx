@@ -67,8 +67,8 @@ const Hero = () => {
                 placeholder={`Search ${selectedLabel}...`}
                 value={searchQuery}
                 onChange={(e) => handleSearch(e.target.value)}
-                className="pl-10 pr-10 py-6 w-full bg-white border-2 border-black text-gray-900 
-                  placeholder:text-gray-500 focus-visible:ring-primary rounded-b-lg rounded-t-none"
+                className="pl-10 pr-10 py-6 w-full bg-white text-gray-900 
+                  placeholder:text-gray-500 focus-visible:ring-primary rounded-lg rounded-t-none"
               />
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-500" />
               {searchQuery && (
