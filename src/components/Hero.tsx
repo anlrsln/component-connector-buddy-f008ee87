@@ -48,7 +48,7 @@ const Hero = () => {
                   onClick={() => setSelectedLabel(label.id as typeof selectedLabel)}
                   className={`flex-1 px-2 py-0.5 text-xs font-medium border-x border-t border-gray-600
                     ${selectedLabel === label.id
-                      ? 'bg-gray-500 text-white'
+                      ? 'bg-accent text-accent-foreground'
                       : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                     }
                     ${label.id === 'product' ? 'rounded-tl-lg' : ''}
