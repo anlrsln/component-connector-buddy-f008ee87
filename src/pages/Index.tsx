@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import FeatureCard from '../components/FeatureCard';
 import Categories from '../components/Categories';
+import PopularProducts from '../components/PopularProducts';
 import Footer from '../components/Footer';
 
 const Index = () => {
@@ -63,7 +64,7 @@ const Index = () => {
       </section>
 
       <Categories />
-      
+      <PopularProducts />
       <Footer />
     </div>
   );
