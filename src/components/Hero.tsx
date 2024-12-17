@@ -29,7 +29,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-black/50" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 flex items-center min-h-screen">
         <div className="max-w-2xl">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white text-left animate-fade-up">
             Discover Top-Quality Products
@@ -68,7 +68,7 @@ const Hero = () => {
                 value={searchQuery}
                 onChange={(e) => handleSearch(e.target.value)}
                 className="pl-10 pr-10 py-6 w-full bg-white text-gray-900 
-                  placeholder:text-gray-500 focus-visible:ring-primary rounded-r-lg rounded-l-none rounded-bl-lg"
+                  placeholder:text-gray-500 focus-visible:ring-primary rounded-r-lg"
               />
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-500" />
               {searchQuery && (
