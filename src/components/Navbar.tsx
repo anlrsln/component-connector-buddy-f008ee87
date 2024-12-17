@@ -30,13 +30,13 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             <a href="#" className="text-white hover:text-primary-hover transition-colors font-medium">
-              Kategoriler
+              Categories
             </a>
             <a href="#" className="text-white/80 hover:text-primary-hover transition-colors font-medium">
               Seller
             </a>
             <a href="#" className="text-white/80 hover:text-primary-hover transition-colors font-medium">
-              Brands of Turkey
+              About Us
             </a>
           </div>
 
