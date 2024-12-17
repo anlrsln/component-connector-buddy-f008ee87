@@ -28,8 +28,8 @@ const CategoryCard = ({ icon, title }: CategoryCardProps) => {
   const IconComponent = iconMap[icon.replace('/', '').replace('.svg', '')];
 
   return (
-    <div className="flex flex-col items-center justify-center bg-white rounded-full w-32 h-32 mx-auto transition-all duration-300 hover:shadow-lg group border border-gray-200 hover:border-yellow-400">
-      <div className="w-16 h-16 flex items-center justify-center">
+    <div className="flex flex-col items-center justify-center bg-white rounded-full w-32 h-32 mx-auto transition-all duration-300 hover:shadow-lg group border border-gray-200 hover:border-yellow-400 relative overflow-hidden">
+      <div className="w-16 h-16 flex items-center justify-center mt-2">
         {IconComponent && (
           <IconComponent
             size={32}
@@ -38,7 +38,9 @@ const CategoryCard = ({ icon, title }: CategoryCardProps) => {
           />
         )}
       </div>
-      <p className="text-[9px] leading-tight text-center font-medium text-foreground/80 px-6 max-w-full line-clamp-2 -mt-2">{title}</p>
+      <div className="absolute bottom-4 left-0 right-0 px-4">
+        <p className="text-[9px] leading-tight text-center font-medium text-foreground/80 px-2 max-w-full line-clamp-2">{title}</p>
+      </div>
     </div>
   );
 };
