@@ -33,8 +33,8 @@ const Hero = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="max-w-md">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white text-left animate-fade-up">
-            Create something
-            <span className="block text-accent">beautiful today</span>
+            Discover Top-Quality Products
+            <span className="block text-accent">from Trusted Local Manufacturers</span>
           </h1>
 
           <div className="mt-8 animate-fade-up">
