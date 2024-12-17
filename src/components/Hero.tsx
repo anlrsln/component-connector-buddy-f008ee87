@@ -46,7 +46,7 @@ const Hero = () => {
                 <button
                   key={label.id}
                   onClick={() => setSelectedLabel(label.id as typeof selectedLabel)}
-                  className={`flex-1 px-2 py-0.5 text-xs font-medium border-x border-t border-gray-600
+                  className={`flex-1 px-2 py-0.5 text-xs font-medium
                     ${selectedLabel === label.id
                       ? 'bg-accent text-accent-foreground'
                       : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
