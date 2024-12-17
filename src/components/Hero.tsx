@@ -19,52 +19,6 @@ const Hero = () => {
 
   return (
     <div className="relative min-h-screen">
-      {/* Search Section at Top */}
-      <div className="absolute top-0 left-0 right-0 z-20 bg-black/50 py-8">
-        <div className="max-w-2xl mx-auto px-4">
-          {/* Label Buttons */}
-          <div className="flex rounded-t-lg overflow-hidden w-1/2">
-            {labels.map((label) => (
-              <button
-                key={label.id}
-                onClick={() => setSelectedLabel(label.id as typeof selectedLabel)}
-                className={`flex-1 px-2 py-0.5 text-xs font-medium border-x border-t border-gray-600
-                  ${selectedLabel === label.id
-                    ? 'bg-gray-500 text-white'
-                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                  }
-                  ${label.id === 'product' ? 'rounded-tl-lg' : ''}
-                  ${label.id === 'hex-code' ? 'rounded-tr-lg' : ''}
-                `}
-              >
-                {label.name}
-              </button>
-            ))}
-          </div>
-
-          {/* Search Bar */}
-          <div className="relative">
-            <Input
-              type="text"
-              placeholder={`Search ${selectedLabel}...`}
-              value={searchQuery}
-              onChange={(e) => handleSearch(e.target.value)}
-              className="pl-10 pr-10 py-6 w-full bg-white border-2 border-black text-gray-900 
-                placeholder:text-gray-500 focus-visible:ring-primary rounded-b-lg rounded-t-none"
-            />
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-500" />
-            {searchQuery && (
-              <button
-                onClick={() => handleSearch('')}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
-              >
-                <X className="h-5 w-5" />
-              </button>
-            )}
-          </div>
-        </div>
-      </div>
-
       {/* Hero Image */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -76,13 +30,57 @@ const Hero = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-        <div className="max-w-md">
+        <div className="max-w-2xl">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white text-left animate-fade-up">
             Discover Top-Quality Products
           </h1>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-accent text-left animate-fade-up mt-2">
             from Trusted Local Manufacturers
           </h2>
+
+          {/* Search Section */}
+          <div className="mt-8 animate-fade-up">
+            {/* Label Buttons */}
+            <div className="flex rounded-t-lg overflow-hidden w-full sm:w-1/2">
+              {labels.map((label) => (
+                <button
+                  key={label.id}
+                  onClick={() => setSelectedLabel(label.id as typeof selectedLabel)}
+                  className={`flex-1 px-2 py-0.5 text-xs font-medium border-x border-t border-gray-600
+                    ${selectedLabel === label.id
+                      ? 'bg-gray-500 text-white'
+                      : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                    }
+                    ${label.id === 'product' ? 'rounded-tl-lg' : ''}
+                    ${label.id === 'hex-code' ? 'rounded-tr-lg' : ''}
+                  `}
+                >
+                  {label.name}
+                </button>
+              ))}
+            </div>
+
+            {/* Search Bar */}
+            <div className="relative">
+              <Input
+                type="text"
+                placeholder={`Search ${selectedLabel}...`}
+                value={searchQuery}
+                onChange={(e) => handleSearch(e.target.value)}
+                className="pl-10 pr-10 py-6 w-full bg-white border-2 border-black text-gray-900 
+                  placeholder:text-gray-500 focus-visible:ring-primary rounded-b-lg rounded-t-none"
+              />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-500" />
+              {searchQuery && (
+                <button
+                  onClick={() => handleSearch('')}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </div>
