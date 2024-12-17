@@ -1,5 +1,5 @@
 import React from 'react';
-import { Headphones, Shirt, Coffee, Sparkles, Package, Shoe, Car, Sprout, Headset, Dumbbell, FileBox, Baby, Gem, Armchair } from 'lucide-react';
+import { Headphones, Shirt, Coffee, Sparkles, Package, Boot, Car, Sprout, Headset, Dumbbell, FileBox, Baby, Gem, Armchair } from 'lucide-react';
 
 interface CategoryCardProps {
   icon: string;
@@ -12,7 +12,7 @@ const iconMap: { [key: string]: React.ComponentType } = {
   'home-garden': Coffee,
   'beauty': Sparkles,
   'packaging': Package,
-  'shoes': Shoe,
+  'shoes': Boot,
   'vehicle': Car,
   'environment': Sprout,
   'electronics': Headset,
