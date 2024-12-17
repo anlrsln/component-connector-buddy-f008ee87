@@ -29,7 +29,7 @@ const Index = () => {
       <Hero />
       
       {/* Features Section */}
-      <section className="py-24 bg-secondary/50">
+      <section className="py-24 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold">Amazing Features</h2>
