@@ -38,7 +38,7 @@ const CategoryCard = ({ icon, title }: CategoryCardProps) => {
           />
         )}
       </div>
-      <p className="text-[9px] leading-tight text-center font-medium text-foreground/80 px-4 max-w-full line-clamp-2">{title}</p>
+      <p className="text-[9px] leading-tight text-center font-medium text-foreground/80 px-2 max-w-full line-clamp-2 -mt-2">{title}</p>
     </div>
   );
 };
