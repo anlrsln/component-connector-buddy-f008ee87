@@ -10,59 +10,59 @@ import CategoryCard from './CategoryCard';
 
 const categories = [
   {
-    icon: "/business-services.svg",
+    icon: "business-services",
     title: "Business Services"
   },
   {
-    icon: "/apparel.svg",
+    icon: "apparel",
     title: "Apparel & Accessories"
   },
   {
-    icon: "/home-garden.svg",
+    icon: "home-garden",
     title: "Home & Garden"
   },
   {
-    icon: "/beauty.svg",
+    icon: "beauty",
     title: "Beauty"
   },
   {
-    icon: "/packaging.svg",
+    icon: "packaging",
     title: "Packaging & Printing"
   },
   {
-    icon: "/shoes.svg",
+    icon: "shoes",
     title: "Shoes & Accessories"
   },
   {
-    icon: "/vehicle.svg",
+    icon: "vehicle",
     title: "Vehicle Parts & Accessories"
   },
   {
-    icon: "/environment.svg",
+    icon: "environment",
     title: "Environment"
   },
   {
-    icon: "/electronics.svg",
+    icon: "electronics",
     title: "Consumer Electronics"
   },
   {
-    icon: "/sports.svg",
+    icon: "sports",
     title: "Sports & Entertainment"
   },
   {
-    icon: "/commercial.svg",
+    icon: "commercial",
     title: "Commercial Equipment & Supplies"
   },
   {
-    icon: "/toys.svg",
+    icon: "toys",
     title: "Mother, Kids & Toys"
   },
   {
-    icon: "/jewelry.svg",
+    icon: "jewelry",
     title: "Jewelry, Eyewear, Watches"
   },
   {
-    icon: "/furniture.svg",
+    icon: "furniture",
     title: "Furniture"
   }
 ];
@@ -90,8 +90,8 @@ const Categories = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className="hidden md:flex" />
+          <CarouselNext className="hidden md:flex" />
         </Carousel>
       </div>
     </section>
