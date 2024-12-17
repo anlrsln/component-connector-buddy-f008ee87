@@ -1,4 +1,4 @@
-import { Zap, Shield, Sparkles } from 'lucide-react';
+import { Shield, Globe, CheckSquare, Package, HeadphonesIcon, PiggyBank } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import FeatureCard from '../components/FeatureCard';
@@ -7,19 +7,34 @@ import Footer from '../components/Footer';
 const Index = () => {
   const features = [
     {
-      icon: Zap,
-      title: 'Lightning Fast',
-      description: 'Experience blazing fast performance with our optimized platform.'
-    },
-    {
       icon: Shield,
-      title: 'Secure by Default',
-      description: 'Your data is protected with enterprise-grade security measures.'
+      title: 'Trusted and Verified Suppliers',
+      description: 'We collaborate exclusively with reliable, thoroughly verified local manufacturers to ensure you receive products that meet the highest standards of trust and reliability.'
     },
     {
-      icon: Sparkles,
-      title: 'Beautiful Design',
-      description: 'Create stunning interfaces with our modern design system.'
+      icon: Globe,
+      title: 'Global Access to Premium Products',
+      description: 'Explore a wide range of high-quality products across multiple categories, carefully curated to meet the needs of international markets and businesses.'
+    },
+    {
+      icon: CheckSquare,
+      title: 'Uncompromising Quality Assurance',
+      description: 'Every product undergoes strict quality control measures, ensuring durability, precision, and consistency that you can depend on.'
+    },
+    {
+      icon: Package,
+      title: 'Fast, Secure, and Hassle-Free Delivery',
+      description: 'Enjoy seamless, timely, and secure shipping solutions tailored to meet the demands of international clients and partners.'
+    },
+    {
+      icon: HeadphonesIcon,
+      title: 'Dedicated Customer Support',
+      description: 'Our team of professionals is ready to assist you with personalized support, helping you navigate every step of the process smoothly and efficiently.'
+    },
+    {
+      icon: PiggyBank,
+      title: 'Competitive Pricing with Transparent Deals',
+      description: 'Gain access to cost-effective, competitive pricing without compromising on quality, with fully transparent transactions and no hidden fees.'
     }
   ];
 
@@ -38,7 +53,7 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <FeatureCard key={index} {...feature} />
             ))}
