@@ -34,8 +34,10 @@ const Hero = () => {
         <div className="max-w-md">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white text-left animate-fade-up">
             Discover Top-Quality Products
-            <span className="block text-accent">from Trusted Local Manufacturers</span>
           </h1>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-accent text-left animate-fade-up mt-2">
+            from Trusted Local Manufacturers
+          </h2>
 
           <div className="mt-8 animate-fade-up">
             {/* Label Buttons */}
