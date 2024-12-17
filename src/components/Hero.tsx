@@ -38,7 +38,7 @@ const Hero = () => {
 
         <div className="mt-8 max-w-md mx-auto animate-fade-up">
           {/* Label Buttons */}
-          <div className="flex justify-center rounded-t-lg overflow-hidden w-1/2 mx-auto">
+          <div className="flex rounded-t-lg overflow-hidden w-1/2">
             {labels.map((label) => (
               <button
                 key={label.id}
