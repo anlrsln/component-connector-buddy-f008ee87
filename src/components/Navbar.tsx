@@ -42,7 +42,7 @@ const Navbar = () => {
 
           {/* Sign In/Up Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" className="text-white border-white hover:bg-white/10">
+            <Button variant="ghost" className="text-white hover:bg-white/10">
               Sign In
             </Button>
             <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium transition-colors">
@@ -77,7 +77,7 @@ const Navbar = () => {
             Brands of Turkey
           </a>
           <div className="flex flex-col space-y-2 px-3 py-2">
-            <Button variant="outline" className="w-full text-white border-white hover:bg-white/10">
+            <Button variant="ghost" className="w-full text-white hover:bg-white/10">
               Sign In
             </Button>
             <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground transition-colors">
