@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Button } from './ui/button';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,24 +20,34 @@ const Navbar = () => {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
+          {/* Logo */}
           <div className="flex-shrink-0">
-            <span className="text-xl font-semibold">Logo</span>
+            <div className="bg-[#2D3748] text-white px-6 py-2 rounded">
+              Logo
+            </div>
           </div>
           
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#" className="text-foreground/80 hover:text-foreground transition-colors">
-              Home
+            <a href="#" className="text-foreground hover:text-foreground/80 transition-colors font-medium">
+              Kategoriler
             </a>
-            <a href="#" className="text-foreground/80 hover:text-foreground transition-colors">
-              Features
+            <a href="#" className="text-foreground/60 hover:text-foreground/80 transition-colors font-medium">
+              Seller
             </a>
-            <a href="#" className="text-foreground/80 hover:text-foreground transition-colors">
-              About
+            <a href="#" className="text-foreground/60 hover:text-foreground/80 transition-colors font-medium">
+              Brands of Turkey
             </a>
-            <a href="#" className="text-foreground/80 hover:text-foreground transition-colors">
-              Contact
-            </a>
+          </div>
+
+          {/* Sign In/Up Buttons */}
+          <div className="hidden md:flex items-center space-x-4">
+            <Button variant="outline" className="font-medium">
+              Sign In
+            </Button>
+            <Button className="bg-[#2D3748] hover:bg-[#2D3748]/90 text-white font-medium">
+              Sign Up
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -56,18 +67,23 @@ const Navbar = () => {
         isMobileMenuOpen ? 'max-h-56' : 'max-h-0'
       } overflow-hidden bg-background/80 backdrop-blur-md`}>
         <div className="px-4 pt-2 pb-3 space-y-1">
-          <a href="#" className="block px-3 py-2 text-foreground/80 hover:text-foreground transition-colors">
-            Home
+          <a href="#" className="block px-3 py-2 text-foreground hover:text-foreground/80 transition-colors">
+            Kategoriler
           </a>
-          <a href="#" className="block px-3 py-2 text-foreground/80 hover:text-foreground transition-colors">
-            Features
+          <a href="#" className="block px-3 py-2 text-foreground/60 hover:text-foreground/80 transition-colors">
+            Seller
           </a>
-          <a href="#" className="block px-3 py-2 text-foreground/80 hover:text-foreground transition-colors">
-            About
+          <a href="#" className="block px-3 py-2 text-foreground/60 hover:text-foreground/80 transition-colors">
+            Brands of Turkey
           </a>
-          <a href="#" className="block px-3 py-2 text-foreground/80 hover:text-foreground transition-colors">
-            Contact
-          </a>
+          <div className="flex flex-col space-y-2 px-3 py-2">
+            <Button variant="outline" className="w-full">
+              Sign In
+            </Button>
+            <Button className="w-full bg-[#2D3748] hover:bg-[#2D3748]/90">
+              Sign Up
+            </Button>
+          </div>
         </div>
       </div>
     </nav>
