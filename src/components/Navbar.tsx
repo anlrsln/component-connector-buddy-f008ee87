@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, LayoutGrid } from 'lucide-react';
+import { Menu, X, LayoutGrid, User } from 'lucide-react';
 import { Button } from './ui/button';
 
 const Navbar = () => {
@@ -45,7 +45,8 @@ const Navbar = () => {
 
           {/* Sign In/Up Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" className={`${isAfterHero ? 'text-foreground hover:bg-gray-100' : 'text-white hover:bg-white/10'}`}>
+            <Button variant="ghost" className={`${isAfterHero ? 'text-foreground hover:bg-gray-100' : 'text-white hover:bg-white/10'} flex items-center gap-2`}>
+              <User size={18} />
               Sign In
             </Button>
             <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium transition-colors">
