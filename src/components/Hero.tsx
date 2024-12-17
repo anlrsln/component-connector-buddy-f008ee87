@@ -14,7 +14,6 @@ const Hero = () => {
 
   const handleSearch = (query: string) => {
     setSearchQuery(query);
-    // Here you would implement the actual search logic based on the selected label
     console.log(`Searching for ${query} in category: ${selectedLabel}`);
   };
 
