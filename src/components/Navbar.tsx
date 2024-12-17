@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, LayoutGrid } from 'lucide-react';
 import { Button } from './ui/button';
 
 const Navbar = () => {
@@ -31,7 +31,8 @@ const Navbar = () => {
           
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#" className={`${isAfterHero ? 'text-foreground' : 'text-white'} hover:text-primary-hover transition-colors font-medium`}>
+            <a href="#" className={`${isAfterHero ? 'text-foreground' : 'text-white'} hover:text-primary-hover transition-colors font-medium flex items-center gap-2`}>
+              <LayoutGrid size={18} />
               Categories
             </a>
             <a href="#" className={`${isAfterHero ? 'text-foreground/80' : 'text-white/80'} hover:text-primary-hover transition-colors font-medium`}>
