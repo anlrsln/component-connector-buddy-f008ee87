@@ -1,6 +1,10 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Search, X } from 'lucide-react';
+import { Input } from './ui/input';
+import { useState } from 'react';
 
 const Hero = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Hero Image */}
@@ -18,6 +22,27 @@ const Hero = () => {
           Create something
           <span className="block text-accent">beautiful today</span>
         </h1>
+
+        <div className="mt-8 max-w-md mx-auto animate-fade-up">
+          <div className="relative">
+            <Input
+              type="text"
+              placeholder="Search"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="pl-10 pr-10 py-6 w-full bg-white/10 text-white placeholder:text-white/60 border-white/20 focus-visible:ring-primary"
+            />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-white/60" />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery('')}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-white/60 hover:text-white"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );
