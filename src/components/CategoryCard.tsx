@@ -28,7 +28,7 @@ const CategoryCard = ({ icon, title }: CategoryCardProps) => {
   const IconComponent = iconMap[icon.replace('/', '').replace('.svg', '')];
 
   return (
-    <div className="flex flex-col items-center justify-center bg-white rounded-full w-32 h-32 mx-auto transition-all duration-300 hover:shadow-lg group">
+    <div className="flex flex-col items-center justify-center bg-white rounded-full w-32 h-32 mx-auto transition-all duration-300 hover:shadow-lg group border border-gray-200">
       <div className="w-16 h-16 flex items-center justify-center relative">
         <div className="absolute inset-0 bg-transparent group-hover:bg-[#F97316] rounded-full transition-colors duration-300" />
         {IconComponent && (
@@ -39,7 +39,7 @@ const CategoryCard = ({ icon, title }: CategoryCardProps) => {
           />
         )}
       </div>
-      <p className="text-xs text-center font-medium text-foreground/80 mt-2 px-2 max-w-[90px]">{title}</p>
+      <p className="text-xs text-center font-medium text-foreground/80 mt-2 px-2 max-w-[80px] line-clamp-2">{title}</p>
     </div>
   );
 };
