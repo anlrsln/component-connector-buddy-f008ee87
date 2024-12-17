@@ -29,7 +29,7 @@ const CategoryCard = ({ icon, title }: CategoryCardProps) => {
 
   return (
     <div className="flex flex-col items-center justify-center bg-white rounded-full w-32 h-32 mx-auto transition-all duration-300 hover:shadow-lg group border border-gray-200 hover:border-yellow-400 relative overflow-hidden">
-      <div className="w-16 h-16 flex items-center justify-center mt-2">
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-[70%] w-16 h-16 flex items-center justify-center">
         {IconComponent && (
           <IconComponent
             size={32}
