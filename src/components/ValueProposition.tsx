@@ -39,8 +39,8 @@ const ValueProposition = () => {
 
   return (
     <>
-      <section className="py-16 bg-primary/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-primary/5 w-full">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
               <div 
@@ -63,11 +63,11 @@ const ValueProposition = () => {
         <section
           key={index}
           id={value.id}
-          className={`py-24 relative ${index === 0 ? 'bg-cover bg-center bg-no-repeat' : 'bg-white even:bg-gray-50'}`}
+          className={`py-24 relative w-full ${index === 0 ? 'bg-cover bg-center bg-no-repeat' : 'bg-white even:bg-gray-50'}`}
           style={index === 0 ? { backgroundImage: `url(${value.image})` } : undefined}
         >
           <div className={`absolute inset-0 ${index === 0 ? 'bg-black/50' : ''}`}></div>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="w-full px-4 sm:px-6 lg:px-8 relative">
             <div className="flex flex-col md:flex-row items-center gap-12">
               <div className="flex-1">
                 <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-6">
