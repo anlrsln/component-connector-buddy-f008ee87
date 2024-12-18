@@ -33,8 +33,6 @@ const Hero = () => {
           alt="Warehouse workers walking past forklift" 
           className={`w-full h-full object-cover transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
           loading="eager"
-          priority="true"
-          fetchpriority="high"
         />
         <div className={`absolute inset-0 bg-black/50 transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`} />
       </div>
