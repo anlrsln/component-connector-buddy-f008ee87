@@ -1,10 +1,10 @@
 import React from 'react';
-import { Shield, CheckSquare, PiggyBank, HeadphonesIcon } from 'lucide-react';
+import { ShieldCheck, CheckSquare, PiggyBank, HeadphonesIcon } from 'lucide-react';
 
 const ValueProposition = () => {
   const values = [
     {
-      icon: Shield,
+      icon: ShieldCheck,
       title: "Trusted and Verified Suppliers",
       description: "We collaborate exclusively with reliable, thoroughly verified local manufacturers to ensure you receive products that meet the highest standards of trust and reliability.",
       id: "trusted-suppliers",
