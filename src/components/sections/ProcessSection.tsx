@@ -8,8 +8,8 @@ const ProcessSection = () => {
     <section className="py-24 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-primary">How It Works</h2>
-          <p className="mt-4 text-foreground/70 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold text-black">How It Works</h2>
+          <p className="mt-4 text-black/70 max-w-2xl mx-auto">
             Follow our simple process to get started with your sourcing journey
           </p>
         </div>
@@ -26,15 +26,15 @@ const ProcessSection = () => {
               >
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className={`font-semibold ${activeStep === index ? 'text-white' : 'text-primary'}`}>
+                    <span className={`font-semibold ${activeStep === index ? 'text-white' : 'text-black'}`}>
                       {index + 1}
                     </span>
                   </div>
                   <div>
-                    <h3 className={`text-lg font-semibold mb-2 ${activeStep === index ? 'text-white' : 'text-primary'}`}>
+                    <h3 className={`text-lg font-semibold mb-2 ${activeStep === index ? 'text-white' : 'text-black'}`}>
                       {step.title}
                     </h3>
-                    <p className={activeStep === index ? 'text-white/90' : 'text-foreground/70'}>
+                    <p className={activeStep === index ? 'text-white/90' : 'text-black/70'}>
                       {step.description}
                     </p>
                   </div>
