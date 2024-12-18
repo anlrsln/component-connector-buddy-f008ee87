@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { processSteps } from '@/data/processSteps';
 
 const ProcessSection = () => {
-  const [activeStep, setActiveStep] = useState<number | null>(null);
+  const [activeStep, setActiveStep] = useState<number>(0);
 
   return (
     <section className="py-24 bg-background">
@@ -23,7 +23,7 @@ const ProcessSection = () => {
                   ${activeStep === index ? 'bg-primary text-white scale-105' : 'bg-white hover:bg-primary/5'}
                   shadow-lg hover:shadow-xl`}
                 onMouseEnter={() => setActiveStep(index)}
-                onMouseLeave={() => setActiveStep(null)}
+                onMouseLeave={() => setActiveStep(0)}
               >
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
@@ -59,11 +59,6 @@ const ProcessSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
               </div>
             ))}
-            {activeStep === null && (
-              <div className="absolute inset-0 flex items-center justify-center bg-primary/5 rounded-xl">
-                <p className="text-primary font-semibold">Hover over steps to see details</p>
-              </div>
-            )}
           </div>
         </div>
       </div>
