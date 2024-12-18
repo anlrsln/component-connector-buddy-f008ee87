@@ -1,53 +1,64 @@
 import { Shield, Globe, CheckSquare, Package, HeadphonesIcon, PiggyBank } from 'lucide-react';
+import { useEffect, useRef } from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import ValueProposition from '../components/ValueProposition';
-import FeatureCard from '../components/FeatureCard';
 import Categories from '../components/Categories';
 import PopularProducts from '../components/PopularProducts';
 import Footer from '../components/Footer';
 
 const Index = () => {
-  const features = [
-    {
-      icon: Shield,
-      title: 'Trusted and Verified Suppliers',
-      description: 'We collaborate exclusively with reliable, thoroughly verified local manufacturers to ensure you receive products that meet the highest standards of trust and reliability.'
-    },
-    {
-      icon: Globe,
-      title: 'Global Access to Premium Products',
-      description: 'Explore a wide range of high-quality products across multiple categories, carefully curated to meet the needs of international markets and businesses.'
-    },
-    {
-      icon: CheckSquare,
-      title: 'Uncompromising Quality Assurance',
-      description: 'Every product undergoes strict quality control measures, ensuring durability, precision, and consistency that you can depend on.'
-    },
-    {
-      icon: Package,
-      title: 'Fast, Secure, and Hassle-Free Delivery',
-      description: 'Enjoy seamless, timely, and secure shipping solutions tailored to meet the demands of international clients and partners.'
-    },
-    {
-      icon: HeadphonesIcon,
-      title: 'Dedicated Customer Support',
-      description: 'Our team of professionals is ready to assist you with personalized support, helping you navigate every step of the process smoothly and efficiently.'
-    },
-    {
-      icon: PiggyBank,
-      title: 'Competitive Pricing with Transparent Deals',
-      description: 'Gain access to cost-effective, competitive pricing without compromising on quality, with fully transparent transactions and no hidden fees.'
-    }
-  ];
+  const sectionsRef = useRef<(HTMLElement | null)[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-up', 'opacity-100');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px'
+      }
+    );
+
+    // Get all sections except the hero (which should always be visible)
+    const sections = sectionsRef.current.filter(Boolean);
+    sections.forEach((section) => {
+      if (section) {
+        section.classList.add('opacity-0');
+        observer.observe(section);
+      }
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        if (section) observer.unobserve(section);
+      });
+    };
+  }, []);
 
   return (
     <div className="min-h-screen">
       <Navbar />
       <Hero />
-      <ValueProposition />
-      <Categories />
-      <PopularProducts />
+      
+      <section ref={el => sectionsRef.current[0] = el}>
+        <ValueProposition />
+      </section>
+      
+      <section ref={el => sectionsRef.current[1] = el}>
+        <Categories />
+      </section>
+      
+      <section ref={el => sectionsRef.current[2] = el}>
+        <PopularProducts />
+      </section>
+      
       <Footer />
     </div>
   );
