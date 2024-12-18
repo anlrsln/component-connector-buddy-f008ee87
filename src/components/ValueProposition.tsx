@@ -30,6 +30,34 @@ const ValueProposition = () => {
     }
   ];
 
+  const orderSteps = [
+    {
+      icon: "//s.alicdn.com/@img/imgextra/i4/O1CN015t37vw1Dd37SPrbRN_!!6000000000238-2-tps-96-96.png",
+      title: "Eşleşme arayın",
+      description: "İşletmeniz için uygun olanları bulmak amacıyla milyonlarca ürün ve tedarikçi teklifini arayıp filtreleyin."
+    },
+    {
+      icon: "//s.alicdn.com/@img/imgextra/i4/O1CN015lgvwy1md3g5nlS9C_!!6000000004976-2-tps-96-96.png",
+      title: "Doğru olanı bulun",
+      description: "Doğrulanmış denetimler ve dijital tedarik araçlarıyla ürün kalitesini ve tedarikçi kapasitesini hem kolay hem verimli bir şekilde değerlendirin."
+    },
+    {
+      icon: "//s.alicdn.com/@img/imgextra/i3/O1CN01HZd7ME1fEbDXenc3M_!!6000000003975-2-tps-96-96.png",
+      title: "Güvenle ödeme yapın",
+      description: "Esnek ödeme koşulları dahil 20'den fazla güvenli ödeme yöntemiyle siparişlerinizi 20'den fazla para birimi kullanarak ödeyin."
+    },
+    {
+      icon: "//s.alicdn.com/@img/imgextra/i3/O1CN01Q2EI0L1iqYtRZh1gI_!!6000000004464-2-tps-96-96.png",
+      title: "Siparişleri şeffaf bir şekilde yerine getirin",
+      description: "Lojistik ihtiyaçlarınızı, tamamı Alibaba.com Logistics tarafından desteklenen, 220 ülke ve bölgede 26.000'den fazla rota için gerçek zamanlı izleme ile karşılayın."
+    },
+    {
+      icon: "//s.alicdn.com/@img/imgextra/i4/O1CN01bw2aFV1obnp2vp772_!!6000000005244-2-tps-96-96.png",
+      title: "Kolayca yönetin",
+      description: "Alibaba Hesabım aracılığıyla sipariş durumunu kontrol edin, tedarikçileri yönetin, ödemelerle gönderimleri takip edin ve satış sonrası destek almak için iletişime geçin."
+    }
+  ];
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -116,6 +144,24 @@ const ValueProposition = () => {
           </div>
         </section>
       ))}
+
+      {/* Order Processing Steps Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-16 text-primary">Sipariş İşlem Adımları</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+            {orderSteps.map((step, index) => (
+              <div key={index} className="flex flex-col items-center text-center">
+                <div className="w-24 h-24 mb-6">
+                  <img src={step.icon} alt={step.title} className="w-full h-full object-contain" />
+                </div>
+                <h3 className="text-lg font-semibold mb-3 text-primary">{step.title}</h3>
+                <p className="text-sm text-foreground/70">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 };
