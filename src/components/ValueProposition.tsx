@@ -148,7 +148,7 @@ const ValueProposition = () => {
       {/* Order Processing Steps Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-16 text-primary">Sipariş İşlem Adımları</h2>
+          <h2 className="text-3xl font-bold text-center mb-16 text-primary">Buyer Process Steps</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             {orderSteps.map((step, index) => (
               <div key={index} className="flex flex-col items-center text-center">
