@@ -10,8 +10,8 @@ import CategoryCard from './CategoryCard';
 
 const categories = [
   {
-    icon: "business-services",
-    title: "Business Services"
+    icon: "environment",
+    title: "Environment"
   },
   {
     icon: "apparel",
@@ -30,16 +30,16 @@ const categories = [
     title: "Packaging & Printing"
   },
   {
-    icon: "shoes",
-    title: "Shoes & Accessories"
+    icon: "toys",
+    title: "Mother, Kids & Toys"
   },
   {
     icon: "vehicle",
     title: "Vehicle Parts & Accessories"
   },
   {
-    icon: "environment",
-    title: "Environment"
+    icon: "commercial",
+    title: "Commercial Equipment & Supplies"
   },
   {
     icon: "electronics",
@@ -50,12 +50,12 @@ const categories = [
     title: "Sports & Entertainment"
   },
   {
-    icon: "commercial",
-    title: "Commercial Equipment & Supplies"
+    icon: "business-services",
+    title: "Business Services"
   },
   {
-    icon: "toys",
-    title: "Mother, Kids & Toys"
+    icon: "shoes",
+    title: "Shoes & Accessories"
   },
   {
     icon: "jewelry",
@@ -76,23 +76,13 @@ const Categories = () => {
           <p className="text-foreground/80">Explore our wide range of product categories</p>
         </div>
         
-        <Carousel
-          opts={{
-            align: "start",
-            loop: true,
-          }}
-          className="w-full"
-        >
-          <CarouselContent className="-ml-2 md:-ml-4">
-            {categories.map((category, index) => (
-              <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/4 lg:basis-1/6">
-                <CategoryCard {...category} />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="hidden md:flex" />
-          <CarouselNext className="hidden md:flex" />
-        </Carousel>
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
+          {categories.map((category, index) => (
+            <div key={index}>
+              <CategoryCard {...category} />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
