@@ -64,21 +64,23 @@ const ValueProposition = () => {
         <section
           key={index}
           id={value.id}
-          className="py-24 bg-white even:bg-gray-50"
+          className={`py-24 relative ${index === 0 ? 'bg-cover bg-center bg-no-repeat' : 'bg-white even:bg-gray-50'}`}
+          style={index === 0 ? { backgroundImage: `url(${value.image})` } : undefined}
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className={`absolute inset-0 ${index === 0 ? 'bg-black/50' : ''}`}></div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div className="flex flex-col md:flex-row items-center gap-12">
               <div className="flex-1">
                 <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-6">
                   <value.icon className="w-10 h-10 text-primary" />
                 </div>
-                <h2 className="text-3xl font-bold mb-6 text-primary">{value.title}</h2>
-                <p className="text-lg text-foreground/70 mb-8">{value.description}</p>
+                <h2 className={`text-3xl font-bold mb-6 ${index === 0 ? 'text-white' : 'text-primary'}`}>{value.title}</h2>
+                <p className={`text-lg mb-8 ${index === 0 ? 'text-white/90' : 'text-foreground/70'}`}>{value.description}</p>
                 <ul className="space-y-4">
                   {[1, 2, 3].map((item) => (
-                    <li key={item} className="flex items-center gap-3">
-                      <CheckSquare className="w-5 h-5 text-primary" />
-                      <span className="text-foreground/80">
+                    <li key={item} className={`flex items-center gap-3 ${index === 0 ? 'text-white/90' : 'text-foreground/80'}`}>
+                      <CheckSquare className={`w-5 h-5 ${index === 0 ? 'text-white' : 'text-primary'}`} />
+                      <span>
                         Feature point {item} related to {value.title}
                       </span>
                     </li>
@@ -86,7 +88,7 @@ const ValueProposition = () => {
                 </ul>
               </div>
               <div className="flex-1">
-                {value.image ? (
+                {value.image && index !== 0 ? (
                   <img 
                     src={value.image} 
                     alt={value.title}
