@@ -7,7 +7,8 @@ const ValueProposition = () => {
       icon: Shield,
       title: "Trusted and Verified Suppliers",
       description: "We collaborate exclusively with reliable, thoroughly verified local manufacturers to ensure you receive products that meet the highest standards of trust and reliability.",
-      id: "trusted-suppliers"
+      id: "trusted-suppliers",
+      image: "/lovable-uploads/802fb3b3-9b1f-4b83-a708-73ee83b68c31.png"
     },
     {
       icon: CheckSquare,
@@ -84,8 +85,18 @@ const ValueProposition = () => {
                   ))}
                 </ul>
               </div>
-              <div className="flex-1 bg-gray-100 rounded-lg p-8 h-[400px] flex items-center justify-center">
-                <span className="text-gray-400">Placeholder for {value.title} illustration</span>
+              <div className="flex-1">
+                {value.image ? (
+                  <img 
+                    src={value.image} 
+                    alt={value.title}
+                    className="w-full h-[400px] object-cover rounded-lg"
+                  />
+                ) : (
+                  <div className="bg-gray-100 rounded-lg p-8 h-[400px] flex items-center justify-center">
+                    <span className="text-gray-400">Placeholder for {value.title} illustration</span>
+                  </div>
+                )}
               </div>
             </div>
           </div>
