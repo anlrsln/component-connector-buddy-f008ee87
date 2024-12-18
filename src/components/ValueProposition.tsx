@@ -1,27 +1,27 @@
 import React from 'react';
-import { Grid, Shield, CreditCard, BarChart } from 'lucide-react';
+import { Shield, CheckSquare, PiggyBank, HeadphonesIcon } from 'lucide-react';
 
 const ValueProposition = () => {
   const values = [
     {
-      icon: Grid,
-      title: "Millions of Business Opportunities",
-      description: "Discover products and suppliers that match your needs from millions of offers worldwide."
-    },
-    {
       icon: Shield,
-      title: "Guaranteed Quality and Operations",
-      description: "Benefit from the production quality of verified suppliers with protection from payment to delivery."
+      title: "Trusted and Verified Suppliers",
+      description: "We collaborate exclusively with reliable, thoroughly verified local manufacturers to ensure you receive products that meet the highest standards of trust and reliability."
     },
     {
-      icon: CreditCard,
-      title: "One-Stop Trading Solution",
-      description: "Place orders seamlessly from supplier search to order management, payment, and fulfillment."
+      icon: CheckSquare,
+      title: "Uncompromising Quality Assurance",
+      description: "Every product undergoes strict quality control measures, ensuring durability, precision, and consistency that you can depend on."
     },
     {
-      icon: BarChart,
-      title: "Custom Trading Experience",
-      description: "Get special advantages like exclusive discounts, enhanced protection, and extra support to help grow your business."
+      icon: PiggyBank,
+      title: "Competitive Pricing with Transparent Deals",
+      description: "Gain access to cost-effective, competitive pricing without compromising on quality, with fully transparent transactions and no hidden fees."
+    },
+    {
+      icon: HeadphonesIcon,
+      title: "Dedicated Customer Support",
+      description: "Our team of professionals is ready to assist you with personalized support, helping you navigate every step of the process smoothly and efficiently."
     }
   ];
 
