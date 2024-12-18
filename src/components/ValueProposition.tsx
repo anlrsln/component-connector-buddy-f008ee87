@@ -1,6 +1,5 @@
 import React from 'react';
 import { Shield, CheckSquare, PiggyBank, HeadphonesIcon } from 'lucide-react';
-import VideoPlayer from './VideoPlayer';
 
 const ValueProposition = () => {
   const values = [
@@ -90,14 +89,12 @@ const ValueProposition = () => {
                 )}
               </div>
               <div className="flex-1 relative overflow-hidden rounded-lg aspect-video">
-                {value.image ? (
+                {value.image && (
                   <img 
                     src={value.image} 
                     alt={value.title}
                     className="w-full h-full object-cover"
                   />
-                ) : (
-                  <VideoPlayer />
                 )}
               </div>
             </div>
