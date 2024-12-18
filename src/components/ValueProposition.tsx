@@ -33,8 +33,8 @@ const ValueProposition = () => {
   const orderSteps = [
     {
       icon: "//s.alicdn.com/@img/imgextra/i4/O1CN015t37vw1Dd37SPrbRN_!!6000000000238-2-tps-96-96.png",
-      title: "Eşleşme arayın",
-      description: "İşletmeniz için uygun olanları bulmak amacıyla milyonlarca ürün ve tedarikçi teklifini arayıp filtreleyin."
+      title: "Search for matches",
+      description: "Search and filter products and suppliers to find the ones that are right for your business."
     },
     {
       icon: "//s.alicdn.com/@img/imgextra/i4/O1CN015lgvwy1md3g5nlS9C_!!6000000004976-2-tps-96-96.png",
