@@ -37,7 +37,7 @@ const Hero = () => {
         <div className={`absolute inset-0 bg-black/50 transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`} />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 flex items-center min-h-screen">
+      <div className={`relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 flex items-center min-h-screen transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}>
         <div className="max-w-2xl">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white text-left animate-fade-up">
             Discover Top-Quality Products
