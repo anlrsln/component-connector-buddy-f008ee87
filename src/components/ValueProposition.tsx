@@ -24,7 +24,7 @@ const ValueProposition = () => {
     },
     {
       icon: HeadphonesIcon,
-      title: "Dedicated Customer Support",
+      title: "İletişime Geçin",
       description: "Our team of professionals is ready to assist you with personalized support, helping you navigate every step of the process smoothly and efficiently.",
       id: "customer-support"
     }
