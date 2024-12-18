@@ -49,7 +49,7 @@ const ValueProposition = () => {
                 className="flex flex-col items-center text-center p-6 rounded-lg bg-white hover:shadow-lg transition-shadow duration-300 cursor-pointer"
               >
                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                  <value.icon className="w-8 h-8 text-primary" />
+                  <value.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-lg font-semibold mb-3 text-primary">{value.title}</h3>
                 <p className="text-sm text-foreground/70">{value.description}</p>
@@ -71,7 +71,7 @@ const ValueProposition = () => {
             <div className="flex flex-col md:flex-row items-center gap-12">
               <div className="flex-1">
                 <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-6">
-                  <value.icon className="w-10 h-10 text-primary" />
+                  <value.icon className="w-10 h-10 text-white" />
                 </div>
                 <h2 className={`text-3xl font-bold mb-6 ${index === 0 ? 'text-white' : 'text-primary'}`}>{value.title}</h2>
                 <p className={`text-lg mb-8 ${index === 0 ? 'text-white/90' : 'text-foreground/70'}`}>{value.description}</p>
