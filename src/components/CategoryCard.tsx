@@ -30,7 +30,7 @@ const CategoryCard = ({ icon, title }: CategoryCardProps) => {
   const IconComponent = iconMap[icon.replace('/', '').replace('.svg', '')];
 
   return (
-    <div className="w-full h-full">
+    <div className="flex flex-col items-center justify-center bg-white rounded-full w-32 h-32 mx-auto transition-all duration-300 hover:shadow-lg group border border-gray-200 hover:border-yellow-400 relative overflow-hidden">
       <div className="flex flex-col items-center justify-center gap-2">
         {IconComponent && (
           <IconComponent
