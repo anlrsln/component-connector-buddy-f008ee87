@@ -8,15 +8,15 @@ const ProcessSection = () => {
   const getStepIcon = (index: number) => {
     switch(index) {
       case 0:
-        return <Pencil className={`w-5 h-5 ${activeStep === index ? 'text-white' : 'text-black'}`} />;
+        return <Pencil className="w-5 h-5 text-black" />;
       case 1:
-        return <PackageSearch className={`w-5 h-5 ${activeStep === index ? 'text-white' : 'text-black'}`} />;
+        return <PackageSearch className="w-5 h-5 text-black" />;
       case 2:
-        return <ShieldCheck className={`w-5 h-5 ${activeStep === index ? 'text-white' : 'text-black'}`} />;
+        return <ShieldCheck className="w-5 h-5 text-black" />;
       case 3:
-        return <ShoppingCart className={`w-5 h-5 ${activeStep === index ? 'text-white' : 'text-black'}`} />;
+        return <ShoppingCart className="w-5 h-5 text-black" />;
       default:
-        return <CircleIcon className={`w-5 h-5 ${activeStep === index ? 'text-white' : 'text-black'}`} />;
+        return <CircleIcon className="w-5 h-5 text-black" />;
     }
   };
 
@@ -36,7 +36,7 @@ const ProcessSection = () => {
               <div
                 key={index}
                 className={`p-6 rounded-lg transition-all duration-300 cursor-pointer bg-white
-                  ${activeStep === index ? 'text-white scale-105' : 'hover:bg-primary/5'}
+                  ${activeStep === index ? 'scale-105' : 'hover:bg-primary/5'}
                   shadow-lg hover:shadow-xl`}
                 onMouseEnter={() => setActiveStep(index)}
               >
@@ -45,10 +45,10 @@ const ProcessSection = () => {
                     {getStepIcon(index)}
                   </div>
                   <div>
-                    <h3 className={`text-lg font-semibold mb-2 ${activeStep === index ? 'text-white' : 'text-black'}`}>
+                    <h3 className="text-lg font-semibold mb-2 text-black">
                       {step.title}
                     </h3>
-                    <p className={activeStep === index ? 'text-white/90' : 'text-black/70'}>
+                    <p className="text-black/70">
                       {step.description}
                     </p>
                   </div>
