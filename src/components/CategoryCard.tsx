@@ -1,5 +1,5 @@
 import React from 'react';
-import { Headphones, Shirt, Coffee, Sparkles, Package, Footprints, Car, Sprout, Headset, Dumbbell, FileBox, Baby, Gem, Armchair } from 'lucide-react';
+import { Headphones, Shirt, Coffee, Sparkles, Package, Footprints, Car, Sprout, Headset, Dumbbell, FileBox, Baby, Gem, Armchair, Camera, Briefcase } from 'lucide-react';
 import { LucideIcon } from 'lucide-react';
 
 interface CategoryCardProps {
@@ -21,7 +21,9 @@ const iconMap: { [key: string]: LucideIcon } = {
   'commercial': FileBox,
   'toys': Baby,
   'jewelry': Gem,
-  'furniture': Armchair
+  'furniture': Armchair,
+  'photography': Camera,
+  'office': Briefcase
 };
 
 const CategoryCard = ({ icon, title }: CategoryCardProps) => {

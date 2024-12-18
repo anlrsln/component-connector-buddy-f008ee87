@@ -1,11 +1,4 @@
 import React from 'react';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import CategoryCard from './CategoryCard';
 
 const categories = [
@@ -64,6 +57,14 @@ const categories = [
   {
     icon: "furniture",
     title: "Furniture"
+  },
+  {
+    icon: "photography",
+    title: "Photography & Video"
+  },
+  {
+    icon: "office",
+    title: "Office Supplies"
   }
 ];
 
