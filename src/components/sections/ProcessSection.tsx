@@ -36,7 +36,7 @@ const ProcessSection = () => {
               <div
                 key={index}
                 className={`p-6 rounded-lg transition-all duration-300 cursor-pointer bg-white
-                  ${activeStep === index ? 'scale-105' : 'hover:bg-primary/5'}
+                  ${activeStep === index ? 'scale-105 border-2 border-accent' : 'hover:bg-primary/5'}
                   shadow-lg hover:shadow-xl`}
                 onMouseEnter={() => setActiveStep(index)}
               >
