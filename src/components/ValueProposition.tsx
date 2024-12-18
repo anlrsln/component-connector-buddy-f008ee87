@@ -1,61 +1,61 @@
 import React from 'react';
 import { ShieldCheck, CheckSquare, PiggyBank, HeadphonesIcon } from 'lucide-react';
 
-const values = [
-  {
-    icon: ShieldCheck,
-    title: "Trusted and Verified Suppliers",
-    description: "We collaborate exclusively with reliable, thoroughly verified local manufacturers to ensure you receive products that meet the highest standards of trust and reliability.",
-    id: "trusted-suppliers",
-    image: "/lovable-uploads/802fb3b3-9b1f-4b83-a708-73ee83b68c31.png"
-  },
-  {
-    icon: CheckSquare,
-    title: "Uncompromising Quality Assurance",
-    description: "Every product undergoes strict quality control measures, ensuring durability, precision, and consistency that you can depend on.",
-    id: "quality-assurance"
-  },
-  {
-    icon: PiggyBank,
-    title: "Competitive Pricing with Transparent Deals",
-    description: "Gain access to cost-effective, competitive pricing without compromising on quality, with fully transparent transactions and no hidden fees.",
-    id: "competitive-pricing"
-  },
-  {
-    icon: HeadphonesIcon,
-    title: "İletişime Geçin",
-    description: "Our team of professionals is ready to assist you with personalized support, helping you navigate every step of the process smoothly and efficiently.",
-    id: "customer-support"
-  }
-];
+  const values = [
+    {
+      icon: ShieldCheck,
+      title: "Trusted and Verified Suppliers",
+      description: "We collaborate exclusively with reliable, thoroughly verified local manufacturers to ensure you receive products that meet the highest standards of trust and reliability.",
+      id: "trusted-suppliers",
+      image: "/lovable-uploads/802fb3b3-9b1f-4b83-a708-73ee83b68c31.png"
+    },
+    {
+      icon: CheckSquare,
+      title: "Uncompromising Quality Assurance",
+      description: "Every product undergoes strict quality control measures, ensuring durability, precision, and consistency that you can depend on.",
+      id: "quality-assurance"
+    },
+    {
+      icon: PiggyBank,
+      title: "Competitive Pricing with Transparent Deals",
+      description: "Gain access to cost-effective, competitive pricing without compromising on quality, with fully transparent transactions and no hidden fees.",
+      id: "competitive-pricing"
+    },
+    {
+      icon: HeadphonesIcon,
+      title: "İletişime Geçin",
+      description: "Our team of professionals is ready to assist you with personalized support, helping you navigate every step of the process smoothly and efficiently.",
+      id: "customer-support"
+    }
+  ];
 
-const orderSteps = [
-  {
-    icon: "//s.alicdn.com/@img/imgextra/i4/O1CN015t37vw1Dd37SPrbRN_!!6000000000238-2-tps-96-96.png",
-    title: "Search for matches",
-    description: "Search and filter products and suppliers to find the ones that are right for your business."
-  },
-  {
-    icon: "//s.alicdn.com/@img/imgextra/i4/O1CN015lgvwy1md3g5nlS9C_!!6000000004976-2-tps-96-96.png",
-    title: "Doğru olanı bulun",
-    description: "Doğrulanmış denetimler ve dijital tedarik araçlarıyla ürün kalitesini ve tedarikçi kapasitesini hem kolay hem verimli bir şekilde değerlendirin."
-  },
-  {
-    icon: "//s.alicdn.com/@img/imgextra/i3/O1CN01HZd7ME1fEbDXenc3M_!!6000000003975-2-tps-96-96.png",
-    title: "Güvenle ödeme yapın",
-    description: "Esnek ödeme koşulları dahil 20'den fazla güvenli ödeme yöntemiyle siparişlerinizi 20'den fazla para birimi kullanarak ödeyin."
-  },
-  {
-    icon: "//s.alicdn.com/@img/imgextra/i3/O1CN01Q2EI0L1iqYtRZh1gI_!!6000000004464-2-tps-96-96.png",
-    title: "Siparişleri şeffaf bir şekilde yerine getirin",
-    description: "Lojistik ihtiyaçlarınızı, tamamı Alibaba.com Logistics tarafından desteklenen, 220 ülke ve bölgede 26.000'den fazla rota için gerçek zamanlı izleme ile karşılayın."
-  },
-  {
-    icon: "//s.alicdn.com/@img/imgextra/i4/O1CN01bw2aFV1obnp2vp772_!!6000000005244-2-tps-96-96.png",
-    title: "Kolayca yönetin",
-    description: "Alibaba Hesabım aracılığıyla sipariş durumunu kontrol edin, tedarikçileri yönetin, ödemelerle gönderimleri takip edin ve satış sonrası destek almak için iletişime geçin."
-  }
-];
+  const orderSteps = [
+    {
+      icon: "//s.alicdn.com/@img/imgextra/i4/O1CN015t37vw1Dd37SPrbRN_!!6000000000238-2-tps-96-96.png",
+      title: "Search for matches",
+      description: "Search and filter products and suppliers to find the ones that are right for your business."
+    },
+    {
+      icon: "//s.alicdn.com/@img/imgextra/i4/O1CN015lgvwy1md3g5nlS9C_!!6000000004976-2-tps-96-96.png",
+      title: "Doğru olanı bulun",
+      description: "Doğrulanmış denetimler ve dijital tedarik araçlarıyla ürün kalitesini ve tedarikçi kapasitesini hem kolay hem verimli bir şekilde değerlendirin."
+    },
+    {
+      icon: "//s.alicdn.com/@img/imgextra/i3/O1CN01HZd7ME1fEbDXenc3M_!!6000000003975-2-tps-96-96.png",
+      title: "Güvenle ödeme yapın",
+      description: "Esnek ödeme koşulları dahil 20'den fazla güvenli ödeme yöntemiyle siparişlerinizi 20'den fazla para birimi kullanarak ödeyin."
+    },
+    {
+      icon: "//s.alicdn.com/@img/imgextra/i3/O1CN01Q2EI0L1iqYtRZh1gI_!!6000000004464-2-tps-96-96.png",
+      title: "Siparişleri şeffaf bir şekilde yerine getirin",
+      description: "Lojistik ihtiyaçlarınızı, tamamı Alibaba.com Logistics tarafından desteklenen, 220 ülke ve bölgede 26.000'den fazla rota için gerçek zamanlı izleme ile karşılayın."
+    },
+    {
+      icon: "//s.alicdn.com/@img/imgextra/i4/O1CN01bw2aFV1obnp2vp772_!!6000000005244-2-tps-96-96.png",
+      title: "Kolayca yönetin",
+      description: "Alibaba Hesabım aracılığıyla sipariş durumunu kontrol edin, tedarikçileri yönetin, ödemelerle gönderimleri takip edin ve satış sonrası destek almak için iletişime geçin."
+    }
+  ];
 
 const ValueProposition = () => {
   const scrollToSection = (id: string) => {
@@ -74,20 +74,18 @@ const ValueProposition = () => {
               <div 
                 key={index}
                 onClick={() => scrollToSection(value.id)}
-                className="group relative flex flex-col items-center text-center p-6 rounded-lg bg-white shadow-xl hover:shadow-2xl transition-shadow duration-300 cursor-pointer"
+                className="flex flex-col items-center text-center p-6 rounded-lg bg-white shadow-xl hover:shadow-2xl transition-shadow duration-300 cursor-pointer"
               >
-                <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="relative">
-                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                    <value.icon className="w-8 h-8 text-primary" />
-                  </div>
-                  <h3 className="text-lg font-semibold mb-3 text-primary">{value.title}</h3>
-                  <p className="text-sm text-foreground/70">{value.description}</p>
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                  <value.icon className="w-8 h-8 text-primary" />
                 </div>
+                <h3 className="text-lg font-semibold mb-3 text-primary">{value.title}</h3>
+                <p className="text-sm text-foreground/70">{value.description}</p>
               </div>
             ))}
           </div>
         </div>
+        {/* Curved bottom section - adjusted for 50/50 split */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden" style={{ height: '50%' }}>
           <svg
             viewBox="0 0 1440 320"
@@ -147,6 +145,7 @@ const ValueProposition = () => {
         </section>
       ))}
 
+      {/* Order Processing Steps Section */}
       <section className="py-24 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-16 text-primary">Buyer Process Steps</h2>
