@@ -46,7 +46,7 @@ const ValueProposition = () => {
               <div 
                 key={index}
                 onClick={() => scrollToSection(value.id)}
-                className="flex flex-col items-center text-center p-6 rounded-lg bg-white hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+                className="flex flex-col items-center text-center p-6 rounded-lg bg-white shadow-xl hover:shadow-2xl transition-shadow duration-300 cursor-pointer"
               >
                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                   <value.icon className="w-8 h-8 text-white" />
