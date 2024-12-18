@@ -1,45 +1,23 @@
-import React from 'react';
-import { Headphones, Shirt, Coffee, Sparkles, Package, Footprints, Car, Sprout, Headset, Dumbbell, FileBox, Baby, Gem, Armchair, Camera, Briefcase } from 'lucide-react';
 import { LucideIcon } from 'lucide-react';
 
 interface CategoryCardProps {
-  icon: string;
+  icon: LucideIcon;
   title: string;
+  description: string;
 }
 
-const iconMap: { [key: string]: LucideIcon } = {
-  'business-services': Headphones,
-  'apparel': Shirt,
-  'home-garden': Coffee,
-  'beauty': Sparkles,
-  'packaging': Package,
-  'shoes': Footprints,
-  'vehicle': Car,
-  'environment': Sprout,
-  'electronics': Headset,
-  'sports': Dumbbell,
-  'commercial': FileBox,
-  'toys': Baby,
-  'jewelry': Gem,
-  'furniture': Armchair,
-  'photography': Camera,
-  'office': Briefcase
-};
-
-const CategoryCard = ({ icon, title }: CategoryCardProps) => {
-  const IconComponent = iconMap[icon.replace('/', '').replace('.svg', '')];
-
+const CategoryCard = ({ icon: Icon, title, description }: CategoryCardProps) => {
   return (
-    <div className="flex flex-col items-center justify-center bg-white rounded-full w-32 h-32 mx-auto transition-all duration-300 hover:shadow-lg group border border-gray-200 hover:border-yellow-400 relative overflow-hidden">
-      <div className="flex flex-col items-center justify-center gap-2">
-        {IconComponent && (
-          <IconComponent
-            size={32}
-            className="text-foreground/80"
-            strokeWidth={1.5}
-          />
-        )}
-        <p className="text-[9px] leading-tight text-center font-medium text-foreground/80 px-2 max-w-full line-clamp-2">{title}</p>
+    <div className="group relative p-6 rounded-2xl bg-background border border-border hover:border-primary/20 transition-all duration-300">
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+      
+      <div className="relative">
+        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+          <Icon className="h-6 w-6 text-primary" />
+        </div>
+        
+        <h3 className="text-lg font-semibold mb-2">{title}</h3>
+        <p className="text-foreground/80 text-sm">{description}</p>
       </div>
     </div>
   );
