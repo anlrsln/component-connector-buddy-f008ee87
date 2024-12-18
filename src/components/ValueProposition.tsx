@@ -59,7 +59,6 @@ const ValueProposition = () => {
         </div>
       </section>
 
-      {/* Detailed Sections */}
       {values.map((value, index) => (
         <section
           key={index}
@@ -87,19 +86,15 @@ const ValueProposition = () => {
                   ))}
                 </ul>
               </div>
-              <div className="flex-1">
-                {value.image && index !== 0 ? (
+              {value.image && index !== 0 && (
+                <div className="flex-1">
                   <img 
                     src={value.image} 
                     alt={value.title}
                     className="w-full h-[400px] object-cover rounded-lg"
                   />
-                ) : (
-                  <div className="bg-gray-100 rounded-lg p-8 h-[400px] flex items-center justify-center">
-                    <span className="text-gray-400">Placeholder for {value.title} illustration</span>
-                  </div>
-                )}
-              </div>
+                </div>
+              )}
             </div>
           </div>
         </section>
