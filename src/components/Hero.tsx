@@ -1,10 +1,17 @@
 import { Search, X } from 'lucide-react';
 import { Input } from './ui/input';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Hero = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedLabel, setSelectedLabel] = useState<'product' | 'companies' | 'hex-code'>('product');
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = "/lovable-uploads/b43e3110-7676-42ec-8147-9741003839ae.png";
+    img.onload = () => setImageLoaded(true);
+  }, []);
 
   const labels = [
     { id: 'product', name: 'Product' },
@@ -24,9 +31,12 @@ const Hero = () => {
         <img 
           src="/lovable-uploads/b43e3110-7676-42ec-8147-9741003839ae.png" 
           alt="Warehouse workers walking past forklift" 
-          className="w-full h-full object-cover"
+          className={`w-full h-full object-cover transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+          loading="eager"
+          priority="true"
+          fetchpriority="high"
         />
-        <div className="absolute inset-0 bg-black/50" />
+        <div className={`absolute inset-0 bg-black/50 transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`} />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 flex items-center min-h-screen">
