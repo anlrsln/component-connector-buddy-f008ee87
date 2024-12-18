@@ -87,24 +87,22 @@ const ValueProposition = () => {
                   ))}
                 </ul>
               </div>
-              {index !== 0 && (
-                <div className="flex-1 relative overflow-hidden rounded-lg aspect-video">
-                  {value.image ? (
-                    <img 
-                      src={value.image} 
-                      alt={value.title}
-                      className="w-full h-full object-cover"
+              <div className="flex-1 relative overflow-hidden rounded-lg aspect-video">
+                {value.image ? (
+                  <img 
+                    src={value.image} 
+                    alt={value.title}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gray-100 flex items-center justify-center">
+                    <VideoPlayer 
+                      src="https://example.com/placeholder-video.mp4" 
+                      className="w-full h-full"
                     />
-                  ) : (
-                    <div className="w-full h-full bg-gray-100 flex items-center justify-center">
-                      <VideoPlayer 
-                        src="https://example.com/placeholder-video.mp4" 
-                        className="w-full h-full"
-                      />
-                    </div>
-                  )}
-                </div>
-              )}
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </section>
