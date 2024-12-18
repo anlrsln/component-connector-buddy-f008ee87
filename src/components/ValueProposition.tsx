@@ -76,16 +76,18 @@ const ValueProposition = () => {
                 </div>
                 <h2 className={`text-3xl font-bold mb-6 ${index === 0 ? 'text-white' : 'text-primary'}`}>{value.title}</h2>
                 <p className={`text-lg mb-8 ${index === 0 ? 'text-white/90' : 'text-foreground/70'}`}>{value.description}</p>
-                <ul className="space-y-4">
-                  {[1, 2, 3].map((item) => (
-                    <li key={item} className={`flex items-center gap-3 ${index === 0 ? 'text-white/90' : 'text-foreground/80'}`}>
-                      <CheckSquare className={`w-5 h-5 ${index === 0 ? 'text-white' : 'text-primary'}`} />
-                      <span>
-                        Feature point {item} related to {value.title}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
+                {index !== 0 && (
+                  <ul className="space-y-4">
+                    {[1, 2, 3].map((item) => (
+                      <li key={item} className="flex items-center gap-3 text-foreground/80">
+                        <CheckSquare className="w-5 h-5 text-primary" />
+                        <span>
+                          Feature point {item} related to {value.title}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
               <div className="flex-1 relative overflow-hidden rounded-lg aspect-video">
                 {value.image ? (
