@@ -74,7 +74,7 @@ const ValueProposition = () => {
                   <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-6">
                     <value.icon className="w-10 h-10 text-white" />
                   </div>
-                  <h2 className={`text-3xl font-bold mb-6 ${index === 0 ? 'text-white' : 'text-primary'}`}>{value.title}</h2>
+                  <h2 className={`text-4xl font-bold mb-6 ${index === 0 ? 'text-white' : 'text-primary'}`}>{value.title}</h2>
                   <p className={`text-lg mb-8 ${index === 0 ? 'text-white/90' : 'text-foreground/70'}`}>{value.description}</p>
                   {index !== 0 && (
                     <ul className="space-y-4">
