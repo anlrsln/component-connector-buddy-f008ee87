@@ -1,63 +1,61 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ShieldCheck, CheckSquare, PiggyBank, HeadphonesIcon } from 'lucide-react';
 
-  const values = [
-    {
-      icon: ShieldCheck,
-      title: "Trusted and Verified Suppliers",
-      description: "We collaborate exclusively with reliable, thoroughly verified local manufacturers to ensure you receive products that meet the highest standards of trust and reliability.",
-      id: "trusted-suppliers",
-      image: "/lovable-uploads/802fb3b3-9b1f-4b83-a708-73ee83b68c31.png"
-    },
-    {
-      icon: CheckSquare,
-      title: "Uncompromising Quality Assurance",
-      description: "Every product undergoes strict quality control measures, ensuring durability, precision, and consistency that you can depend on.",
-      id: "quality-assurance"
-    },
-    {
-      icon: PiggyBank,
-      title: "Competitive Pricing with Transparent Deals",
-      description: "Gain access to cost-effective, competitive pricing without compromising on quality, with fully transparent transactions and no hidden fees.",
-      id: "competitive-pricing"
-    },
-    {
-      icon: HeadphonesIcon,
-      title: "İletişime Geçin",
-      description: "Our team of professionals is ready to assist you with personalized support, helping you navigate every step of the process smoothly and efficiently.",
-      id: "customer-support"
-    }
-  ];
+const values = [
+  {
+    icon: ShieldCheck,
+    title: "Trusted and Verified Suppliers",
+    description: "We collaborate exclusively with reliable, thoroughly verified local manufacturers to ensure you receive products that meet the highest standards of trust and reliability.",
+    id: "trusted-suppliers",
+    image: "/lovable-uploads/802fb3b3-9b1f-4b83-a708-73ee83b68c31.png"
+  },
+  {
+    icon: CheckSquare,
+    title: "Uncompromising Quality Assurance",
+    description: "Every product undergoes strict quality control measures, ensuring durability, precision, and consistency that you can depend on.",
+    id: "quality-assurance"
+  },
+  {
+    icon: PiggyBank,
+    title: "Competitive Pricing with Transparent Deals",
+    description: "Gain access to cost-effective, competitive pricing without compromising on quality, with fully transparent transactions and no hidden fees.",
+    id: "competitive-pricing"
+  },
+  {
+    icon: HeadphonesIcon,
+    title: "İletişime Geçin",
+    description: "Our team of professionals is ready to assist you with personalized support, helping you navigate every step of the process smoothly and efficiently.",
+    id: "customer-support"
+  }
+];
 
-  const orderSteps = [
-    {
-      icon: "//s.alicdn.com/@img/imgextra/i4/O1CN015t37vw1Dd37SPrbRN_!!6000000000238-2-tps-96-96.png",
-      title: "Search for matches",
-      description: "Search and filter products and suppliers to find the ones that are right for your business."
-    },
-    {
-      icon: "//s.alicdn.com/@img/imgextra/i4/O1CN015lgvwy1md3g5nlS9C_!!6000000004976-2-tps-96-96.png",
-      title: "Doğru olanı bulun",
-      description: "Doğrulanmış denetimler ve dijital tedarik araçlarıyla ürün kalitesini ve tedarikçi kapasitesini hem kolay hem verimli bir şekilde değerlendirin."
-    },
-    {
-      icon: "//s.alicdn.com/@img/imgextra/i3/O1CN01HZd7ME1fEbDXenc3M_!!6000000003975-2-tps-96-96.png",
-      title: "Güvenle ödeme yapın",
-      description: "Esnek ödeme koşulları dahil 20'den fazla güvenli ödeme yöntemiyle siparişlerinizi 20'den fazla para birimi kullanarak ödeyin."
-    },
-    {
-      icon: "//s.alicdn.com/@img/imgextra/i3/O1CN01Q2EI0L1iqYtRZh1gI_!!6000000004464-2-tps-96-96.png",
-      title: "Siparişleri şeffaf bir şekilde yerine getirin",
-      description: "Lojistik ihtiyaçlarınızı, tamamı Alibaba.com Logistics tarafından desteklenen, 220 ülke ve bölgede 26.000'den fazla rota için gerçek zamanlı izleme ile karşılayın."
-    },
-    {
-      icon: "//s.alicdn.com/@img/imgextra/i4/O1CN01bw2aFV1obnp2vp772_!!6000000005244-2-tps-96-96.png",
-      title: "Kolayca yönetin",
-      description: "Alibaba Hesabım aracılığıyla sipariş durumunu kontrol edin, tedarikçileri yönetin, ödemelerle gönderimleri takip edin ve satış sonrası destek almak için iletişime geçin."
-    }
-  ];
+const processSteps = [
+  {
+    title: "Initial Consultation",
+    description: "Schedule a meeting with our experts to discuss your specific needs and requirements.",
+    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
+  },
+  {
+    title: "Product Selection",
+    description: "Browse through our curated selection of verified suppliers and products.",
+    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
+  },
+  {
+    title: "Quality Verification",
+    description: "Our team conducts thorough quality checks to ensure products meet your standards.",
+    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf"
+  },
+  {
+    title: "Order Processing",
+    description: "Place your order with confidence through our secure platform.",
+    image: "https://images.unsplash.com/photo-1557804506-669a67965ba0"
+  }
+];
 
 const ValueProposition = () => {
+  const [activeStep, setActiveStep] = useState<number | null>(null);
+  const [isHovered, setIsHovered] = useState(false);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -85,7 +83,6 @@ const ValueProposition = () => {
             ))}
           </div>
         </div>
-        {/* Curved bottom section - adjusted for 50/50 split */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden" style={{ height: '50%' }}>
           <svg
             viewBox="0 0 1440 320"
@@ -145,7 +142,70 @@ const ValueProposition = () => {
         </section>
       ))}
 
-      {/* Order Processing Steps Section */}
+      <section className="py-24 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-primary">How It Works</h2>
+            <p className="mt-4 text-foreground/70 max-w-2xl mx-auto">
+              Follow our simple process to get started with your sourcing journey
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              {processSteps.map((step, index) => (
+                <div
+                  key={index}
+                  className={`p-6 rounded-lg transition-all duration-300 cursor-pointer
+                    ${activeStep === index ? 'bg-primary text-white scale-105' : 'bg-white hover:bg-primary/5'}
+                    shadow-lg hover:shadow-xl`}
+                  onMouseEnter={() => setActiveStep(index)}
+                  onMouseLeave={() => setActiveStep(null)}
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                      <span className={`font-semibold ${activeStep === index ? 'text-white' : 'text-primary'}`}>
+                        {index + 1}
+                      </span>
+                    </div>
+                    <div>
+                      <h3 className={`text-lg font-semibold mb-2 ${activeStep === index ? 'text-white' : 'text-primary'}`}>
+                        {step.title}
+                      </h3>
+                      <p className={activeStep === index ? 'text-white/90' : 'text-foreground/70'}>
+                        {step.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="relative h-[500px] rounded-xl overflow-hidden">
+              {processSteps.map((step, index) => (
+                <div
+                  key={index}
+                  className={`absolute inset-0 transition-all duration-500 transform
+                    ${activeStep === index ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'}`}
+                >
+                  <img
+                    src={step.image}
+                    alt={step.title}
+                    className="w-full h-full object-cover rounded-xl"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                </div>
+              ))}
+              {activeStep === null && (
+                <div className="absolute inset-0 flex items-center justify-center bg-primary/5 rounded-xl">
+                  <p className="text-primary font-semibold">Hover over steps to see details</p>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-24 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-16 text-primary">Buyer Process Steps</h2>
