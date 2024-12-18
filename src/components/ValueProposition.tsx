@@ -39,7 +39,7 @@ const ValueProposition = () => {
 
   return (
     <>
-      <section className="py-16 w-full bg-[#bdc3c7] bg-gradient-to-r from-[#2c3e50] to-[#bdc3c7]">
+      <section className="py-16 w-full bg-[#8e9eab] bg-gradient-to-r from-[#eef2f3] to-[#8e9eab]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
