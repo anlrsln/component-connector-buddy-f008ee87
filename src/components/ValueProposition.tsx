@@ -57,17 +57,16 @@ const ValueProposition = () => {
             ))}
           </div>
         </div>
-        {/* Curved bottom section */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden" style={{ height: '150px' }}>
+        {/* Curved bottom section - adjusted for 50/50 split */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden" style={{ height: '50%' }}>
           <svg
             viewBox="0 0 1440 320"
-            className="absolute bottom-0 w-full"
+            className="absolute bottom-0 w-full h-full"
             preserveAspectRatio="none"
-            style={{ transform: 'scale(1.5)' }}
           >
             <path
               fill="#ffffff"
-              d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,208C1248,224,1344,192,1392,176L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+              d="M0,160L48,144C96,128,192,96,288,90.7C384,85,480,107,576,122.7C672,139,768,149,864,144C960,139,1056,117,1152,106.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
             />
           </svg>
         </div>
