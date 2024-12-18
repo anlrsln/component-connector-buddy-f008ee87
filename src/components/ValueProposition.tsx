@@ -39,7 +39,7 @@ const ValueProposition = () => {
 
   return (
     <>
-      <section className="relative py-16 w-full bg-[rgb(83,82,78)] bg-gradient-to-b from-[rgba(83,82,78,1)] to-[rgba(105,107,103,1)]">
+      <section className="relative py-16 w-full bg-[#1B2131]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
@@ -58,15 +58,16 @@ const ValueProposition = () => {
           </div>
         </div>
         {/* Curved bottom section */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden" style={{ height: '70px' }}>
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden" style={{ height: '150px' }}>
           <svg
-            viewBox="0 0 1440 100"
-            className="absolute bottom-0 w-full h-full"
+            viewBox="0 0 1440 320"
+            className="absolute bottom-0 w-full"
             preserveAspectRatio="none"
+            style={{ transform: 'scale(1.5)' }}
           >
             <path
               fill="#ffffff"
-              d="M0,0 C240,95 480,95 720,95 C960,95 1200,95 1440,0 V100 H0 V0 Z"
+              d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,208C1248,224,1344,192,1392,176L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
             />
           </svg>
         </div>
