@@ -50,31 +50,3 @@ export const processSteps = [
     image: "https://images.unsplash.com/photo-1557804506-669a67965ba0"
   }
 ];
-
-export const orderSteps = [
-  {
-    title: "Request Quote",
-    description: "Submit your requirements and receive detailed quotes",
-    icon: "/icons/quote.png"
-  },
-  {
-    title: "Review Options",
-    description: "Compare different suppliers and their offerings",
-    icon: "/icons/review.png"
-  },
-  {
-    title: "Place Order",
-    description: "Confirm your selection and process payment",
-    icon: "/icons/order.png"
-  },
-  {
-    title: "Track Progress",
-    description: "Monitor your order status in real-time",
-    icon: "/icons/track.png"
-  },
-  {
-    title: "Receive Product",
-    description: "Get your products delivered to your location",
-    icon: "/icons/delivery.png"
-  }
-];

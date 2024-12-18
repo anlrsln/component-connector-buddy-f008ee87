@@ -1,7 +1,6 @@
 import React from 'react';
 import ValuesSection from './sections/ValuesSection';
 import ProcessSection from './sections/ProcessSection';
-import OrderStepsSection from './sections/OrderStepsSection';
 import { values } from '@/data/processSteps';
 import { CheckSquare } from 'lucide-react';
 
@@ -56,7 +55,6 @@ const ValueProposition = () => {
       ))}
 
       <ProcessSection />
-      <OrderStepsSection />
     </>
   );
 };
