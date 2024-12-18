@@ -79,7 +79,10 @@ const Categories = () => {
         
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
           {categories.map((category, index) => (
-            <div key={index}>
+            <div 
+              key={index} 
+              className="flex flex-col items-center text-center p-6 rounded-lg bg-white hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+            >
               <CategoryCard {...category} />
             </div>
           ))}
