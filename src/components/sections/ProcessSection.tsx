@@ -23,7 +23,6 @@ const ProcessSection = () => {
                   ${activeStep === index ? 'bg-primary text-white scale-105' : 'bg-white hover:bg-primary/5'}
                   shadow-lg hover:shadow-xl`}
                 onMouseEnter={() => setActiveStep(index)}
-                onMouseLeave={() => setActiveStep(0)}
               >
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
