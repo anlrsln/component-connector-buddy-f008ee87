@@ -97,12 +97,7 @@ const ValueProposition = () => {
                     className="w-full h-full object-cover"
                   />
                 ) : (
-                  <div className="w-full h-full bg-gray-100 flex items-center justify-center">
-                    <VideoPlayer 
-                      src="https://example.com/placeholder-video.mp4" 
-                      className="w-full h-full"
-                    />
-                  </div>
+                  <VideoPlayer />
                 )}
               </div>
             </div>
