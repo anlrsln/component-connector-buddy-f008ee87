@@ -70,7 +70,7 @@ const ValueProposition = () => {
           <div className="w-full h-full flex items-center justify-center relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
               <div className="flex flex-col md:flex-row items-center gap-12">
-                <div className="flex-1">
+                <div className="flex-1 flex flex-col justify-center">
                   <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-6">
                     <value.icon className="w-10 h-10 text-white" />
                   </div>
