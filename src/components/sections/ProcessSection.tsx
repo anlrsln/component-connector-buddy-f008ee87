@@ -1,8 +1,24 @@
 import React, { useState } from 'react';
 import { processSteps } from '@/data/processSteps';
+import { CircleIcon, Pencil, PackageSearch, ShieldCheck, ShoppingCart } from 'lucide-react';
 
 const ProcessSection = () => {
-  const [activeStep, setActiveStep] = useState<number>(0);
+  const [activeStep, setActiveStep] = useState(0);
+
+  const getStepIcon = (index: number) => {
+    switch(index) {
+      case 0:
+        return <Pencil className={`w-5 h-5 ${activeStep === index ? 'text-white' : 'text-black'}`} />;
+      case 1:
+        return <PackageSearch className={`w-5 h-5 ${activeStep === index ? 'text-white' : 'text-black'}`} />;
+      case 2:
+        return <ShieldCheck className={`w-5 h-5 ${activeStep === index ? 'text-white' : 'text-black'}`} />;
+      case 3:
+        return <ShoppingCart className={`w-5 h-5 ${activeStep === index ? 'text-white' : 'text-black'}`} />;
+      default:
+        return <CircleIcon className={`w-5 h-5 ${activeStep === index ? 'text-white' : 'text-black'}`} />;
+    }
+  };
 
   return (
     <section className="py-24 bg-background">
@@ -26,9 +42,7 @@ const ProcessSection = () => {
               >
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className={`font-semibold ${activeStep === index ? 'text-white' : 'text-black'}`}>
-                      {index + 1}
-                    </span>
+                    {getStepIcon(index)}
                   </div>
                   <div>
                     <h3 className={`text-lg font-semibold mb-2 ${activeStep === index ? 'text-white' : 'text-black'}`}>
