@@ -1,6 +1,7 @@
 import { Shield, Globe, CheckSquare, Package, HeadphonesIcon, PiggyBank } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
+import ValueProposition from '../components/ValueProposition';
 import FeatureCard from '../components/FeatureCard';
 import Categories from '../components/Categories';
 import PopularProducts from '../components/PopularProducts';
@@ -44,6 +45,7 @@ const Index = () => {
     <div className="min-h-screen">
       <Navbar />
       <Hero />
+      <ValueProposition />
       
       {/* Features Section */}
       <section className="py-24 bg-[#F8F9FA]">
