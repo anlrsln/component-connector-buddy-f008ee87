@@ -1,7 +1,6 @@
 import React from 'react';
 import { ShieldCheck, CheckSquare, PiggyBank, HeadphonesIcon } from 'lucide-react';
 
-const ValueProposition = () => {
   const values = [
     {
       icon: ShieldCheck,
@@ -58,6 +57,7 @@ const ValueProposition = () => {
     }
   ];
 
+const ValueProposition = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -146,7 +146,7 @@ const ValueProposition = () => {
       ))}
 
       {/* Order Processing Steps Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-16 text-primary">Buyer Process Steps</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
