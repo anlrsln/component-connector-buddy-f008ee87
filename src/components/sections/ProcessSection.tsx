@@ -35,10 +35,11 @@ const ProcessSection = () => {
             {processSteps.map((step, index) => (
               <div
                 key={index}
-                className={`p-6 rounded-lg transition-colors duration-300 cursor-pointer border-2 bg-white
+                className={`p-6 rounded-lg transition-all duration-300 cursor-pointer border-2
                   ${activeStep === index 
-                    ? 'text-primary border-primary' 
-                    : 'border-transparent'}`}
+                    ? 'bg-primary text-white border-primary' 
+                    : 'bg-white border-transparent'}
+                  shadow-lg`}
                 onMouseEnter={() => setActiveStep(index)}
               >
                 <div className="flex items-start gap-4">
@@ -46,10 +47,10 @@ const ProcessSection = () => {
                     {getStepIcon(index)}
                   </div>
                   <div>
-                    <h3 className={`text-lg font-semibold mb-2 ${activeStep === index ? 'text-primary' : 'text-black'}`}>
+                    <h3 className={`text-lg font-semibold mb-2 ${activeStep === index ? 'text-white' : 'text-black'}`}>
                       {step.title}
                     </h3>
-                    <p className={activeStep === index ? 'text-primary/90' : 'text-black/70'}>
+                    <p className={activeStep === index ? 'text-white/90' : 'text-black/70'}>
                       {step.description}
                     </p>
                   </div>
