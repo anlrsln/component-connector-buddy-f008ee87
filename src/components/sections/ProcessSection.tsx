@@ -35,8 +35,8 @@ const ProcessSection = () => {
             {processSteps.map((step, index) => (
               <div
                 key={index}
-                className={`p-6 rounded-lg transition-all duration-300 cursor-pointer
-                  ${activeStep === index ? 'bg-primary text-white scale-105' : 'bg-white hover:bg-primary/5'}
+                className={`p-6 rounded-lg transition-all duration-300 cursor-pointer bg-white
+                  ${activeStep === index ? 'text-white scale-105' : 'hover:bg-primary/5'}
                   shadow-lg hover:shadow-xl`}
                 onMouseEnter={() => setActiveStep(index)}
               >
