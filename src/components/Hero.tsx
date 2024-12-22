@@ -6,11 +6,32 @@ const Hero = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedLabel, setSelectedLabel] = useState<'product' | 'companies' | 'hex-code'>('product');
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [currentPlaceholder, setCurrentPlaceholder] = useState('Glass');
+
+  const placeholders = [
+    'Glass',
+    'Sofa',
+    'Table',
+    'Chair',
+    'Lamp',
+    'Cabinet',
+    'Desk'
+  ];
 
   useEffect(() => {
     const img = new Image();
     img.src = "/lovable-uploads/b43e3110-7676-42ec-8147-9741003839ae.png";
     img.onload = () => setImageLoaded(true);
+  }, []);
+
+  useEffect(() => {
+    let currentIndex = 0;
+    const interval = setInterval(() => {
+      currentIndex = (currentIndex + 1) % placeholders.length;
+      setCurrentPlaceholder(placeholders[currentIndex]);
+    }, 2000);
+
+    return () => clearInterval(interval);
   }, []);
 
   const labels = [
@@ -72,7 +93,7 @@ const Hero = () => {
             <div className="relative">
               <Input
                 type="text"
-                placeholder={`Search ${selectedLabel}...`}
+                placeholder={`Search ${currentPlaceholder}...`}
                 value={searchQuery}
                 onChange={(e) => handleSearch(e.target.value)}
                 className="pl-10 pr-10 py-4 w-full bg-white text-gray-900 
