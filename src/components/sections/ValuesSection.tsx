@@ -10,7 +10,7 @@ const ValuesSection = () => {
   };
 
   return (
-    <section className="relative py-16 w-full bg-gradient-to-br from-[#1f2937] via-[#374151] to-[#4b5563] overflow-hidden">
+    <section className="relative py-16 w-full bg-gradient-to-r from-[#D3D5D9] to-[#6B7A8E] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {values.map((value, index) => (
