@@ -9,12 +9,12 @@ const ValueProposition = () => {
       <ValuesSection />
       
       {values.map((value, index) => {
-        // Define different background gradients based on index, but use image for first section
-        const backgroundGradient = value.title === "Trusted and Verified Suppliers"
+        // Define background based on index, keeping the image for the first section
+        const backgroundClass = value.title === "Trusted and Verified Suppliers"
           ? 'bg-[url("/lovable-uploads/802fb3b3-9b1f-4b83-a708-73ee83b68c31.png")] bg-cover bg-center bg-no-repeat'
-          : index % 3 === 1
-          ? 'bg-gradient-to-br from-[#accbee] to-[#e7f0fd]'
-          : 'bg-gradient-to-t from-[#d7d2cc] to-[#304352]';
+          : index % 2 === 0 
+          ? 'bg-gray-100' 
+          : 'bg-white';
 
         // Determine if the content should be reversed based on the section title
         const shouldReverse = value.title === "Uncompromising Quality Assurance" || value.title === "İletişime Geçin";
@@ -23,10 +23,10 @@ const ValueProposition = () => {
           <section
             key={index}
             id={value.id}
-            className={`min-h-screen relative w-full ${backgroundGradient}`}
+            className={`min-h-screen relative w-full ${backgroundClass}`}
           >
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <h1 className="text-[150px] font-bold text-white/5">
+              <h1 className="text-[150px] font-bold text-black/5">
                 {value.title}
               </h1>
             </div>
