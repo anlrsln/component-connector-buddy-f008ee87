@@ -1,4 +1,4 @@
-import { CircleIcon, Pencil, PackageSearch, ShieldCheck, ShoppingCart } from 'lucide-react';
+import { ShieldCheck, CheckSquareIcon, PiggyBankIcon, Headphones } from 'lucide-react';
 
 export const values = [
   {
@@ -9,19 +9,19 @@ export const values = [
     image: "/lovable-uploads/802fb3b3-9b1f-4b83-a708-73ee83b68c31.png"
   },
   {
-    icon: CheckSquare,
+    icon: CheckSquareIcon,
     title: "Uncompromising Quality Assurance",
     description: "Every product undergoes strict quality control measures, ensuring durability, precision, and consistency that you can depend on.",
     id: "quality-assurance"
   },
   {
-    icon: PiggyBank,
+    icon: PiggyBankIcon,
     title: "Competitive Pricing with Transparent Deals",
     description: "Gain access to cost-effective, competitive pricing without compromising on quality, with fully transparent transactions and no hidden fees.",
     id: "competitive-pricing"
   },
   {
-    icon: HeadphonesIcon,
+    icon: Headphones,
     title: "İletişime Geçin",
     description: "Our team of professionals is ready to assist you with personalized support, helping you navigate every step of the process smoothly and efficiently.",
     id: "customer-support"
