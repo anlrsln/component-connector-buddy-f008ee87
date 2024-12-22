@@ -9,9 +9,9 @@ const ValueProposition = () => {
       <ValuesSection />
       
       {values.map((value, index) => {
-        // Define different background gradients based on index
-        const backgroundGradient = index % 3 === 0
-          ? 'bg-gradient-to-t from-[#2c3e50] to-[#bdc3c7]'
+        // Define different background gradients based on index, but use image for first section
+        const backgroundGradient = value.title === "Trusted and Verified Suppliers"
+          ? 'bg-[url("/lovable-uploads/802fb3b3-9b1f-4b83-a708-73ee83b68c31.png")] bg-cover bg-center bg-no-repeat'
           : index % 3 === 1
           ? 'bg-gradient-to-br from-[#accbee] to-[#e7f0fd]'
           : 'bg-gradient-to-t from-[#d7d2cc] to-[#304352]';
