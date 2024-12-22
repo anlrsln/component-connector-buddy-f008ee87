@@ -101,9 +101,12 @@ const Hero = () => {
                 placeholder={`Search ${currentPlaceholder}...`}
                 value={searchQuery}
                 onChange={(e) => handleSearch(e.target.value)}
-                className={`pl-10 pr-10 py-4 w-full bg-white text-gray-900 
+                className="pl-10 pr-10 py-4 w-full bg-white text-gray-900 
                   placeholder:text-gray-500 focus-visible:ring-primary rounded-r-lg rounded-tl-none rounded-bl-lg
-                  transition-opacity duration-400 ${isTransitioning ? 'opacity-50' : 'opacity-100'}`}
+                  [&::placeholder]:transition-opacity [&::placeholder]:duration-400"
+                style={{
+                  '--tw-placeholder-opacity': isTransitioning ? '0.5' : '1'
+                } as React.CSSProperties}
               />
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-500" />
               {searchQuery && (
