@@ -26,7 +26,6 @@ const Index = () => {
       }
     );
 
-    // Get all sections except the hero (which should always be visible)
     const sections = sectionsRef.current.filter(Boolean);
     sections.forEach((section) => {
       if (section) {
@@ -48,11 +47,11 @@ const Index = () => {
       <Hero />
       
       <section ref={el => sectionsRef.current[0] = el}>
-        <ValueProposition />
+        <Categories />
       </section>
       
       <section ref={el => sectionsRef.current[1] = el}>
-        <Categories />
+        <ValueProposition />
       </section>
       
       <section ref={el => sectionsRef.current[2] = el}>
