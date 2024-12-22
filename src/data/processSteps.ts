@@ -30,23 +30,23 @@ export const values = [
 
 export const processSteps = [
   {
-    title: "Initial Consultation",
-    description: "Schedule a meeting with our experts to discuss your specific needs and requirements.",
+    title: "Discover Reliable Sellers",
+    description: "Browse categories to find certified Turkish manufacturers.",
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
   },
   {
-    title: "Product Selection",
-    description: "Browse through our curated selection of verified suppliers and products.",
+    title: "Explore Verified Products",
+    description: "Check detailed product information and review certifications.",
     image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
   },
   {
-    title: "Quality Verification",
-    description: "Our team conducts thorough quality checks to ensure products meet your standards.",
+    title: "Communicate Without Intermediaries",
+    description: "Reach out to sellers directly and discuss your terms.",
     image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf"
   },
   {
-    title: "Order Processing",
-    description: "Place your order with confidence through our secure platform.",
+    title: "Complete Transactions Safely",
+    description: "Our support team is with you throughout the process; finalize your trade easily.",
     image: "https://images.unsplash.com/photo-1557804506-669a67965ba0"
   }
 ];
