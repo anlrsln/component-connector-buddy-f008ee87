@@ -1,4 +1,4 @@
-import { ShieldCheck, CheckSquare, PiggyBank, HeadphonesIcon } from 'lucide-react';
+import { CircleIcon, Pencil, PackageSearch, ShieldCheck, ShoppingCart } from 'lucide-react';
 
 export const values = [
   {
@@ -30,22 +30,22 @@ export const values = [
 
 export const processSteps = [
   {
-    title: "Discover Reliable Sellers",
+    title: "Explore Trusted Sellers",
     description: "Browse categories to find certified Turkish manufacturers.",
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
   },
   {
-    title: "Explore Verified Products",
+    title: "Browse Verified Products",
     description: "Check detailed product information and review certifications.",
     image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
   },
   {
-    title: "Communicate Without Intermediaries",
+    title: "Connect Directly",
     description: "Reach out to sellers directly and discuss your terms.",
     image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf"
   },
   {
-    title: "Complete Transactions Safely",
+    title: "Make Secure Deals",
     description: "Our support team is with you throughout the process; finalize your trade easily.",
     image: "https://images.unsplash.com/photo-1557804506-669a67965ba0"
   }
