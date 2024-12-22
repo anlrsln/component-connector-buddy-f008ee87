@@ -7,6 +7,7 @@ const Hero = () => {
   const [selectedLabel, setSelectedLabel] = useState<'product' | 'companies' | 'hex-code'>('product');
   const [imageLoaded, setImageLoaded] = useState(false);
   const [currentPlaceholder, setCurrentPlaceholder] = useState('Glass');
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const placeholders = [
     'Glass',
@@ -27,8 +28,12 @@ const Hero = () => {
   useEffect(() => {
     let currentIndex = 0;
     const interval = setInterval(() => {
-      currentIndex = (currentIndex + 1) % placeholders.length;
-      setCurrentPlaceholder(placeholders[currentIndex]);
+      setIsTransitioning(true);
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % placeholders.length;
+        setCurrentPlaceholder(placeholders[currentIndex]);
+        setIsTransitioning(false);
+      }, 200); // Half of the transition duration
     }, 2000);
 
     return () => clearInterval(interval);
@@ -96,8 +101,9 @@ const Hero = () => {
                 placeholder={`Search ${currentPlaceholder}...`}
                 value={searchQuery}
                 onChange={(e) => handleSearch(e.target.value)}
-                className="pl-10 pr-10 py-4 w-full bg-white text-gray-900 
-                  placeholder:text-gray-500 focus-visible:ring-primary rounded-r-lg rounded-tl-none rounded-bl-lg"
+                className={`pl-10 pr-10 py-4 w-full bg-white text-gray-900 
+                  placeholder:text-gray-500 focus-visible:ring-primary rounded-r-lg rounded-tl-none rounded-bl-lg
+                  transition-opacity duration-400 ${isTransitioning ? 'opacity-50' : 'opacity-100'}`}
               />
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-500" />
               {searchQuery && (
