@@ -71,13 +71,21 @@ const ProductImageAndDetails = ({
               <CarouselNext className="relative right-0 translate-x-0" />
             </div>
           </Carousel>
-          <div className="mt-4 px-2">
+          <div className="mt-4 px-2 relative">
             <Slider
               value={[currentSlide]}
               max={images.length - 1}
               step={1}
               onValueChange={handleSliderChange}
               className="w-full"
+            />
+            <div 
+              className="absolute h-4 w-4 bg-yellow-400 rounded-full border-2 border-white shadow-md"
+              style={{
+                left: `calc(${(currentSlide / (images.length - 1)) * 100}% - 8px)`,
+                top: '-8px',
+                transform: 'translateX(-50%)',
+              }}
             />
           </div>
         </div>
