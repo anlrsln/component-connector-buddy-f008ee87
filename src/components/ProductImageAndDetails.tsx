@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { MinusCircle, PlusCircle } from "lucide-react";
+import { MinusCircle, PlusCircle, Heart, Maximize2, ChevronLeft, ChevronRight } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -31,7 +31,6 @@ const ProductImageAndDetails = ({
   handleIncrement,
   handleDecrement
 }: ProductImageAndDetailsProps) => {
-  // Default images array including the main image and additional sample images
   const images = product.images || [
     product.image,
     "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?q=80",
@@ -61,12 +60,12 @@ const ProductImageAndDetails = ({
       <div className="flex flex-col md:flex-row gap-6 bg-white p-6 rounded-lg shadow-sm">
         {/* Product Image Carousel */}
         <div className="md:w-1/2">
-          <div className="relative">
+          <div className="relative group">
             <Carousel className="w-full">
               <CarouselContent>
                 {images.map((image, index) => (
                   <CarouselItem key={index}>
-                    <div className="p-1">
+                    <div className="relative">
                       <img 
                         src={image} 
                         alt={`${product.title} - View ${index + 1}`}
@@ -76,9 +75,33 @@ const ProductImageAndDetails = ({
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-4">
-                <CarouselPrevious className="relative h-8 w-8 rounded-full bg-white/70 hover:bg-white" />
-                <CarouselNext className="relative h-8 w-8 rounded-full bg-white/70 hover:bg-white" />
+              
+              {/* Navigation Arrows */}
+              <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between">
+                <CarouselPrevious className="relative h-10 w-10 rounded-full bg-white opacity-0 group-hover:opacity-80 transition-opacity duration-200 -translate-x-2">
+                  <ChevronLeft className="h-6 w-6" />
+                </CarouselPrevious>
+                <CarouselNext className="relative h-10 w-10 rounded-full bg-white opacity-0 group-hover:opacity-80 transition-opacity duration-200 translate-x-2">
+                  <ChevronRight className="h-6 w-6" />
+                </CarouselNext>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="absolute top-4 right-4 flex gap-2">
+                <Button 
+                  variant="secondary" 
+                  size="icon" 
+                  className="rounded-full bg-white hover:bg-white/90"
+                >
+                  <Heart className="h-5 w-5 text-gray-600" />
+                </Button>
+                <Button 
+                  variant="secondary" 
+                  size="icon" 
+                  className="rounded-full bg-white hover:bg-white/90"
+                >
+                  <Maximize2 className="h-5 w-5 text-gray-600" />
+                </Button>
               </div>
             </Carousel>
           </div>
