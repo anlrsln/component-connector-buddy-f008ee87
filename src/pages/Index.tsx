@@ -5,6 +5,7 @@ import Hero from '../components/Hero';
 import ValueProposition from '../components/ValueProposition';
 import Categories from '../components/Categories';
 import PopularProducts from '../components/PopularProducts';
+import GetStartedCTA from '../components/GetStartedCTA';
 import Footer from '../components/Footer';
 
 const Index = () => {
@@ -58,6 +59,7 @@ const Index = () => {
         <PopularProducts />
       </section>
       
+      <GetStartedCTA />
       <Footer />
     </div>
   );
