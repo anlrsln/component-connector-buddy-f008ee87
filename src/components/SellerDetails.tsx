@@ -81,15 +81,6 @@ const SellerDetails = () => {
             Contact Seller
           </Button>
         </div>
-
-        <div className="bg-gray-50 p-4 rounded-lg">
-          <div className="text-lg font-medium text-[#1A5F7A]">
-            Get the Best Price for
-          </div>
-          <div className="font-medium">
-            ETHYL HEXYL RESORCINOL VCARE MEDICINES
-          </div>
-        </div>
       </div>
     </div>
   );
