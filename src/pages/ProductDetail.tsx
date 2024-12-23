@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import SellerDetails from '@/components/SellerDetails';
+import CompanyDetails from '@/components/CompanyDetails';
 import { Share2, MinusCircle, PlusCircle } from 'lucide-react';
 import { useState } from 'react';
 
@@ -97,6 +98,7 @@ const ProductDetail = () => {
     <div className="min-h-screen bg-gray-50">
       <Navbar />
       <div className="container mx-auto px-4 pt-20">
+        {/* Breadcrumb section */}
         <div className="flex justify-between items-center mb-6">
           <Breadcrumb>
             <BreadcrumbList>
@@ -118,6 +120,7 @@ const ProductDetail = () => {
           </Button>
         </div>
 
+        {/* Main product section */}
         <div className="grid md:grid-cols-12 gap-6">
           {/* Left Column - Product Image */}
           <div className="md:col-span-5">
@@ -209,6 +212,9 @@ const ProductDetail = () => {
             <SellerDetails />
           </div>
         </div>
+
+        {/* Company Details Section */}
+        <CompanyDetails />
       </div>
     </div>
   );
