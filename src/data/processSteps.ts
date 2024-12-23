@@ -3,27 +3,27 @@ import { ShieldCheck, CheckSquareIcon, PiggyBankIcon, Headphones } from 'lucide-
 export const values = [
   {
     icon: ShieldCheck,
-    title: "Trusted and Verified Suppliers",
-    description: "We collaborate exclusively with reliable, thoroughly verified local manufacturers to ensure you receive products that meet the highest standards of trust and reliability.",
+    title: "Trust",
+    description: "Our top priority is trust. Buyers and sellers are thoroughly verified, including document checks, production sites, and credibility, ensuring a secure trading environment.",
     id: "trusted-suppliers",
     image: "/lovable-uploads/802fb3b3-9b1f-4b83-a708-73ee83b68c31.png"
   },
   {
     icon: CheckSquareIcon,
-    title: "Uncompromising Quality Assurance",
-    description: "Every product undergoes strict quality control measures, ensuring durability, precision, and consistency that you can depend on.",
+    title: "Products",
+    description: "Comprehensive product details, certifications, and quality documents are provided. Product verification and order tracking are ensured for buyers.",
     id: "quality-assurance"
   },
   {
     icon: PiggyBankIcon,
-    title: "Competitive Pricing with Transparent Deals",
-    description: "Gain access to cost-effective, competitive pricing without compromising on quality, with fully transparent transactions and no hidden fees.",
+    title: "Affordable Prices",
+    description: "We enable direct purchases from producers, eliminating intermediaries for cost-effective trade.",
     id: "competitive-pricing"
   },
   {
     icon: Headphones,
-    title: "İletişime Geçin",
-    description: "Our team of professionals is ready to assist you with personalized support, helping you navigate every step of the process smoothly and efficiently.",
+    title: "Customer Support",
+    description: "Expert teams provide support to both buyers and sellers at every step of their transactions.",
     id: "customer-support"
   }
 ];
