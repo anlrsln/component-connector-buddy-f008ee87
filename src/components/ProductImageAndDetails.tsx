@@ -52,7 +52,7 @@ const ProductImageAndDetails = ({
       {/* Product Image Carousel */}
       <div className="md:w-1/2">
         <div className="relative">
-          <Carousel className="w-full" defaultIndex={currentSlide}>
+          <Carousel className="w-full">
             <CarouselContent>
               {images.map((image, index) => (
                 <CarouselItem key={index}>
