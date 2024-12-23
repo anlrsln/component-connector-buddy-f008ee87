@@ -23,7 +23,7 @@ const ValuesSection = () => {
                 <value.icon className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-lg font-semibold mb-3 text-white">{value.title}</h3>
-              <p className="text-sm text-white/80">{value.description}</p>
+              <p className="text-sm text-white">{value.description}</p>
             </div>
           ))}
         </div>
