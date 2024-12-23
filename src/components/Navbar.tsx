@@ -9,6 +9,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const isItemsPage = location.pathname === '/items';
+  const isProductPage = location.pathname.startsWith('/product/');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,7 +21,7 @@ const Navbar = () => {
   }, []);
 
   const getNavbarBackground = () => {
-    if (isItemsPage) {
+    if (isProductPage || isItemsPage) {
       return 'bg-primary text-primary-foreground';
     }
     return isAfterHero ? 'bg-primary text-primary-foreground' : 'bg-transparent';
