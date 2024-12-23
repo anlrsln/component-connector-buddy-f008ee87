@@ -1,9 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from './ui/button';
 import { Card, CardContent, CardFooter } from './ui/card';
 import { Badge } from './ui/badge';
 
 interface ProductCardProps {
+  id?: string;
   title: string;
   price: number;
   image: string;
@@ -11,8 +13,8 @@ interface ProductCardProps {
   rating: number;
 }
 
-const ProductCard = ({ title, price, image, category, rating }: ProductCardProps) => {
-  // Calculate price range (example: original price ±50%)
+const ProductCard = ({ id = "1", title, price, image, category, rating }: ProductCardProps) => {
+  const navigate = useNavigate();
   const minPrice = (price * 0.5).toFixed(2);
   const maxPrice = (price * 1.5).toFixed(2);
 
@@ -36,7 +38,13 @@ const ProductCard = ({ title, price, image, category, rating }: ProductCardProps
         </div>
       </CardContent>
       <CardFooter className="p-4 pt-0">
-        <Button className="w-full" variant="outline">View Details</Button>
+        <Button 
+          className="w-full" 
+          variant="outline"
+          onClick={() => navigate(`/product/${id}`)}
+        >
+          View Details
+        </Button>
       </CardFooter>
     </Card>
   );
