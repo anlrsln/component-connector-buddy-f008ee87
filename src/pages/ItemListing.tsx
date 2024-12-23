@@ -180,7 +180,7 @@ const ItemListing = () => {
 
         <div className="flex gap-6">
           {/* Desktop Filter Sidebar */}
-          <div className="hidden md:block w-64 bg-white p-4 rounded-lg shadow-sm">
+          <div className="hidden md:block w-64 bg-white p-4 rounded-lg shadow-sm h-fit">
             <FilterContent 
               priceRange={priceRange}
               setPriceRange={setPriceRange}
