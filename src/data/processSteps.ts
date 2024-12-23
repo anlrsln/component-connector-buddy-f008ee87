@@ -1,4 +1,4 @@
-import { ShieldCheck, CheckSquareIcon, Coins, Headphones } from 'lucide-react';
+import { ShieldCheck, CheckSquareIcon, Coins, HeadphonesIcon } from 'lucide-react';
 
 export const values = [
   {
@@ -21,7 +21,7 @@ export const values = [
     id: "competitive-pricing"
   },
   {
-    icon: Headphones,
+    icon: HeadphonesIcon,
     title: "Customer Support",
     description: "Expert teams provide support to both buyers and sellers at every step of their transactions.",
     id: "customer-support"
