@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, LayoutGrid, User } from 'lucide-react';
 import { Button } from './ui/button';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isAfterHero, setIsAfterHero] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+  const isItemsPage = location.pathname === '/items';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,10 +19,15 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const getNavbarBackground = () => {
+    if (isItemsPage) {
+      return 'bg-primary text-primary-foreground';
+    }
+    return isAfterHero ? 'bg-primary text-primary-foreground' : 'bg-transparent';
+  };
+
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${
-      isAfterHero ? 'bg-primary text-primary-foreground' : 'bg-transparent'
-    }`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${getNavbarBackground()}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -73,7 +80,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div className={`md:hidden transition-all duration-300 ease-in-out ${
         isMobileMenuOpen ? 'max-h-56' : 'max-h-0'
-      } overflow-hidden ${isAfterHero ? 'bg-primary' : 'bg-primary/95 backdrop-blur-md'}`}>
+      } overflow-hidden ${isItemsPage ? 'bg-primary' : isAfterHero ? 'bg-primary' : 'bg-primary/95 backdrop-blur-md'}`}>
         <div className="px-4 pt-2 pb-3 space-y-1">
           <button
             onClick={() => navigate('/items')}
