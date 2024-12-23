@@ -7,6 +7,7 @@ import { Separator } from "@/components/ui/separator";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
+import Navbar from "@/components/Navbar";
 
 const sampleProducts = [
   {
@@ -153,8 +154,9 @@ const ItemListing = () => {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
   return (
-    <div className="min-h-screen bg-background pt-20">
-      <div className="container mx-auto px-4">
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <div className="container mx-auto px-4 pt-20">
         <div className="flex items-center justify-between mb-6">
           <h1 className="text-2xl font-bold">Products</h1>
           <div className="md:hidden">
