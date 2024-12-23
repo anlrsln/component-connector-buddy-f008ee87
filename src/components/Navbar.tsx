@@ -19,7 +19,7 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${
-      isAfterHero ? 'bg-primary text-primary-foreground' : 'bg-primary/95 text-primary-foreground'
+      isAfterHero ? 'bg-primary text-primary-foreground' : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -73,7 +73,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div className={`md:hidden transition-all duration-300 ease-in-out ${
         isMobileMenuOpen ? 'max-h-56' : 'max-h-0'
-      } overflow-hidden bg-primary/95 backdrop-blur-md`}>
+      } overflow-hidden ${isAfterHero ? 'bg-primary' : 'bg-primary/95 backdrop-blur-md'}`}>
         <div className="px-4 pt-2 pb-3 space-y-1">
           <button
             onClick={() => navigate('/items')}
