@@ -12,6 +12,10 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ title, price, image, category, rating }: ProductCardProps) => {
+  // Calculate price range (example: original price ±50%)
+  const minPrice = (price * 0.5).toFixed(2);
+  const maxPrice = (price * 1.5).toFixed(2);
+
   return (
     <Card className="overflow-hidden group">
       <CardContent className="p-0">
@@ -28,7 +32,7 @@ const ProductCard = ({ title, price, image, category, rating }: ProductCardProps
         <div className="p-4">
           <h3 className="font-medium text-sm line-clamp-2 mb-2 min-h-[40px]">{title}</h3>
           <p className="text-sm text-foreground/60 mb-2">{category}</p>
-          <p className="text-lg font-bold text-primary">${price.toFixed(2)}</p>
+          <p className="text-lg font-bold text-primary">${minPrice} - ${maxPrice}</p>
         </div>
       </CardContent>
       <CardFooter className="p-4 pt-0">
