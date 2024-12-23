@@ -155,18 +155,6 @@ const ContactSupplierForm = () => {
                 </FormItem>
               )}
             />
-
-            <div className="flex justify-between items-center pt-4">
-              <div className="text-sm">
-                Do you have an account? 
-                <a href="/sign-in" className="text-primary ml-1 font-semibold">
-                  SIGN IN
-                </a>
-              </div>
-              <Button type="submit" className="bg-primary hover:bg-primary-hover text-primary-foreground px-8">
-                Next
-              </Button>
-            </div>
           </form>
         </Form>
       </div>
