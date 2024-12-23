@@ -53,7 +53,7 @@ const categories = [
 ];
 
 const ItemListing = () => {
-  const [priceRange, setPriceRange] = useState([0, 1500]);
+  const [priceRange, setPriceRange] = useState<number[]>([0, 1500]);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
   return (
@@ -111,7 +111,7 @@ interface FilterContentProps {
   priceRange: number[];
   setPriceRange: (value: number[]) => void;
   selectedCategories: string[];
-  setSelectedCategories: (value: string[]) => void;
+  setSelectedCategories: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
 const FilterContent = ({ 
@@ -121,10 +121,9 @@ const FilterContent = ({
   setSelectedCategories 
 }: FilterContentProps) => {
   const handleCategoryChange = (category: string) => {
-    setSelectedCategories(prev => 
-      prev.includes(category)
-        ? prev.filter(c => c !== category)
-        : [...prev, category]
+    setSelectedCategories(selectedCategories.includes(category) 
+      ? selectedCategories.filter(c => c !== category)
+      : [...selectedCategories, category]
     );
   };
 
