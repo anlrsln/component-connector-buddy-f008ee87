@@ -47,6 +47,23 @@ const ProductImageAndDetails = ({
     setCurrentSlide(value[0]);
   };
 
+  const specificationData = [
+    { label: "Mop", value: "200" },
+    { label: "Currency", value: "INR" },
+    { label: "Unit Type", value: "Piece/Pieces" },
+    { label: "Price", value: "890.00 INR (Approx.)" },
+    { label: "Brand Name", value: "ETHYL HEXYL GLYCERIN" },
+    { label: "Price Type", value: "fixed" },
+    { label: "Minimum Order Quantity", value: "200" },
+    { label: "Moq", value: "200" },
+    { label: "Packsize", value: "1" },
+    { label: "Product Unit", value: "200 Piece/Pieces" },
+    { label: "Stock Quantity", value: "1000" },
+    { label: "Returnable", value: "No" },
+    { label: "Minimum Ordered Packs", value: "200" },
+    { label: "GSTIN", value: "0%" }
+  ];
+
   return (
     <div className="flex flex-col md:flex-row gap-6 bg-white p-6 rounded-lg shadow-sm">
       {/* Product Image Carousel */}
@@ -154,6 +171,23 @@ const ProductImageAndDetails = ({
               <li key={index} className="text-muted-foreground">{spec}</li>
             ))}
           </ul>
+        </div>
+
+        {/* Product Specifications Section */}
+        <div className="mt-8">
+          <h2 className="text-2xl font-semibold mb-4">Product Specifications</h2>
+          <div className="bg-gray-50 rounded-lg p-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {specificationData.map((spec, index) => (
+                <div key={index} className="border-b border-gray-200 py-3">
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-600">{spec.label}</span>
+                    <span className="font-medium text-gray-900">{spec.value}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>
