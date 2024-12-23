@@ -20,14 +20,14 @@ const SellerDetails = () => {
     <div className="bg-background border rounded-lg p-4 space-y-4">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <h2 className="text-lg font-bold">John Doe</h2>
+          <h2 className="text-lg font-bold">VCARE MEDICINES</h2>
           <Badge variant="secondary" className="flex items-center gap-1">
             <BadgeCheck className="w-4 h-4" />
-            Verified Seller
+            4.2 ★
           </Badge>
         </div>
         <div className="text-sm text-muted-foreground">
-          Member since 2021
+          Member since 2015
         </div>
       </div>
 
@@ -53,10 +53,10 @@ const SellerDetails = () => {
       <div className="space-y-2 text-sm text-muted-foreground">
         <div className="flex items-center gap-2">
           <MapPin className="w-4 h-4" />
-          <span>123 Business Street, Silicon Valley, CA 94025</span>
+          <span>Shop No. C-13, First Floor, Shree Ram Industrial Estate, GD Ambekar Marg, Wadala, Mumbai, Maharashtra, 400031, India</span>
         </div>
         <div>
-          <span className="font-medium">GST Number:</span> 22AAAAA0000A1Z5
+          <span className="font-medium">GST Number:</span> 27AABFN3528C1ZX
         </div>
       </div>
     </div>

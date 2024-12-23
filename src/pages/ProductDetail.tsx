@@ -4,6 +4,8 @@ import Navbar from '@/components/Navbar';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import SellerDetails from '@/components/SellerDetails';
+import { Share2, MinusCircle, PlusCircle } from 'lucide-react';
+import { useState } from 'react';
 
 const getProductById = (id: string) => {
   const products = [
@@ -75,55 +77,122 @@ const getProductById = (id: string) => {
 const ProductDetail = () => {
   const { id } = useParams();
   const product = getProductById(id || "");
+  const [quantity, setQuantity] = useState(1);
 
   if (!product) {
     return <div>Product not found</div>;
   }
 
-  const minPrice = (product.price * 0.5).toFixed(2);
-  const maxPrice = (product.price * 1.5).toFixed(2);
+  const handleIncrement = () => {
+    setQuantity(prev => prev + 1);
+  };
+
+  const handleDecrement = () => {
+    if (quantity > 1) {
+      setQuantity(prev => prev - 1);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       <div className="container mx-auto px-4 pt-20">
-        <Breadcrumb className="mb-6">
-          <BreadcrumbList>
-            <BreadcrumbItem>
-              <BreadcrumbLink href="/">Home</BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbLink href="/items">Products</BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbPage>{product.title}</BreadcrumbPage>
-            </BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
+        <div className="flex justify-between items-center mb-6">
+          <Breadcrumb>
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink href="/">Home</BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbLink href="/items">Products</BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage>{product.title}</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+          <Button variant="ghost" size="icon">
+            <Share2 className="h-5 w-5" />
+          </Button>
+        </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="relative">
-            <img 
-              src={product.image} 
-              alt={product.title}
-              className="w-full rounded-lg object-cover aspect-square"
-            />
-            <Badge className="absolute top-4 right-4 text-lg">
-              {product.rating} ★
-            </Badge>
+          <div className="space-y-4">
+            <div className="relative bg-white p-4 rounded-lg shadow-sm">
+              <img 
+                src={product.image} 
+                alt={product.title}
+                className="w-full rounded-lg object-cover aspect-square"
+              />
+              <Badge className="absolute top-4 right-4 text-lg">
+                {product.rating} ★
+              </Badge>
+            </div>
           </div>
 
           <div className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <h1 className="text-3xl font-bold mb-2">{product.title}</h1>
-                <p className="text-muted-foreground">{product.category}</p>
-                <p className="text-2xl font-bold text-primary mt-4">
-                  ${minPrice} - ${maxPrice}
-                </p>
+              <div className="space-y-4">
+                <div>
+                  <h1 className="text-2xl font-bold mb-2">{product.title}</h1>
+                  <Badge variant="secondary" className="text-xs">
+                    Accepts only Foreign inquiries
+                  </Badge>
+                </div>
+
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-lg font-semibold">Price:</span>
+                    <span className="text-xl font-bold text-primary">
+                      ${product.price.toFixed(2)} / Unit
+                    </span>
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    <div>1 Pack Contains 1</div>
+                    <div>Minimum Pack Size: {quantity}</div>
+                  </div>
+                  <Badge variant="secondary" className="bg-green-100 text-green-800">
+                    In Stock
+                  </Badge>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <div className="flex items-center border rounded-md">
+                    <Button 
+                      variant="ghost" 
+                      size="icon"
+                      onClick={handleDecrement}
+                    >
+                      <MinusCircle className="h-4 w-4" />
+                    </Button>
+                    <input
+                      type="number"
+                      value={quantity}
+                      onChange={(e) => setQuantity(Number(e.target.value))}
+                      className="w-16 text-center border-x"
+                    />
+                    <Button 
+                      variant="ghost" 
+                      size="icon"
+                      onClick={handleIncrement}
+                    >
+                      <PlusCircle className="h-4 w-4" />
+                    </Button>
+                  </div>
+                </div>
+
+                <div className="flex gap-3">
+                  <Button className="flex-1">
+                    Buy Now
+                  </Button>
+                  <Button variant="outline" className="flex-1">
+                    Send Inquiry
+                  </Button>
+                </div>
               </div>
+
               <SellerDetails />
             </div>
 
@@ -140,8 +209,6 @@ const ProductDetail = () => {
                 ))}
               </ul>
             </div>
-
-            <Button size="lg" className="w-full">Add to Cart</Button>
           </div>
         </div>
       </div>
