@@ -76,9 +76,9 @@ const ProductImageAndDetails = ({
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <div className="absolute inset-0 flex items-center justify-between p-4">
-                <CarouselPrevious className="relative left-0 translate-x-0" />
-                <CarouselNext className="relative right-0 translate-x-0" />
+              <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-4">
+                <CarouselPrevious className="relative h-8 w-8 rounded-full bg-white/70 hover:bg-white" />
+                <CarouselNext className="relative h-8 w-8 rounded-full bg-white/70 hover:bg-white" />
               </div>
             </Carousel>
           </div>
