@@ -19,13 +19,13 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${
-      isAfterHero ? 'bg-white shadow-sm' : 'bg-transparent'
+      isAfterHero ? 'bg-primary text-primary-foreground' : 'bg-primary/95 text-primary-foreground'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link to="/" className={`${isAfterHero ? 'bg-primary text-white' : 'bg-white/10 text-white'} px-6 py-2 rounded`}>
+            <Link to="/" className="bg-white/10 text-white px-6 py-2 rounded">
               Logo
             </Link>
           </div>
@@ -34,22 +34,22 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-8">
             <button
               onClick={() => navigate('/items')}
-              className={`${isAfterHero ? 'text-foreground' : 'text-white'} hover:text-primary-hover transition-colors font-medium flex items-center gap-2`}
+              className="text-white hover:text-primary-hover transition-colors font-medium flex items-center gap-2"
             >
               <LayoutGrid size={18} />
               Categories
             </button>
-            <a href="#" className={`${isAfterHero ? 'text-foreground/80' : 'text-white/80'} hover:text-primary-hover transition-colors font-medium`}>
+            <a href="#" className="text-white/80 hover:text-primary-hover transition-colors font-medium">
               Seller
             </a>
-            <a href="#" className={`${isAfterHero ? 'text-foreground/80' : 'text-white/80'} hover:text-primary-hover transition-colors font-medium`}>
+            <a href="#" className="text-white/80 hover:text-primary-hover transition-colors font-medium">
               About Us
             </a>
           </div>
 
           {/* Sign In/Up Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" className={`${isAfterHero ? 'text-foreground hover:bg-gray-100' : 'text-white hover:bg-white/10'} flex items-center gap-2`}>
+            <Button variant="ghost" className="text-white hover:bg-white/10 flex items-center gap-2">
               <User size={18} />
               Sign In
             </Button>
@@ -62,9 +62,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`inline-flex items-center justify-center p-2 rounded-md ${
-                isAfterHero ? 'text-foreground' : 'text-white'
-              } hover:text-primary-hover focus:outline-none`}
+              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-primary-hover focus:outline-none"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
