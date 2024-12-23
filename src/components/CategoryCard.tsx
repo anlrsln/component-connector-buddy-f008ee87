@@ -1,7 +1,6 @@
 import React from 'react';
 import { Headphones, Shirt, Coffee, Sparkles, Package, Footprints, Car, Sprout, Headset, Dumbbell, FileBox, Baby, Gem, Armchair, Camera, Briefcase } from 'lucide-react';
 import { LucideIcon } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
 
 interface CategoryCardProps {
   icon: string;
@@ -28,18 +27,10 @@ const iconMap: { [key: string]: LucideIcon } = {
 };
 
 const CategoryCard = ({ icon, title }: CategoryCardProps) => {
-  const navigate = useNavigate();
   const IconComponent = iconMap[icon.replace('/', '').replace('.svg', '')];
 
-  const handleClick = () => {
-    navigate(`/items?category=${encodeURIComponent(title)}`);
-  };
-
   return (
-    <div 
-      onClick={handleClick}
-      className="flex flex-col items-center justify-center bg-white rounded-full w-32 h-32 mx-auto transition-all duration-300 hover:shadow-lg group border border-gray-200 hover:border-yellow-400 relative overflow-hidden cursor-pointer"
-    >
+    <div className="flex flex-col items-center justify-center bg-white rounded-full w-32 h-32 mx-auto transition-all duration-300 hover:shadow-lg group border border-gray-200 hover:border-yellow-400 relative overflow-hidden">
       <div className="flex flex-col items-center justify-center gap-2">
         {IconComponent && (
           <IconComponent

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 import { Filter, SlidersHorizontal } from "lucide-react";
@@ -8,7 +8,6 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import Navbar from "@/components/Navbar";
-import { useSearchParams } from "react-router-dom";
 
 const sampleProducts = [
   {
@@ -151,38 +150,15 @@ const categories = [
 ];
 
 const ItemListing = () => {
-  const [searchParams] = useSearchParams();
-  const categoryParam = searchParams.get('category');
   const [priceRange, setPriceRange] = useState<number[]>([0, 1500]);
-  const [selectedCategories, setSelectedCategories] = useState<string[]>(
-    categoryParam ? [categoryParam] : []
-  );
-
-  // Filter products based on selected categories and price range
-  const filteredProducts = sampleProducts.filter((product) => {
-    const matchesCategory =
-      selectedCategories.length === 0 ||
-      selectedCategories.includes(product.category);
-    const matchesPrice =
-      product.price >= priceRange[0] && product.price <= priceRange[1];
-    return matchesCategory && matchesPrice;
-  });
-
-  // Update selected categories when URL parameter changes
-  useEffect(() => {
-    if (categoryParam && !selectedCategories.includes(categoryParam)) {
-      setSelectedCategories([categoryParam]);
-    }
-  }, [categoryParam]);
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       <div className="container mx-auto px-4 pt-20">
         <div className="flex items-center justify-between mb-6">
-          <h1 className="text-2xl font-bold">
-            {categoryParam ? `${categoryParam} Products` : 'All Products'}
-          </h1>
+          <h1 className="text-2xl font-bold">Products</h1>
           <div className="md:hidden">
             <Drawer>
               <DrawerTrigger asChild>
@@ -218,7 +194,7 @@ const ItemListing = () => {
           {/* Product Grid */}
           <div className="flex-1">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-              {filteredProducts.map((product) => (
+              {sampleProducts.map((product) => (
                 <ProductCard key={product.id} {...product} />
               ))}
             </div>
