@@ -3,8 +3,10 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbP
 import Navbar from '@/components/Navbar';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { BadgeCheck, Phone, MessageSquare, MapPin } from 'lucide-react';
+import { useState } from 'react';
+import { toast } from 'sonner';
 
-// This would typically come from an API, using the same sample data for now
 const getProductById = (id: string) => {
   const products = [
     {
@@ -75,6 +77,7 @@ const getProductById = (id: string) => {
 const ProductDetail = () => {
   const { id } = useParams();
   const product = getProductById(id || "");
+  const [showPhone, setShowPhone] = useState(false);
 
   if (!product) {
     return <div>Product not found</div>;
@@ -82,6 +85,15 @@ const ProductDetail = () => {
 
   const minPrice = (product.price * 0.5).toFixed(2);
   const maxPrice = (product.price * 1.5).toFixed(2);
+
+  const handleShowPhone = () => {
+    setShowPhone(true);
+    toast.success("Phone number revealed!");
+  };
+
+  const handleMessage = () => {
+    toast.success("Message sent to seller!");
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -125,6 +137,51 @@ const ProductDetail = () => {
               <p className="text-2xl font-bold text-primary">
                 ${minPrice} - ${maxPrice}
               </p>
+            </div>
+
+            {/* Seller Details Section */}
+            <div className="bg-background border rounded-lg p-4 space-y-4">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <h2 className="text-lg font-bold">John Doe</h2>
+                  <Badge variant="secondary" className="flex items-center gap-1">
+                    <BadgeCheck className="w-4 h-4" />
+                    Verified Seller
+                  </Badge>
+                </div>
+                <div className="text-sm text-muted-foreground">
+                  Member since 2021
+                </div>
+              </div>
+
+              <div className="flex gap-3">
+                <Button
+                  variant="outline"
+                  className="flex-1"
+                  onClick={handleShowPhone}
+                >
+                  <Phone className="w-4 h-4 mr-2" />
+                  {showPhone ? "+1 (555) 123-4567" : "Show Phone"}
+                </Button>
+                <Button
+                  variant="outline"
+                  className="flex-1"
+                  onClick={handleMessage}
+                >
+                  <MessageSquare className="w-4 h-4 mr-2" />
+                  Message Seller
+                </Button>
+              </div>
+
+              <div className="space-y-2 text-sm text-muted-foreground">
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-4 h-4" />
+                  <span>123 Business Street, Silicon Valley, CA 94025</span>
+                </div>
+                <div>
+                  <span className="font-medium">GST Number:</span> 22AAAAA0000A1Z5
+                </div>
+              </div>
             </div>
 
             <div>
