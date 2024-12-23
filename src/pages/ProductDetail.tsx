@@ -15,6 +15,12 @@ const getProductById = (id: string) => {
       title: "Professional Camera",
       price: 899.99,
       image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
+      images: [
+        "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
+        "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+        "https://images.unsplash.com/photo-1518770660439-4636190af475",
+        "https://images.unsplash.com/photo-1461749280684-dccba630e2f6"
+      ],
       category: "Electronics",
       rating: 4.8,
       description: "High-quality professional camera perfect for photography enthusiasts and professionals alike. Features advanced imaging technology and versatile shooting modes.",

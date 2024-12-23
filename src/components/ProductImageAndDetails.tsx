@@ -1,10 +1,18 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { MinusCircle, PlusCircle } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 interface ProductImageAndDetailsProps {
   product: {
     image: string;
+    images?: string[];
     title: string;
     price: number;
     description: string;
@@ -23,15 +31,35 @@ const ProductImageAndDetails = ({
   handleIncrement,
   handleDecrement
 }: ProductImageAndDetailsProps) => {
+  // Default images array including the main image and additional sample images
+  const images = product.images || [
+    product.image,
+    "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?q=80",
+    "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80",
+    "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80"
+  ];
+
   return (
     <div className="flex flex-col md:flex-row gap-6 bg-white p-6 rounded-lg shadow-sm">
-      {/* Product Image */}
+      {/* Product Image Carousel */}
       <div className="md:w-1/2">
-        <img 
-          src={product.image} 
-          alt={product.title}
-          className="w-full rounded-lg object-cover aspect-square"
-        />
+        <Carousel className="w-full">
+          <CarouselContent>
+            {images.map((image, index) => (
+              <CarouselItem key={index}>
+                <div className="p-1">
+                  <img 
+                    src={image} 
+                    alt={`${product.title} - View ${index + 1}`}
+                    className="w-full rounded-lg object-cover aspect-square"
+                  />
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
       </div>
 
       {/* Product Details */}
