@@ -9,45 +9,53 @@ const ValueProposition = () => {
       <ValuesSection />
       
       {values.map((value, index) => {
-        // Define background based on index, keeping the image for the first section
-        const backgroundClass = value.title === "Trusted and Verified Suppliers"
+        const backgroundClass = value.title === "Trust"
           ? 'bg-[url("/lovable-uploads/802fb3b3-9b1f-4b83-a708-73ee83b68c31.png")] bg-cover bg-center bg-no-repeat'
           : index % 2 === 0 
           ? 'bg-gray-100' 
           : 'bg-white';
 
-        // Determine if the content should be reversed based on the section title
-        const shouldReverse = value.title === "Uncompromising Quality Assurance" || value.title === "İletişime Geçin";
+        const shouldReverse = value.title === "Products" || value.title === "Customer Support";
 
         return (
-          <section
-            key={index}
-            id={value.id}
-            className={`min-h-screen relative w-full ${backgroundClass}`}
-          >
-            <div className="w-full h-full flex items-center justify-center relative">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-                <div className={`flex flex-col md:flex-row items-center gap-12 ${shouldReverse ? 'md:flex-row-reverse' : ''}`}>
-                  <div className="flex-1 flex flex-col justify-center">
-                    <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-6">
-                      <value.icon className="w-10 h-10 text-primary" />
+          <React.Fragment key={index}>
+            <section
+              id={value.id}
+              className={`min-h-screen relative w-full ${backgroundClass}`}
+            >
+              <div className="w-full h-full flex items-center justify-center relative">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+                  <div className={`flex flex-col md:flex-row items-center gap-12 ${shouldReverse ? 'md:flex-row-reverse' : ''}`}>
+                    <div className="flex-1 flex flex-col justify-center">
+                      <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                        <value.icon className="w-10 h-10 text-primary" />
+                      </div>
+                      <h2 className="text-4xl font-bold mb-6 text-primary">{value.title}</h2>
+                      <p className="text-lg mb-8 text-foreground/70">{value.description}</p>
                     </div>
-                    <h2 className="text-4xl font-bold mb-6 text-primary">{value.title}</h2>
-                    <p className="text-lg mb-8 text-foreground/70">{value.description}</p>
-                  </div>
-                  <div className="flex-1 relative overflow-hidden rounded-lg aspect-video">
-                    {value.image && (
-                      <img 
-                        src={value.image} 
-                        alt={value.title}
-                        className="w-full h-full object-cover"
-                      />
-                    )}
+                    <div className="flex-1 relative overflow-hidden rounded-lg aspect-video">
+                      {value.image && (
+                        <img 
+                          src={value.image} 
+                          alt={value.title}
+                          className="w-full h-full object-cover"
+                        />
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </section>
+            </section>
+            {index < values.length - 1 && (
+              <div className="h-32 w-full relative overflow-hidden">
+                <img
+                  src="/lovable-uploads/66eeeede-ce60-4463-ba67-dd4f2db1ef52.png"
+                  alt="Section transition"
+                  className="w-full h-full object-cover transform rotate-180"
+                />
+              </div>
+            )}
+          </React.Fragment>
         );
       })}
 
