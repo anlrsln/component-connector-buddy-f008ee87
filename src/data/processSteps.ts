@@ -1,4 +1,4 @@
-import { ShieldCheck, CheckSquareIcon, PiggyBankIcon, Headphones } from 'lucide-react';
+import { ShieldCheck, CheckSquareIcon, Coins, Headphones } from 'lucide-react';
 
 export const values = [
   {
@@ -15,7 +15,7 @@ export const values = [
     id: "quality-assurance"
   },
   {
-    icon: PiggyBankIcon,
+    icon: Coins,
     title: "Affordable Prices",
     description: "We enable direct purchases from producers, eliminating intermediaries for cost-effective trade.",
     id: "competitive-pricing"
