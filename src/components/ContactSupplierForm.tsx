@@ -2,6 +2,7 @@ import { useForm } from 'react-hook-form';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { Checkbox } from '@/components/ui/checkbox';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
@@ -11,6 +12,7 @@ type FormData = {
   phone: string;
   country: string;
   message: string;
+  sendToMore: boolean;
 };
 
 const ContactSupplierForm = () => {
@@ -136,12 +138,23 @@ const ContactSupplierForm = () => {
               )}
             />
 
-            <Button 
-              type="submit" 
-              className="w-full bg-primary hover:bg-primary-hover text-primary-foreground"
-            >
-              Send
-            </Button>
+            <FormField
+              control={form.control}
+              name="sendToMore"
+              render={({ field }) => (
+                <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+                  <FormControl>
+                    <Checkbox
+                      checked={field.value}
+                      onCheckedChange={field.onChange}
+                    />
+                  </FormControl>
+                  <div className="text-sm text-gray-600 leading-none">
+                    Would you like to send this message to more relevant companies?
+                  </div>
+                </FormItem>
+              )}
+            />
           </form>
         </Form>
       </div>
