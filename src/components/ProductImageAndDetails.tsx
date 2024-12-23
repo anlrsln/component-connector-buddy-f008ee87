@@ -1,7 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { MinusCircle, PlusCircle } from "lucide-react";
-import { Slider } from "@/components/ui/slider";
 import {
   Carousel,
   CarouselContent,
@@ -9,7 +8,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { useState } from "react";
 
 interface ProductImageAndDetailsProps {
   product: {
@@ -33,8 +31,6 @@ const ProductImageAndDetails = ({
   handleIncrement,
   handleDecrement
 }: ProductImageAndDetailsProps) => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  
   // Default images array including the main image and additional sample images
   const images = product.images || [
     product.image,
@@ -43,44 +39,27 @@ const ProductImageAndDetails = ({
     "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80"
   ];
 
-  const handleSliderChange = (value: number[]) => {
-    setCurrentSlide(value[0]);
-  };
-
   return (
     <div className="flex flex-col md:flex-row gap-6 bg-white p-6 rounded-lg shadow-sm">
       {/* Product Image Carousel */}
       <div className="md:w-1/2">
-        <div className="relative">
-          <Carousel className="w-full">
-            <CarouselContent>
-              {images.map((image, index) => (
-                <CarouselItem key={index}>
-                  <div className="p-1">
-                    <img 
-                      src={image} 
-                      alt={`${product.title} - View ${index + 1}`}
-                      className="w-full rounded-lg object-cover aspect-square"
-                    />
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <div className="absolute inset-0 flex items-center justify-between p-4">
-              <CarouselPrevious className="relative left-0 translate-x-0" />
-              <CarouselNext className="relative right-0 translate-x-0" />
-            </div>
-          </Carousel>
-          <div className="mt-4 px-2">
-            <Slider
-              value={[currentSlide]}
-              max={images.length - 1}
-              step={1}
-              onValueChange={handleSliderChange}
-              className="w-full"
-            />
-          </div>
-        </div>
+        <Carousel className="w-full">
+          <CarouselContent>
+            {images.map((image, index) => (
+              <CarouselItem key={index}>
+                <div className="p-1">
+                  <img 
+                    src={image} 
+                    alt={`${product.title} - View ${index + 1}`}
+                    className="w-full rounded-lg object-cover aspect-square"
+                  />
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
       </div>
 
       {/* Product Details */}
