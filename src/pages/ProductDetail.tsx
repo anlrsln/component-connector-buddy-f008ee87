@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import { Button } from '@/components/ui/button';
 import SellerDetails from '@/components/SellerDetails';
 import CompanyDetails from '@/components/CompanyDetails';
+import MoreProductsFromSeller from '@/components/MoreProductsFromSeller';
 import { Share2 } from 'lucide-react';
 import { useState } from 'react';
 import ProductImageAndDetails from '@/components/ProductImageAndDetails';
@@ -146,6 +147,9 @@ const ProductDetail = () => {
 
         {/* Company Details Section */}
         <CompanyDetails />
+        
+        {/* More Products Section */}
+        <MoreProductsFromSeller />
       </div>
     </div>
   );
