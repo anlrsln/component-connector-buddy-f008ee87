@@ -3,9 +3,7 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbP
 import Navbar from '@/components/Navbar';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { BadgeCheck, Phone, MessageSquare, MapPin } from 'lucide-react';
-import { useState } from 'react';
-import { toast } from 'sonner';
+import SellerDetails from '@/components/SellerDetails';
 
 const getProductById = (id: string) => {
   const products = [
@@ -77,7 +75,6 @@ const getProductById = (id: string) => {
 const ProductDetail = () => {
   const { id } = useParams();
   const product = getProductById(id || "");
-  const [showPhone, setShowPhone] = useState(false);
 
   if (!product) {
     return <div>Product not found</div>;
@@ -85,15 +82,6 @@ const ProductDetail = () => {
 
   const minPrice = (product.price * 0.5).toFixed(2);
   const maxPrice = (product.price * 1.5).toFixed(2);
-
-  const handleShowPhone = () => {
-    setShowPhone(true);
-    toast.success("Phone number revealed!");
-  };
-
-  const handleMessage = () => {
-    toast.success("Message sent to seller!");
-  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -128,60 +116,15 @@ const ProductDetail = () => {
           </div>
 
           <div className="space-y-6">
-            <div>
-              <h1 className="text-3xl font-bold mb-2">{product.title}</h1>
-              <p className="text-muted-foreground">{product.category}</p>
-            </div>
-
-            <div>
-              <p className="text-2xl font-bold text-primary">
-                ${minPrice} - ${maxPrice}
-              </p>
-            </div>
-
-            {/* Seller Details Section */}
-            <div className="bg-background border rounded-lg p-4 space-y-4">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <h2 className="text-lg font-bold">John Doe</h2>
-                  <Badge variant="secondary" className="flex items-center gap-1">
-                    <BadgeCheck className="w-4 h-4" />
-                    Verified Seller
-                  </Badge>
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  Member since 2021
-                </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <h1 className="text-3xl font-bold mb-2">{product.title}</h1>
+                <p className="text-muted-foreground">{product.category}</p>
+                <p className="text-2xl font-bold text-primary mt-4">
+                  ${minPrice} - ${maxPrice}
+                </p>
               </div>
-
-              <div className="flex gap-3">
-                <Button
-                  variant="outline"
-                  className="flex-1"
-                  onClick={handleShowPhone}
-                >
-                  <Phone className="w-4 h-4 mr-2" />
-                  {showPhone ? "+1 (555) 123-4567" : "Show Phone"}
-                </Button>
-                <Button
-                  variant="outline"
-                  className="flex-1"
-                  onClick={handleMessage}
-                >
-                  <MessageSquare className="w-4 h-4 mr-2" />
-                  Message Seller
-                </Button>
-              </div>
-
-              <div className="space-y-2 text-sm text-muted-foreground">
-                <div className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4" />
-                  <span>123 Business Street, Silicon Valley, CA 94025</span>
-                </div>
-                <div>
-                  <span className="font-medium">GST Number:</span> 22AAAAA0000A1Z5
-                </div>
-              </div>
+              <SellerDetails />
             </div>
 
             <div>
