@@ -19,7 +19,7 @@ const ValuesSection = () => {
               onClick={() => scrollToSection(value.id)}
               className="flex flex-col items-center text-center p-6 rounded-lg bg-white/10 backdrop-blur-md shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer border border-white/20"
             >
-              <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mb-4 backdrop-blur-sm">
+              <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center mb-4">
                 <value.icon className="w-8 h-8 text-primary" />
               </div>
               <h3 className="text-lg font-semibold mb-3 text-white">{value.title}</h3>
