@@ -39,13 +39,35 @@ const sellers = [
   }
 ];
 
+const categories = [
+  "All Categories",
+  "Electronics",
+  "Healthcare",
+  "Software",
+  "Import/Export",
+  "Wholesale",
+  "Manufacturing"
+];
+
 const SellerListing = () => {
   return (
     <>
       <Navbar />
       <div className="min-h-screen bg-background pt-20">
         <div className="container mx-auto px-4">
-          <h1 className="text-3xl font-bold mb-8">Featured Sellers</h1>
+          <h1 className="text-3xl font-bold mb-4">Featured Sellers</h1>
+          
+          <div className="flex flex-wrap gap-3 mb-8">
+            {categories.map((category) => (
+              <Button
+                key={category}
+                variant="outline"
+                className="rounded-full hover:bg-primary hover:text-primary-foreground"
+              >
+                {category}
+              </Button>
+            ))}
+          </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {sellers.map((seller) => (
