@@ -14,29 +14,29 @@ interface Product {
 const moreProducts: Product[] = [
   {
     id: "2",
-    title: "Full Sleeve Males Reversible Safari Suit",
-    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea",
-    seller: "NEW AASHI RAINWEAR",
+    title: "Professional Developer Laptop",
+    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+    seller: "Tech Solutions Inc",
     featured: true
   },
   {
     id: "3",
-    title: "Polyester Fabric Full Sleeve Mens Raincoat",
-    image: "https://images.unsplash.com/photo-1578681994506-b8f463449011",
-    seller: "NEW AASHI RAINWEAR",
+    title: "Smart Watch Pro",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
+    seller: "Tech Solutions Inc",
     featured: true
   },
   {
     id: "4",
-    title: "XL Size Full Sleeve Mens Raincoat",
-    image: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a",
-    seller: "NEW AASHI RAINWEAR"
+    title: "Code Editor License",
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+    seller: "Tech Solutions Inc"
   },
   {
     id: "5",
-    title: "Full Sleeve Mens Reversible Safari Suit",
-    image: "https://images.unsplash.com/photo-1578681994680-d5f1668c6388",
-    seller: "NEW AASHI RAINWEAR"
+    title: "Professional Camera",
+    image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
+    seller: "Tech Solutions Inc"
   }
 ];
 
