@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Star, Mail } from "lucide-react";
+import Navbar from "@/components/Navbar";
 
 const sellers = [
   {
@@ -40,63 +41,66 @@ const sellers = [
 
 const SellerListing = () => {
   return (
-    <div className="min-h-screen bg-background pt-20">
-      <div className="container mx-auto px-4">
-        <h1 className="text-3xl font-bold mb-8">Featured Sellers</h1>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {sellers.map((seller) => (
-            <Card key={seller.id} className="overflow-hidden">
-              <div className="aspect-video relative">
-                <img 
-                  src={seller.image} 
-                  alt={seller.name}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              
-              <div className="p-6 space-y-4">
-                <div className="flex justify-between items-start">
-                  <h3 className="text-xl font-semibold">{seller.name}</h3>
-                  <div className="flex items-center gap-1">
-                    <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                    <span className="text-sm font-medium">{seller.rating}</span>
+    <>
+      <Navbar />
+      <div className="min-h-screen bg-background pt-20">
+        <div className="container mx-auto px-4">
+          <h1 className="text-3xl font-bold mb-8">Featured Sellers</h1>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {sellers.map((seller) => (
+              <Card key={seller.id} className="overflow-hidden">
+                <div className="aspect-video relative">
+                  <img 
+                    src={seller.image} 
+                    alt={seller.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                
+                <div className="p-6 space-y-4">
+                  <div className="flex justify-between items-start">
+                    <h3 className="text-xl font-semibold">{seller.name}</h3>
+                    <div className="flex items-center gap-1">
+                      <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                      <span className="text-sm font-medium">{seller.rating}</span>
+                    </div>
                   </div>
+
+                  <div className="flex items-center gap-2 text-muted-foreground">
+                    <MapPin className="w-4 h-4" />
+                    <span className="text-sm">{seller.location}</span>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2">
+                    {seller.categories.map((category) => (
+                      <span 
+                        key={category}
+                        className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm"
+                      >
+                        {category}
+                      </span>
+                    ))}
+                  </div>
+
+                  <p className="text-sm text-muted-foreground">{seller.description}</p>
+
+                  <div className="flex justify-between items-center text-sm text-muted-foreground">
+                    <span>Member since {seller.memberSince}</span>
+                    <span>{seller.responseRate} response rate</span>
+                  </div>
+
+                  <Button className="w-full gap-2">
+                    <Mail className="w-4 h-4" />
+                    Contact Seller
+                  </Button>
                 </div>
-
-                <div className="flex items-center gap-2 text-muted-foreground">
-                  <MapPin className="w-4 h-4" />
-                  <span className="text-sm">{seller.location}</span>
-                </div>
-
-                <div className="flex flex-wrap gap-2">
-                  {seller.categories.map((category) => (
-                    <span 
-                      key={category}
-                      className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm"
-                    >
-                      {category}
-                    </span>
-                  ))}
-                </div>
-
-                <p className="text-sm text-muted-foreground">{seller.description}</p>
-
-                <div className="flex justify-between items-center text-sm text-muted-foreground">
-                  <span>Member since {seller.memberSince}</span>
-                  <span>{seller.responseRate} response rate</span>
-                </div>
-
-                <Button className="w-full gap-2">
-                  <Mail className="w-4 h-4" />
-                  Contact Seller
-                </Button>
-              </div>
-            </Card>
-          ))}
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
