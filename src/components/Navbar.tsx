@@ -47,9 +47,12 @@ const Navbar = () => {
               <LayoutGrid size={18} />
               Categories
             </button>
-            <a href="#" className="text-white/80 hover:text-primary-hover transition-colors font-medium">
+            <button
+              onClick={() => navigate('/sellers')}
+              className="text-white/80 hover:text-primary-hover transition-colors font-medium"
+            >
               Seller
-            </a>
+            </button>
             <a href="#" className="text-white/80 hover:text-primary-hover transition-colors font-medium">
               About Us
             </a>
@@ -89,9 +92,12 @@ const Navbar = () => {
           >
             Categories
           </button>
-          <a href="#" className="block px-3 py-2 text-white/80 hover:text-primary-hover transition-colors">
+          <button
+            onClick={() => navigate('/sellers')}
+            className="block px-3 py-2 text-white/80 hover:text-primary-hover transition-colors w-full text-left"
+          >
             Seller
-          </a>
+          </button>
           <a href="#" className="block px-3 py-2 text-white/80 hover:text-primary-hover transition-colors">
             About Us
           </a>
