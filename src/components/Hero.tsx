@@ -75,7 +75,7 @@ const Hero = () => {
           {/* Search Section */}
           <div className="mt-8 animate-fade-up">
             {/* Label Buttons */}
-            <div className="flex rounded-t-lg overflow-hidden w-full sm:w-1/2">
+            <div className="flex rounded-t-md overflow-hidden w-full sm:w-1/2">
               {labels.map((label) => (
                 <button
                   key={label.id}
@@ -85,8 +85,8 @@ const Hero = () => {
                       ? 'bg-accent text-accent-foreground'
                       : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                     }
-                    ${label.id === 'product' ? 'rounded-tl-lg' : ''}
-                    ${label.id === 'hex-code' ? 'rounded-tr-lg' : ''}
+                    ${label.id === 'product' ? 'rounded-tl-md' : ''}
+                    ${label.id === 'hex-code' ? 'rounded-tr-md' : ''}
                   `}
                 >
                   {label.name}
@@ -102,7 +102,7 @@ const Hero = () => {
                 value={searchQuery}
                 onChange={(e) => handleSearch(e.target.value)}
                 className="pl-10 pr-10 py-6 w-full bg-white text-gray-900 
-                  placeholder:text-gray-500 focus-visible:ring-primary rounded-r-lg rounded-tl-none rounded-bl-lg
+                  placeholder:text-gray-500 focus-visible:ring-primary rounded-r-md rounded-tl-none rounded-bl-md
                   [&::placeholder]:transition-opacity [&::placeholder]:duration-400"
                 style={{
                   '--tw-placeholder-opacity': isTransitioning ? '0.5' : '1'
