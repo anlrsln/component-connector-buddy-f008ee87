@@ -33,7 +33,7 @@ const Hero = () => {
         currentIndex = (currentIndex + 1) % placeholders.length;
         setCurrentPlaceholder(placeholders[currentIndex]);
         setIsTransitioning(false);
-      }, 200); // Half of the transition duration
+      }, 200);
     }, 2000);
 
     return () => clearInterval(interval);
@@ -68,7 +68,7 @@ const Hero = () => {
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white text-left animate-fade-up">
             Discover Top-Quality Products
           </h1>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-accent text-left animate-fade-up mt-2">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-primary text-left animate-fade-up mt-2">
             from Trusted Local Manufacturers
           </h2>
 
@@ -82,7 +82,7 @@ const Hero = () => {
                   onClick={() => setSelectedLabel(label.id as typeof selectedLabel)}
                   className={`flex-1 px-2 py-2 text-xs font-medium
                     ${selectedLabel === label.id
-                      ? 'bg-accent text-accent-foreground'
+                      ? 'bg-primary text-primary-foreground'
                       : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                     }
                     ${label.id === 'product' ? 'rounded-tl-md' : ''}
@@ -122,7 +122,7 @@ const Hero = () => {
             {/* Search Button */}
             <button
               onClick={() => handleSearch(searchQuery)}
-              className="bg-accent text-accent-foreground h-9 px-4 rounded-b-md flex items-center justify-center gap-2 hover:bg-accent/90 transition-colors w-full sm:w-1/4 ml-auto"
+              className="bg-primary text-primary-foreground h-9 px-4 rounded-b-md flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors w-full sm:w-1/4 ml-auto"
             >
               <Search className="h-4 w-4" />
               <span className="text-sm font-medium">Search</span>
