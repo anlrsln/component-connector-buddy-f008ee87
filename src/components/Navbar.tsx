@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, LayoutGrid, User, Package } from 'lucide-react';
-import { Button } from './ui/button';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+import DesktopMenu from './navbar/DesktopMenu';
+import MobileMenu from './navbar/MobileMenu';
+import AuthButtons from './navbar/AuthButtons';
 
 const Navbar = () => {
   const [isAfterHero, setIsAfterHero] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const navigate = useNavigate();
   const location = useLocation();
   const isItemsPage = location.pathname === '/items';
   const isProductPage = location.pathname.startsWith('/product/');
@@ -39,43 +40,8 @@ const Navbar = () => {
             </Link>
           </div>
           
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
-            <button
-              onClick={() => navigate('/items')}
-              className="text-white hover:text-primary-hover transition-colors font-medium flex items-center gap-2"
-            >
-              <LayoutGrid size={18} />
-              Categories
-            </button>
-            <button
-              onClick={() => navigate('/sellers')}
-              className="text-white/80 hover:text-primary-hover transition-colors font-medium"
-            >
-              Seller
-            </button>
-            <button
-              onClick={() => navigate('/items')}
-              className="text-white/80 hover:text-primary-hover transition-colors font-medium flex items-center gap-2"
-            >
-              <Package size={18} />
-              Products
-            </button>
-            <a href="#" className="text-white/80 hover:text-primary-hover transition-colors font-medium">
-              About Us
-            </a>
-          </div>
-
-          {/* Sign In/Up Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" className="text-white hover:bg-white/10 flex items-center gap-2">
-              <User size={18} />
-              Sign In
-            </Button>
-            <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium transition-colors">
-              Sign Up
-            </Button>
-          </div>
+          <DesktopMenu />
+          <AuthButtons />
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
@@ -89,42 +55,11 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      <div className={`md:hidden transition-all duration-300 ease-in-out ${
-        isMobileMenuOpen ? 'max-h-56' : 'max-h-0'
-      } overflow-hidden ${isItemsPage ? 'bg-primary' : isAfterHero ? 'bg-primary' : 'bg-primary/95 backdrop-blur-md'}`}>
-        <div className="px-4 pt-2 pb-3 space-y-1">
-          <button
-            onClick={() => navigate('/items')}
-            className="block px-3 py-2 text-white hover:text-primary-hover transition-colors w-full text-left"
-          >
-            Categories
-          </button>
-          <button
-            onClick={() => navigate('/sellers')}
-            className="block px-3 py-2 text-white/80 hover:text-primary-hover transition-colors w-full text-left"
-          >
-            Seller
-          </button>
-          <button
-            onClick={() => navigate('/items')}
-            className="block px-3 py-2 text-white/80 hover:text-primary-hover transition-colors w-full text-left"
-          >
-            Products
-          </button>
-          <a href="#" className="block px-3 py-2 text-white/80 hover:text-primary-hover transition-colors">
-            About Us
-          </a>
-          <div className="flex flex-col space-y-2 px-3 py-2">
-            <Button variant="ghost" className="w-full text-white hover:bg-white/10">
-              Sign In
-            </Button>
-            <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground transition-colors">
-              Sign Up
-            </Button>
-          </div>
-        </div>
-      </div>
+      <MobileMenu 
+        isOpen={isMobileMenuOpen}
+        isItemsPage={isItemsPage}
+        isAfterHero={isAfterHero}
+      />
     </nav>
   );
 };
