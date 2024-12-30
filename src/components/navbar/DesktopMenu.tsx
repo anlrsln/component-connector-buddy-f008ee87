@@ -1,4 +1,4 @@
-import { LayoutGrid, Package, Building2 } from 'lucide-react';
+import { LayoutGrid, Package, Building2, Info } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import {
@@ -87,7 +87,8 @@ const DesktopMenu = () => {
         <Package size={18} />
         Products
       </button>
-      <a href="#" className="text-white/80 hover:text-primary-hover transition-colors font-medium">
+      <a href="#" className="text-white/80 hover:text-primary-hover transition-colors font-medium flex items-center gap-2">
+        <Info size={18} />
         About Us
       </a>
     </div>
