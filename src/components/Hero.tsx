@@ -102,7 +102,7 @@ const Hero = () => {
                 value={searchQuery}
                 onChange={(e) => handleSearch(e.target.value)}
                 className="pl-10 pr-10 py-6 w-full bg-white text-gray-900 
-                  placeholder:text-gray-500 focus-visible:ring-primary rounded-r-md rounded-tl-none rounded-bl-md
+                  placeholder:text-gray-500 focus-visible:ring-primary rounded-none
                   [&::placeholder]:transition-opacity [&::placeholder]:duration-400"
                 style={{
                   '--tw-placeholder-opacity': isTransitioning ? '0.5' : '1'
@@ -122,7 +122,7 @@ const Hero = () => {
             {/* Search Button */}
             <button
               onClick={() => handleSearch(searchQuery)}
-              className="bg-accent text-accent-foreground h-9 px-4 rounded-b-md flex items-center justify-center gap-2 hover:bg-accent/90 transition-colors w-full sm:w-1/2"
+              className="bg-accent text-accent-foreground h-9 px-4 rounded-b-md flex items-center justify-center gap-2 hover:bg-accent/90 transition-colors w-full sm:w-1/2 ml-auto"
             >
               <Search className="h-4 w-4" />
               <span className="text-sm">Search</span>
