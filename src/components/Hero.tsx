@@ -33,7 +33,7 @@ const Hero = () => {
         currentIndex = (currentIndex + 1) % placeholders.length;
         setCurrentPlaceholder(placeholders[currentIndex]);
         setIsTransitioning(false);
-      }, 200);
+      }, 200); // Half of the transition duration
     }, 2000);
 
     return () => clearInterval(interval);
@@ -82,8 +82,8 @@ const Hero = () => {
                   onClick={() => setSelectedLabel(label.id as typeof selectedLabel)}
                   className={`flex-1 px-2 py-2 text-xs font-medium
                     ${selectedLabel === label.id
-                      ? 'bg-primary text-primary-foreground'
-                      : 'bg-accent text-accent-foreground hover:bg-accent/90'
+                      ? 'bg-accent text-accent-foreground'
+                      : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                     }
                     ${label.id === 'product' ? 'rounded-tl-md' : ''}
                     ${label.id === 'hex-code' ? 'rounded-tr-md' : ''}
