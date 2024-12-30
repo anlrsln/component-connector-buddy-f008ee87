@@ -30,8 +30,8 @@ export default {
 				background: '#F8F9FA',
 				foreground: '#333333',
 				primary: {
-					DEFAULT: '#1A5F7A',
-					hover: '#57C5B6',
+					DEFAULT: '#112D4E',
+					hover: '#1A5F7A',
 					foreground: '#FFFFFF'
 				},
 				secondary: {
