@@ -51,7 +51,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative h-[70vh]"> {/* Changed from min-h-screen to h-[70vh] */}
+    <div className="relative h-[80vh]"> {/* Changed from h-[70vh] to h-[80vh] */}
       {/* Hero Image */}
       <div className="absolute inset-0 z-0">
         <img 
