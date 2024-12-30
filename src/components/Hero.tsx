@@ -102,7 +102,7 @@ const Hero = () => {
                 value={searchQuery}
                 onChange={(e) => handleSearch(e.target.value)}
                 className="pl-10 pr-10 py-6 w-full bg-white text-gray-900 
-                  placeholder:text-gray-500 focus-visible:ring-primary rounded-none
+                  placeholder:text-gray-500 focus-visible:ring-primary rounded-r-md rounded-tl-none rounded-bl-md
                   [&::placeholder]:transition-opacity [&::placeholder]:duration-400"
                 style={{
                   '--tw-placeholder-opacity': isTransitioning ? '0.5' : '1'
