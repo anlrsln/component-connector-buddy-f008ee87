@@ -37,7 +37,6 @@ const DesktopMenu = () => {
       <div className="relative">
         <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
           <div 
-            className="relative"
             onMouseEnter={() => setIsOpen(true)}
             onMouseLeave={() => setIsOpen(false)}
           >
@@ -50,8 +49,14 @@ const DesktopMenu = () => {
               </button>
             </DropdownMenuTrigger>
             <DropdownMenuContent 
-              className="w-56 bg-white absolute left-0 mt-2" 
-              style={{ position: 'absolute', zIndex: 50 }}
+              className="w-56 bg-white"
+              style={{
+                position: 'fixed',
+                zIndex: 50,
+                marginTop: '0.5rem',
+                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
+              }}
+              sideOffset={5}
             >
               <DropdownMenuGroup>
                 {categories.map((category, index) => (
