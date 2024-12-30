@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, LayoutGrid, User } from 'lucide-react';
+import { Menu, X, LayoutGrid, User, Package } from 'lucide-react';
 import { Button } from './ui/button';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 
@@ -54,6 +54,13 @@ const Navbar = () => {
             >
               Seller
             </button>
+            <button
+              onClick={() => navigate('/items')}
+              className="text-white/80 hover:text-primary-hover transition-colors font-medium flex items-center gap-2"
+            >
+              <Package size={18} />
+              Products
+            </button>
             <a href="#" className="text-white/80 hover:text-primary-hover transition-colors font-medium">
               About Us
             </a>
@@ -98,6 +105,12 @@ const Navbar = () => {
             className="block px-3 py-2 text-white/80 hover:text-primary-hover transition-colors w-full text-left"
           >
             Seller
+          </button>
+          <button
+            onClick={() => navigate('/items')}
+            className="block px-3 py-2 text-white/80 hover:text-primary-hover transition-colors w-full text-left"
+          >
+            Products
           </button>
           <a href="#" className="block px-3 py-2 text-white/80 hover:text-primary-hover transition-colors">
             About Us
