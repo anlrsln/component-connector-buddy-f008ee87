@@ -80,7 +80,7 @@ const Hero = () => {
                 <button
                   key={label.id}
                   onClick={() => setSelectedLabel(label.id as typeof selectedLabel)}
-                  className={`flex-1 px-2 py-0.5 text-xs font-medium
+                  className={`flex-1 px-2 py-2 text-xs font-medium
                     ${selectedLabel === label.id
                       ? 'bg-accent text-accent-foreground'
                       : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
@@ -101,7 +101,7 @@ const Hero = () => {
                 placeholder={`Search ${currentPlaceholder}...`}
                 value={searchQuery}
                 onChange={(e) => handleSearch(e.target.value)}
-                className="pl-10 pr-10 py-4 w-full bg-white text-gray-900 
+                className="pl-10 pr-10 py-6 w-full bg-white text-gray-900 
                   placeholder:text-gray-500 focus-visible:ring-primary rounded-r-lg rounded-tl-none rounded-bl-lg
                   [&::placeholder]:transition-opacity [&::placeholder]:duration-400"
                 style={{
