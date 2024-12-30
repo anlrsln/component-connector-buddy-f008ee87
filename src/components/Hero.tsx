@@ -122,7 +122,7 @@ const Hero = () => {
             {/* Search Button */}
             <button
               onClick={() => handleSearch(searchQuery)}
-              className="bg-accent text-accent-foreground h-9 px-4 rounded-b-md flex items-center justify-center gap-2 hover:bg-accent/90 transition-colors w-full sm:w-1/3 ml-auto"
+              className="bg-accent text-accent-foreground h-9 px-4 rounded-b-md flex items-center justify-center gap-2 hover:bg-accent/90 transition-colors w-full sm:w-1/4 ml-auto"
             >
               <Search className="h-4 w-4" />
               <span className="text-sm font-medium">Search</span>
