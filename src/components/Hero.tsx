@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 
 const Hero = () => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedLabel, setSelectedLabel] = useState<'product' | 'companies' | 'hex-code' | 'search'>('product');
+  const [selectedLabel, setSelectedLabel] = useState<'product' | 'companies' | 'hex-code'>('product');
   const [imageLoaded, setImageLoaded] = useState(false);
   const [currentPlaceholder, setCurrentPlaceholder] = useState('Glass');
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -33,7 +33,7 @@ const Hero = () => {
         currentIndex = (currentIndex + 1) % placeholders.length;
         setCurrentPlaceholder(placeholders[currentIndex]);
         setIsTransitioning(false);
-      }, 200);
+      }, 200); // Half of the transition duration
     }, 2000);
 
     return () => clearInterval(interval);
@@ -43,7 +43,6 @@ const Hero = () => {
     { id: 'product', name: 'Product' },
     { id: 'companies', name: 'Companies' },
     { id: 'hex-code', name: 'Hex Code' },
-    { id: 'search', name: 'Search', icon: Search }
   ];
 
   const handleSearch = (query: string) => {
@@ -76,26 +75,20 @@ const Hero = () => {
           {/* Search Section */}
           <div className="mt-8 animate-fade-up">
             {/* Label Buttons */}
-            <div className="flex rounded-t-md overflow-hidden w-full">
+            <div className="flex rounded-t-md overflow-hidden w-full sm:w-1/2">
               {labels.map((label) => (
                 <button
                   key={label.id}
-                  onClick={() => {
-                    setSelectedLabel(label.id as typeof selectedLabel);
-                    if (label.id === 'search') {
-                      handleSearch(searchQuery);
-                    }
-                  }}
-                  className={`flex-1 px-2 py-2 text-xs font-medium flex items-center justify-center gap-1
+                  onClick={() => setSelectedLabel(label.id as typeof selectedLabel)}
+                  className={`flex-1 px-2 py-2 text-xs font-medium
                     ${selectedLabel === label.id
                       ? 'bg-accent text-accent-foreground'
                       : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                     }
                     ${label.id === 'product' ? 'rounded-tl-md' : ''}
-                    ${label.id === 'search' ? 'rounded-tr-md' : ''}
+                    ${label.id === 'hex-code' ? 'rounded-tr-md' : ''}
                   `}
                 >
-                  {label.icon && <label.icon className="h-3 w-3" />}
                   {label.name}
                 </button>
               ))}
@@ -109,7 +102,7 @@ const Hero = () => {
                 value={searchQuery}
                 onChange={(e) => handleSearch(e.target.value)}
                 className="pl-10 pr-10 py-6 w-full bg-white text-gray-900 
-                  placeholder:text-gray-500 focus-visible:ring-primary rounded-r-md rounded-tl-none rounded-tr-none
+                  placeholder:text-gray-500 focus-visible:ring-primary rounded-r-md rounded-tl-none
                   [&::placeholder]:transition-opacity [&::placeholder]:duration-400"
                 style={{
                   '--tw-placeholder-opacity': isTransitioning ? '0.5' : '1'
@@ -124,6 +117,17 @@ const Hero = () => {
                   <X className="h-5 w-5" />
                 </button>
               )}
+            </div>
+
+            {/* Search Button */}
+            <div className="flex justify-end">
+              <button
+                onClick={() => handleSearch(searchQuery)}
+                className="mt-2 w-24 bg-accent text-accent-foreground h-9 rounded-b-md flex items-center justify-center gap-2 hover:bg-accent/90 transition-colors"
+              >
+                <Search className="h-4 w-4" />
+                <span className="text-sm">Search</span>
+              </button>
             </div>
           </div>
         </div>
