@@ -70,9 +70,9 @@ const categories = [
 
 const Categories = () => {
   return (
-    <section className="py-8 bg-white"> {/* Changed from py-12 to py-8 */}
+    <section className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8"> {/* Changed from mb-12 to mb-8 */}
+        <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">Product Categories</h2>
           <p className="text-foreground/80">Explore our wide range of product categories</p>
         </div>
