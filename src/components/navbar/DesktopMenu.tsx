@@ -1,4 +1,4 @@
-import { LayoutGrid, Package } from 'lucide-react';
+import { LayoutGrid, Package, Building2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import {
@@ -75,8 +75,9 @@ const DesktopMenu = () => {
       </div>
       <button
         onClick={() => navigate('/sellers')}
-        className="text-white/80 hover:text-primary-hover transition-colors font-medium"
+        className="text-white/80 hover:text-primary-hover transition-colors font-medium flex items-center gap-2"
       >
+        <Building2 size={18} />
         Seller
       </button>
       <button
