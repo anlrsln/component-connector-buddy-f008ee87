@@ -83,7 +83,7 @@ const Hero = () => {
                   className={`flex-1 px-2 py-2 text-xs font-medium
                     ${selectedLabel === label.id
                       ? 'bg-primary text-primary-foreground'
-                      : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                      : 'bg-accent text-accent-foreground hover:bg-accent/90'
                     }
                     ${label.id === 'product' ? 'rounded-tl-md' : ''}
                     ${label.id === 'hex-code' ? 'rounded-tr-md' : ''}
