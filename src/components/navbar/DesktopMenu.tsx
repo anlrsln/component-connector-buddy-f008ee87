@@ -1,5 +1,5 @@
 import { LayoutGrid, Package, Building2, Info } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import {
   DropdownMenu,
@@ -31,17 +31,21 @@ const categories = [
 
 const DesktopMenu = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
+  const isHomePage = location.pathname === '/';
 
   return (
     <div className="hidden md:flex items-center justify-end flex-1 space-x-8">
-      <div className="flex-1 max-w-md mx-8">
-        <Input 
-          type="search" 
-          placeholder="Search products..." 
-          className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
-        />
-      </div>
+      {!isHomePage && (
+        <div className="flex-1 max-w-md mx-8">
+          <Input 
+            type="search" 
+            placeholder="Search products..." 
+            className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
+          />
+        </div>
+      )}
       <div className="flex items-center space-x-8">
         <div className="relative">
           <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
@@ -86,19 +90,19 @@ const DesktopMenu = () => {
         </div>
         <button
           onClick={() => navigate('/sellers')}
-          className="text-white/80 hover:text-primary-hover transition-colors font-medium flex items-center gap-2"
+          className="text-white hover:text-primary-hover transition-colors font-medium flex items-center gap-2"
         >
           <Building2 size={18} />
           Seller
         </button>
         <button
           onClick={() => navigate('/items')}
-          className="text-white/80 hover:text-primary-hover transition-colors font-medium flex items-center gap-2"
+          className="text-white hover:text-primary-hover transition-colors font-medium flex items-center gap-2"
         >
           <Package size={18} />
           Products
         </button>
-        <a href="#" className="text-white/80 hover:text-primary-hover transition-colors font-medium flex items-center gap-2">
+        <a href="#" className="text-white hover:text-primary-hover transition-colors font-medium flex items-center gap-2">
           <Info size={18} />
           About Us
         </a>
