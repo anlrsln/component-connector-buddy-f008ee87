@@ -8,7 +8,6 @@ const DesktopMenu = () => {
   return (
     <div className="hidden md:flex items-center space-x-8">
       <button
-        onClick={() => navigate('/items')}
         className="text-white hover:text-primary-hover transition-colors font-medium flex items-center gap-2"
       >
         <LayoutGrid size={18} />
