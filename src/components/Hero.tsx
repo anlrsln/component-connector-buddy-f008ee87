@@ -33,7 +33,7 @@ const Hero = () => {
         currentIndex = (currentIndex + 1) % placeholders.length;
         setCurrentPlaceholder(placeholders[currentIndex]);
         setIsTransitioning(false);
-      }, 200); // Half of the transition duration
+      }, 200);
     }, 2000);
 
     return () => clearInterval(interval);
@@ -94,36 +94,34 @@ const Hero = () => {
               ))}
             </div>
 
-            {/* Search Bar */}
-            <div className="relative">
-              <Input
-                type="text"
-                placeholder={`Search ${currentPlaceholder}...`}
-                value={searchQuery}
-                onChange={(e) => handleSearch(e.target.value)}
-                className="pl-10 pr-10 py-6 w-full bg-white text-gray-900 
-                  placeholder:text-gray-500 focus-visible:ring-primary rounded-r-md rounded-tl-none
-                  [&::placeholder]:transition-opacity [&::placeholder]:duration-400"
-                style={{
-                  '--tw-placeholder-opacity': isTransitioning ? '0.5' : '1'
-                } as React.CSSProperties}
-              />
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-500" />
-              {searchQuery && (
-                <button
-                  onClick={() => handleSearch('')}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
-                >
-                  <X className="h-5 w-5" />
-                </button>
-              )}
-            </div>
-
-            {/* Search Button */}
-            <div className="flex justify-end">
+            {/* Search Bar with Integrated Button */}
+            <div className="relative flex">
+              <div className="relative flex-1">
+                <Input
+                  type="text"
+                  placeholder={`Search ${currentPlaceholder}...`}
+                  value={searchQuery}
+                  onChange={(e) => handleSearch(e.target.value)}
+                  className="pl-10 pr-10 py-6 w-full bg-white text-gray-900 
+                    placeholder:text-gray-500 focus-visible:ring-primary rounded-r-none
+                    [&::placeholder]:transition-opacity [&::placeholder]:duration-400"
+                  style={{
+                    '--tw-placeholder-opacity': isTransitioning ? '0.5' : '1'
+                  } as React.CSSProperties}
+                />
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-500" />
+                {searchQuery && (
+                  <button
+                    onClick={() => handleSearch('')}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
+                  >
+                    <X className="h-5 w-5" />
+                  </button>
+                )}
+              </div>
               <button
                 onClick={() => handleSearch(searchQuery)}
-                className="mt-2 w-24 bg-accent text-accent-foreground h-9 rounded-b-md flex items-center justify-center gap-2 hover:bg-accent/90 transition-colors"
+                className="bg-accent text-accent-foreground px-6 h-[42px] flex items-center justify-center gap-2 hover:bg-accent/90 transition-colors rounded-r-md"
               >
                 <Search className="h-4 w-4" />
                 <span className="text-sm">Search</span>
