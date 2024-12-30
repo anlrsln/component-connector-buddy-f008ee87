@@ -51,7 +51,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative h-[85vh]"> {/* Changed from h-[80vh] to h-[85vh] */}
+    <div className="relative h-[80vh]"> {/* Changed from h-[70vh] to h-[80vh] */}
       {/* Hero Image */}
       <div className="absolute inset-0 z-0">
         <img 
