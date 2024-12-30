@@ -34,35 +34,39 @@ const DesktopMenu = () => {
 
   return (
     <div className="hidden md:flex items-center space-x-8">
-      <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
-        <div 
-          className="relative"
-          onMouseEnter={() => setIsOpen(true)}
-          onMouseLeave={() => setIsOpen(false)}
-        >
-          <DropdownMenuTrigger asChild>
-            <button
-              className="text-white hover:text-primary-hover transition-colors font-medium flex items-center gap-2"
+      <div className="relative">
+        <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
+          <div 
+            onMouseEnter={() => setIsOpen(true)}
+            onMouseLeave={() => setIsOpen(false)}
+          >
+            <DropdownMenuTrigger asChild>
+              <button
+                className="text-white hover:text-primary-hover transition-colors font-medium flex items-center gap-2"
+              >
+                <LayoutGrid size={18} />
+                Categories
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent 
+              className="w-56 bg-white fixed mt-2"
+              style={{ position: 'fixed', left: 'auto' }}
             >
-              <LayoutGrid size={18} />
-              Categories
-            </button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent className="w-56 bg-white absolute left-0 top-full">
-            <DropdownMenuGroup>
-              {categories.map((category, index) => (
-                <DropdownMenuItem
-                  key={index}
-                  className="cursor-pointer hover:bg-gray-100"
-                  onClick={() => console.log(`Selected category: ${category}`)}
-                >
-                  {category}
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuGroup>
-          </DropdownMenuContent>
-        </div>
-      </DropdownMenu>
+              <DropdownMenuGroup>
+                {categories.map((category, index) => (
+                  <DropdownMenuItem
+                    key={index}
+                    className="cursor-pointer hover:bg-gray-100"
+                    onClick={() => console.log(`Selected category: ${category}`)}
+                  >
+                    {category}
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuGroup>
+            </DropdownMenuContent>
+          </div>
+        </DropdownMenu>
+      </div>
       <button
         onClick={() => navigate('/sellers')}
         className="text-white/80 hover:text-primary-hover transition-colors font-medium"
