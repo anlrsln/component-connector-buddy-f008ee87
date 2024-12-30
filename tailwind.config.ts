@@ -30,7 +30,7 @@ export default {
 				background: '#F8F9FA',
 				foreground: '#333333',
 				primary: {
-					DEFAULT: '#112D4E',
+					DEFAULT: '#074173',
 					hover: '#1A5F7A',
 					foreground: '#FFFFFF'
 				},
