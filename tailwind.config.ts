@@ -39,7 +39,7 @@ export default {
 					foreground: '#FFFFFF'
 				},
 				accent: {
-					DEFAULT: '#EB8317',
+					DEFAULT: '#FFB200',
 					foreground: '#333333'
 				},
 				teal: {
