@@ -36,6 +36,7 @@ const DesktopMenu = () => {
     <div className="hidden md:flex items-center space-x-8">
       <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
         <div 
+          className="relative"
           onMouseEnter={() => setIsOpen(true)}
           onMouseLeave={() => setIsOpen(false)}
         >
@@ -47,7 +48,7 @@ const DesktopMenu = () => {
               Categories
             </button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="w-56 bg-white">
+          <DropdownMenuContent className="w-56 bg-white absolute left-0 top-full">
             <DropdownMenuGroup>
               {categories.map((category, index) => (
                 <DropdownMenuItem
