@@ -1,5 +1,6 @@
 import { LayoutGrid, Package } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -29,31 +30,37 @@ const categories = [
 
 const DesktopMenu = () => {
   const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="hidden md:flex items-center space-x-8">
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <button
-            className="text-white hover:text-primary-hover transition-colors font-medium flex items-center gap-2"
-          >
-            <LayoutGrid size={18} />
-            Categories
-          </button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent className="w-56 bg-white">
-          <DropdownMenuGroup>
-            {categories.map((category, index) => (
-              <DropdownMenuItem
-                key={index}
-                className="cursor-pointer hover:bg-gray-100"
-                onClick={() => console.log(`Selected category: ${category}`)}
-              >
-                {category}
-              </DropdownMenuItem>
-            ))}
-          </DropdownMenuGroup>
-        </DropdownMenuContent>
+      <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
+        <div 
+          onMouseEnter={() => setIsOpen(true)}
+          onMouseLeave={() => setIsOpen(false)}
+        >
+          <DropdownMenuTrigger asChild>
+            <button
+              className="text-white hover:text-primary-hover transition-colors font-medium flex items-center gap-2"
+            >
+              <LayoutGrid size={18} />
+              Categories
+            </button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="w-56 bg-white">
+            <DropdownMenuGroup>
+              {categories.map((category, index) => (
+                <DropdownMenuItem
+                  key={index}
+                  className="cursor-pointer hover:bg-gray-100"
+                  onClick={() => console.log(`Selected category: ${category}`)}
+                >
+                  {category}
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuGroup>
+          </DropdownMenuContent>
+        </div>
       </DropdownMenu>
       <button
         onClick={() => navigate('/sellers')}
