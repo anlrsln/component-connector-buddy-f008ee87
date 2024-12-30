@@ -68,7 +68,7 @@ const Hero = () => {
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white text-left animate-fade-up">
             Discover Top-Quality Products
           </h1>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-primary text-left animate-fade-up mt-2">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#FEF7CD] text-left animate-fade-up mt-2">
             from Trusted Local Manufacturers
           </h2>
 
