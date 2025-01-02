@@ -13,7 +13,7 @@ import {
 import { Progress } from "@/components/ui/progress";
 import { 
   LayoutDashboard, 
-  Components, 
+  Component, 
   Settings, 
   Table, 
   BarChart, 
@@ -64,7 +64,7 @@ const SellerPanel = () => {
         
         <nav className="mt-8">
           <SidebarItem icon={LayoutDashboard} text="Dashboard" collapsed={collapsed} active />
-          <SidebarItem icon={Components} text="Components" collapsed={collapsed} />
+          <SidebarItem icon={Component} text="Components" collapsed={collapsed} />
           <SidebarItem icon={Settings} text="Utilities" collapsed={collapsed} />
           <SidebarItem icon={Files} text="Pages" collapsed={collapsed} />
           <SidebarItem icon={Table} text="Tables" collapsed={collapsed} />
