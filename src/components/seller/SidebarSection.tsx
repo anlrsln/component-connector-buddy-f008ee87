@@ -10,7 +10,7 @@ interface SidebarButtonProps {
 const SidebarButton: React.FC<SidebarButtonProps> = ({ icon: Icon, label, isActive }) => (
   <button 
     className={`w-full flex items-center space-x-3 p-2 ${
-      isActive ? 'bg-emerald-50 text-emerald-600' : 'text-gray-600 hover:bg-gray-50'
+      isActive ? 'bg-accent/10 text-accent' : 'text-gray-600 hover:bg-gray-50'
     } rounded-md`}
   >
     <Icon size={20} />
