@@ -103,8 +103,6 @@ const SellerPanel = () => {
       <div className="flex">
         {/* Sidebar */}
         <aside className={`${sidebarOpen ? 'w-64' : 'w-20'} bg-white transition-all duration-300 border-r`}>
-          <h1 className={`text-xl font-bold p-4 ${!sidebarOpen && 'hidden'}`}>Pixer</h1>
-          
           <SidebarSection
             title="MAIN"
             buttons={mainButtons}
