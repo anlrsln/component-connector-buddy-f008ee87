@@ -105,53 +105,51 @@ const SellerPanel = () => {
         </aside>
 
         <main className="flex-1 p-8">
-          <div className="space-y-6">
-            <Card className="mb-6 bg-white">
-              <CardHeader className="flex flex-row items-center justify-between">
-                <div>
-                  <CardTitle>Dropdown Card Example</CardTitle>
-                  <CardDescription className="py-2">
-                    Dropdown menus can be placed in the card header in order to extend the functionality of a basic card.
-                  </CardDescription>
-                </div>
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button variant="ghost" className="h-8 w-8 p-0">
-                      <MoreVertical className="h-4 w-4" />
-                    </Button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end">
-                    <DropdownMenuItem>Edit</DropdownMenuItem>
-                    <DropdownMenuItem>Share</DropdownMenuItem>
-                    <DropdownMenuItem>Delete</DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              </CardHeader>
-            </Card>
+          <Card className="mb-6 bg-white">
+            <CardHeader className="flex flex-row items-center justify-between">
+              <div>
+                <CardTitle>Dropdown Card Example</CardTitle>
+                <CardDescription className="py-2">
+                  Dropdown menus can be placed in the card header in order to extend the functionality of a basic card.
+                </CardDescription>
+              </div>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" className="h-8 w-8 p-0">
+                    <MoreVertical className="h-4 w-4" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  <DropdownMenuItem>Edit</DropdownMenuItem>
+                  <DropdownMenuItem>Share</DropdownMenuItem>
+                  <DropdownMenuItem>Delete</DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </CardHeader>
+          </Card>
 
-            <Card className="mb-6 bg-white">
-              <CardHeader className="flex flex-row items-center justify-between">
-                <div>
-                  <CardTitle>Additional Card Section</CardTitle>
-                  <CardDescription className="py-2">
-                    This is another example of a card with dropdown functionality in the header section.
-                  </CardDescription>
-                </div>
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button variant="ghost" className="h-8 w-8 p-0">
-                      <MoreVertical className="h-4 w-4" />
-                    </Button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end">
-                    <DropdownMenuItem>Edit</DropdownMenuItem>
-                    <DropdownMenuItem>Share</DropdownMenuItem>
-                    <DropdownMenuItem>Delete</DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              </CardHeader>
-            </Card>
-          </div>
+          <Card className="mb-6 bg-white">
+            <CardHeader className="flex flex-row items-center justify-between">
+              <div>
+                <CardTitle>Additional Card Section</CardTitle>
+                <CardDescription className="py-2">
+                  This is another example of a card with dropdown functionality in the header section.
+                </CardDescription>
+              </div>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" className="h-8 w-8 p-0">
+                    <MoreVertical className="h-4 w-4" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  <DropdownMenuItem>Edit</DropdownMenuItem>
+                  <DropdownMenuItem>Share</DropdownMenuItem>
+                  <DropdownMenuItem>Delete</DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </CardHeader>
+          </Card>
 
           <div className="flex items-center justify-between mb-3 bg-white p-4 rounded-lg">
             <div className="flex items-center gap-4">
@@ -172,7 +170,7 @@ const SellerPanel = () => {
                 />
                 <Search className="absolute left-3 top-2.5 text-gray-400" size={20} />
               </div>
-              <Button className="bg-primary hover:bg-primary-hover text-white">
+              <Button className="bg-emerald-600 hover:bg-emerald-700">
                 <Plus size={20} />
                 Add Product
               </Button>
