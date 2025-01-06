@@ -31,9 +31,6 @@ const SellerDetail = () => {
               </div>
             </div>
             <div className="flex gap-3">
-              <Badge variant="secondary" className="bg-green-100 text-green-800 hover:bg-green-200">
-                Verified company
-              </Badge>
               <Button className="bg-teal-600 hover:bg-teal-700">
                 FİRMAYLA İLETİŞİME GEÇ
               </Button>
