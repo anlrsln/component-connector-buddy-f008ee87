@@ -11,8 +11,8 @@ const CompanyDetails = () => {
 
       <div className="grid md:grid-cols-2 gap-6">
         <div className="flex items-center gap-4">
-          <div className="w-12 h-12 bg-yellow-50 rounded-full flex items-center justify-center">
-            <Briefcase className="w-6 h-6 text-yellow-500" />
+          <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
+            <Briefcase className="w-6 h-6 text-accent" />
           </div>
           <div>
             <h3 className="text-gray-700 font-medium">Business Type</h3>
@@ -21,8 +21,8 @@ const CompanyDetails = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          <div className="w-12 h-12 bg-yellow-50 rounded-full flex items-center justify-center">
-            <Users className="w-6 h-6 text-yellow-500" />
+          <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
+            <Users className="w-6 h-6 text-accent" />
           </div>
           <div>
             <h3 className="text-gray-700 font-medium">Employee Count</h3>
@@ -31,8 +31,8 @@ const CompanyDetails = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          <div className="w-12 h-12 bg-yellow-50 rounded-full flex items-center justify-center">
-            <Award className="w-6 h-6 text-yellow-500" />
+          <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
+            <Award className="w-6 h-6 text-accent" />
           </div>
           <div>
             <h3 className="text-gray-700 font-medium">Establishment</h3>
@@ -41,8 +41,8 @@ const CompanyDetails = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          <div className="w-12 h-12 bg-yellow-50 rounded-full flex items-center justify-center">
-            <Calendar className="w-6 h-6 text-yellow-500" />
+          <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
+            <Calendar className="w-6 h-6 text-accent" />
           </div>
           <div>
             <h3 className="text-gray-700 font-medium">Working Days</h3>
@@ -51,8 +51,8 @@ const CompanyDetails = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          <div className="w-12 h-12 bg-yellow-50 rounded-full flex items-center justify-center">
-            <CheckCircle className="w-6 h-6 text-yellow-500" />
+          <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
+            <CheckCircle className="w-6 h-6 text-accent" />
           </div>
           <div>
             <h3 className="text-gray-700 font-medium">GST NO</h3>
@@ -61,8 +61,8 @@ const CompanyDetails = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          <div className="w-12 h-12 bg-yellow-50 rounded-full flex items-center justify-center">
-            <CreditCard className="w-6 h-6 text-yellow-500" />
+          <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
+            <CreditCard className="w-6 h-6 text-accent" />
           </div>
           <div>
             <h3 className="text-gray-700 font-medium">Payment Mode</h3>
