@@ -1,4 +1,4 @@
-import { MapPin, Building, Globe, Linkedin, Instagram, Twitter } from 'lucide-react';
+import { MapPin, Building, Globe, Linkedin, Instagram, Twitter, Phone } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -50,6 +50,7 @@ const SellerDetail = () => {
             </div>
             <div className="flex gap-3">
               <Button className="bg-accent hover:bg-accent/90">
+                <Phone className="w-5 h-5" />
                 FİRMAYLA İLETİŞİME GEÇ
               </Button>
               <Button variant="outline">
