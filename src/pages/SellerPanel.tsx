@@ -9,13 +9,27 @@ import {
   Search,
   ChevronLeft,
   ChevronRight,
-  Plus
+  Plus,
+  MoreVertical
 } from 'lucide-react';
 import SellerPanelNavbar from '../components/seller/SellerPanelNavbar';
 import SidebarSection from '../components/seller/SidebarSection';
 import OrdersTable from '../components/seller/OrdersTable';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+} from '../components/ui/card';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '../components/ui/dropdown-menu';
 
 const orders = [
   {
@@ -91,6 +105,29 @@ const SellerPanel = () => {
         </aside>
 
         <main className="flex-1 p-8">
+          <Card className="mb-6">
+            <CardHeader className="flex flex-row items-center justify-between">
+              <div>
+                <CardTitle>Dropdown Card Example</CardTitle>
+                <CardDescription>
+                  Dropdown menus can be placed in the card header in order to extend the functionality of a basic card.
+                </CardDescription>
+              </div>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" className="h-8 w-8 p-0">
+                    <MoreVertical className="h-4 w-4" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  <DropdownMenuItem>Edit</DropdownMenuItem>
+                  <DropdownMenuItem>Share</DropdownMenuItem>
+                  <DropdownMenuItem>Delete</DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </CardHeader>
+          </Card>
+
           <div className="flex items-center justify-between mb-3 bg-white p-4 rounded-lg">
             <div className="flex items-center gap-4">
               <button
