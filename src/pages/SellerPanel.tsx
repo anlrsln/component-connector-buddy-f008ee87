@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   LayoutGrid,
   Store,
@@ -70,6 +71,7 @@ const orders = [
 ];
 
 const SellerPanel = () => {
+  const navigate = useNavigate();
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
   const mainButtons = [{
