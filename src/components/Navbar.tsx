@@ -82,7 +82,7 @@ const Navbar = () => {
           )}
           
           {/* Desktop Menu - Centered */}
-          <div className={`hidden md:flex items-center justify-center flex-1 ${isAfterHero ? 'ml-8' : ''}`}>
+          <div className={`hidden md:flex items-center w-fit ${isAfterHero ? 'ml-8' : ''}`}>
             <DesktopMenu isAfterHero={isAfterHero} />
           </div>
 
