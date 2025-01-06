@@ -33,7 +33,7 @@ const DesktopMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="hidden md:flex items-center space-x-8">
+    <div className="hidden md:flex items-center justify-center flex-1 space-x-8">
       <div className="relative">
         <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
           <div 
