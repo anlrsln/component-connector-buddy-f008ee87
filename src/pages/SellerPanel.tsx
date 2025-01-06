@@ -8,11 +8,14 @@ import {
   Tags,
   Search,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Plus
 } from 'lucide-react';
 import SellerPanelNavbar from '../components/seller/SellerPanelNavbar';
 import SidebarSection from '../components/seller/SidebarSection';
 import OrdersTable from '../components/seller/OrdersTable';
+import { Button } from '../components/ui/button';
+import { Input } from '../components/ui/input';
 
 const orders = [
   {
@@ -100,25 +103,29 @@ const SellerPanel = () => {
         </aside>
 
         <main className="flex-1 p-8">
-          <div className="flex justify-between items-center mb-8">
-            <div className="flex items-center space-x-4">
+          <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center gap-4">
               <button
                 onClick={() => setSidebarOpen(!sidebarOpen)}
                 className="p-2 hover:bg-gray-100 rounded-md"
               >
                 {sidebarOpen ? <ChevronLeft size={24} /> : <ChevronRight size={24} />}
               </button>
-              <h1 className="text-2xl font-semibold">Recent Orders</h1>
+              <h1 className="text-xl font-semibold">Product</h1>
             </div>
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center gap-4">
               <div className="relative">
-                <input
+                <Input
                   type="text"
                   placeholder="Search by Name"
-                  className="pl-10 pr-4 py-2 border rounded-md w-64"
+                  className="pl-10 w-[300px]"
                 />
                 <Search className="absolute left-3 top-2.5 text-gray-400" size={20} />
               </div>
+              <Button className="bg-emerald-600 hover:bg-emerald-700">
+                <Plus size={20} />
+                Add Product
+              </Button>
             </div>
           </div>
 
