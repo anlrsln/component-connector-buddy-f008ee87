@@ -53,7 +53,7 @@ const Navbar = () => {
 
           {/* Search Bar - Only visible after hero section */}
           {isAfterHero && (
-            <div className="hidden md:flex flex-1 justify-center px-4 max-w-md mx-auto">
+            <div className="hidden md:flex flex-1 justify-start pl-8 max-w-md">
               <div className="relative w-full flex gap-2">
                 <Select
                   defaultValue="products"
