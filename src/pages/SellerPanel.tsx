@@ -108,7 +108,7 @@ const SellerPanel = () => {
           <Card className="mb-6 bg-white">
             <CardHeader className="flex flex-row items-center justify-between">
               <div>
-                <CardTitle>Dropdown Card Example</CardTitle>
+                <CardTitle>Sözleşme</CardTitle>
                 <CardDescription className="py-2">
                   Dropdown menus can be placed in the card header in order to extend the functionality of a basic card.
                 </CardDescription>
