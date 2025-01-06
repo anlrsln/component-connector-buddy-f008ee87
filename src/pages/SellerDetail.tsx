@@ -1,4 +1,4 @@
-import { MapPin, Building, Globe, Linkedin, Instagram, Twitter, Phone } from 'lucide-react';
+import { MapPin, Building, Globe, Linkedin, Instagram, Twitter, Phone, Package } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -54,6 +54,7 @@ const SellerDetail = () => {
                 FİRMAYLA İLETİŞİME GEÇ
               </Button>
               <Button variant="outline">
+                <Package className="w-5 h-5" />
                 ASK FOR A QUOTE
               </Button>
             </div>
