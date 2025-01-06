@@ -1,5 +1,5 @@
 import React from 'react';
-import { Eye, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Eye, ChevronLeft, ChevronRight, Edit, Trash } from 'lucide-react';
 
 interface Order {
   id: string;
@@ -40,9 +40,17 @@ const OrdersTable: React.FC<OrdersTableProps> = ({ orders }) => (
             <td className="p-4">{order.icon}</td>
             <td className="p-4">{order.slug}</td>
             <td className="p-4">
-              <button className="p-2 hover:bg-gray-100 rounded-full">
-                <Eye size={20} className="text-gray-500" />
-              </button>
+              <div className="flex items-center space-x-2">
+                <button className="p-2 hover:bg-gray-100 rounded-full">
+                  <Eye size={20} className="text-gray-500" />
+                </button>
+                <button className="p-2 hover:bg-gray-100 rounded-full">
+                  <Edit size={20} className="text-gray-500" />
+                </button>
+                <button className="p-2 hover:bg-gray-100 rounded-full text-red-500 hover:text-red-600">
+                  <Trash size={20} />
+                </button>
+              </div>
             </td>
           </tr>
         ))}
