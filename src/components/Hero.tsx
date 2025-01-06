@@ -82,7 +82,7 @@ const Hero = () => {
                   onClick={() => setSelectedLabel(label.id as typeof selectedLabel)}
                   className={`flex-1 px-2 py-2 text-xs font-medium
                     ${selectedLabel === label.id
-                      ? 'bg-primary text-primary-foreground'
+                      ? 'bg-accent text-accent-foreground'
                       : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                     }
                     ${label.id === 'product' ? 'rounded-tl-md' : ''}
@@ -122,7 +122,7 @@ const Hero = () => {
             {/* Search Button */}
             <button
               onClick={() => handleSearch(searchQuery)}
-              className="bg-primary text-primary-foreground h-9 px-4 rounded-b-md flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors w-full sm:w-1/4 ml-auto"
+              className="bg-accent text-accent-foreground h-9 px-4 rounded-b-md flex items-center justify-center gap-2 hover:bg-accent/90 transition-colors w-full sm:w-1/4 ml-auto"
             >
               <Search className="h-4 w-4" />
               <span className="text-sm font-medium">Search</span>
