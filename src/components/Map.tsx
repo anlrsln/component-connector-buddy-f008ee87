@@ -1,63 +1,56 @@
-import React, { useEffect, useRef, useState } from 'react';
-import mapboxgl from 'mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
+import { useLoadScript, GoogleMap, Marker } from '@react-google-maps/api';
+import { useState } from 'react';
 
 const Map = () => {
-  const mapContainer = useRef<HTMLDivElement>(null);
-  const map = useRef<mapboxgl.Map | null>(null);
   const [token, setToken] = useState('');
-  const [isMapInitialized, setIsMapInitialized] = useState(false);
+  
+  const { isLoaded } = useLoadScript({
+    googleMapsApiKey: token,
+  });
 
-  useEffect(() => {
-    if (!mapContainer.current || !token || isMapInitialized) return;
-
-    mapboxgl.accessToken = token;
-    
-    map.current = new mapboxgl.Map({
-      container: mapContainer.current,
-      style: 'mapbox://styles/mapbox/light-v11',
-      center: [29.0122, 41.0082], // Istanbul coordinates
-      zoom: 12
-    });
-
-    // Add navigation controls
-    map.current.addControl(new mapboxgl.NavigationControl(), 'top-right');
-
-    setIsMapInitialized(true);
-
-    return () => {
-      map.current?.remove();
-    };
-  }, [token, isMapInitialized]);
+  const center = {
+    lat: 41.0082,
+    lng: 29.0122
+  };
 
   if (!token) {
     return (
       <div className="p-4 bg-yellow-50 rounded-lg">
         <p className="text-sm text-yellow-800 mb-2">
-          Please enter your Mapbox public token to view the map. You can get it from{' '}
+          Please enter your Google Maps API key to view the map. You can get it from{' '}
           <a 
-            href="https://mapbox.com" 
+            href="https://console.cloud.google.com/google/maps-apis"
             target="_blank" 
             rel="noopener noreferrer"
             className="underline"
           >
-            mapbox.com
+            Google Cloud Console
           </a>
         </p>
         <input
           type="text"
           value={token}
           onChange={(e) => setToken(e.target.value)}
-          placeholder="Enter your Mapbox token"
+          placeholder="Enter your Google Maps API key"
           className="w-full p-2 border rounded"
         />
       </div>
     );
   }
 
+  if (!isLoaded) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="h-[400px] rounded-lg overflow-hidden">
-      <div ref={mapContainer} className="w-full h-full" />
+      <GoogleMap
+        zoom={12}
+        center={center}
+        mapContainerClassName="w-full h-full"
+      >
+        <Marker position={center} />
+      </GoogleMap>
     </div>
   );
 };
