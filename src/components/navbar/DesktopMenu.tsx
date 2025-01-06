@@ -49,7 +49,7 @@ const DesktopMenu = ({ isAfterHero }: DesktopMenuProps) => {
               <button
                 className="text-white hover:text-white/90 transition-colors font-medium flex items-center gap-2"
               >
-                <LayoutGrid size={18} />
+                <LayoutGrid size={24} />
                 {!isAfterHero && "Categories"}
               </button>
             </DropdownMenuTrigger>
@@ -83,21 +83,21 @@ const DesktopMenu = ({ isAfterHero }: DesktopMenuProps) => {
         onClick={() => navigate('/sellers')}
         className="text-white/80 hover:text-white transition-colors font-medium flex items-center gap-2"
       >
-        <Building2 size={18} />
+        <Building2 size={24} />
         {!isAfterHero && "Seller"}
       </button>
       <button
         onClick={() => navigate('/items')}
         className="text-white/80 hover:text-white transition-colors font-medium flex items-center gap-2"
       >
-        <Package size={18} />
+        <Package size={24} />
         {!isAfterHero && "Products"}
       </button>
       <button
         onClick={() => navigate('/about')}
         className="text-white/80 hover:text-white transition-colors font-medium flex items-center gap-2"
       >
-        <Info size={18} />
+        <Info size={24} />
         {!isAfterHero && "About Us"}
       </button>
     </div>
