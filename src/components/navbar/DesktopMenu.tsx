@@ -37,7 +37,7 @@ const DesktopMenu = ({ isAfterHero }: DesktopMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="hidden md:flex items-center justify-center flex-1 space-x-8">
+    <div className="hidden md:flex items-center justify-center space-x-8 flex-1 px-4">
       <div className="relative">
         <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
           <div 
