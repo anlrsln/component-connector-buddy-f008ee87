@@ -61,14 +61,14 @@ const SellerDetail = () => {
           <div className="flex gap-4 mt-6">
             <Button 
               variant={activeTab === 'about' ? 'default' : 'ghost'} 
-              className={activeTab === 'about' ? 'text-accent' : ''}
+              className={activeTab === 'about' ? 'bg-accent text-white hover:bg-accent/90' : ''}
               onClick={() => setActiveTab('about')}
             >
               About us
             </Button>
             <Button 
               variant={activeTab === 'products' ? 'default' : 'ghost'}
-              className={activeTab === 'products' ? 'text-accent' : ''}
+              className={activeTab === 'products' ? 'bg-accent text-white hover:bg-accent/90' : ''}
               onClick={() => setActiveTab('products')}
             >
               Our Products
