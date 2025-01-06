@@ -117,25 +117,25 @@ const SellerDetail = () => {
               <div className="space-y-4">
                 <div className="flex items-center gap-2">
                   <Globe className="w-5 h-5 text-gray-500" />
-                  <a href="http://www.immaglobal.com" className="text-blue-500 hover:underline">
+                  <a href="http://www.immaglobal.com" className="text-blue-500 hover:underline font-semibold">
                     http://www.immaglobal.com
                   </a>
                 </div>
                 <div className="flex items-center gap-2">
                   <Linkedin className="w-5 h-5 text-[#0A66C2]" />
-                  <a href="#" className="text-blue-500 hover:underline">
+                  <a href="#" className="text-blue-500 hover:underline font-semibold">
                     LinkedIn Profile
                   </a>
                 </div>
                 <div className="flex items-center gap-2">
                   <Instagram className="w-5 h-5 text-[#E4405F]" />
-                  <a href="#" className="text-blue-500 hover:underline">
+                  <a href="#" className="text-blue-500 hover:underline font-semibold">
                     Instagram Profile
                   </a>
                 </div>
                 <div className="flex items-center gap-2">
                   <Twitter className="w-5 h-5 text-[#1DA1F2]" />
-                  <a href="#" className="text-blue-500 hover:underline">
+                  <a href="#" className="text-blue-500 hover:underline font-semibold">
                     X (Twitter) Profile
                   </a>
                 </div>
