@@ -55,7 +55,7 @@ const OrdersTable: React.FC<OrdersTableProps> = ({ orders }) => (
         <button className="p-2 border rounded hover:bg-gray-50">
           <ChevronLeft size={20} />
         </button>
-        <button className="px-4 py-2 bg-emerald-600 text-white rounded">1</button>
+        <button className="px-4 py-2 bg-primary text-white rounded">1</button>
         <button className="px-4 py-2 border rounded hover:bg-gray-50">2</button>
         <button className="px-4 py-2 border rounded hover:bg-gray-50">3</button>
         <button className="px-4 py-2 border rounded hover:bg-gray-50">4</button>

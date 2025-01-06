@@ -9,7 +9,7 @@ const SellerPanelNavbar = () => {
     <div className="h-16 bg-white border-b flex items-center justify-between px-4 lg:px-8">
       {/* Left section with logo */}
       <div className="flex items-center gap-2">
-        <Store className="w-6 h-6 text-emerald-600" />
+        <Store className="w-6 h-6 text-primary" />
         <span className="text-xl font-semibold">Commervia</span>
       </div>
 
@@ -19,7 +19,7 @@ const SellerPanelNavbar = () => {
           <input
             type="text"
             placeholder="Search your route..."
-            className="w-full px-4 py-2 pl-10 bg-gray-50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+            className="w-full px-4 py-2 pl-10 bg-gray-50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
           />
           <Search className="absolute left-3 top-2.5 text-gray-400" size={20} />
         </div>
@@ -29,7 +29,7 @@ const SellerPanelNavbar = () => {
       <div className="flex items-center gap-4">
         <Button 
           variant="outline" 
-          className="hidden md:flex items-center gap-2 text-emerald-600 border-emerald-600 hover:bg-emerald-50"
+          className="hidden md:flex items-center gap-2 text-primary border-primary hover:bg-primary/10"
           onClick={() => navigate('/')}
         >
           <ExternalLink size={18} />

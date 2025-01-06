@@ -161,20 +161,22 @@ const SellerPanel = () => {
               </button>
               <h1 className="text-xl font-semibold">Product</h1>
             </div>
-            <div className="flex items-center gap-4">
-              <div className="relative">
-                <Input
-                  type="text"
-                  placeholder="Search by Name"
-                  className="pl-10 w-[300px]"
-                />
-                <Search className="absolute left-3 top-2.5 text-gray-400" size={20} />
-              </div>
-              <Button className="bg-emerald-600 hover:bg-emerald-700">
-                <Plus size={20} />
-                Add Product
-              </Button>
+
+          <div className="flex items-center gap-4">
+            <div className="relative">
+              <Input
+                type="text"
+                placeholder="Search by Name"
+                className="pl-10 w-[300px]"
+              />
+              <Search className="absolute left-3 top-2.5 text-gray-400" size={20} />
             </div>
+            <Button className="bg-primary hover:bg-primary-hover">
+              <Plus size={20} />
+              Add Product
+            </Button>
+          </div>
+
           </div>
 
           <OrdersTable orders={orders} />
@@ -185,3 +187,4 @@ const SellerPanel = () => {
 };
 
 export default SellerPanel;
+
