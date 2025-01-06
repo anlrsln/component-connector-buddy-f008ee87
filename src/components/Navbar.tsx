@@ -61,7 +61,7 @@ const Navbar = () => {
           
           {/* Desktop Menu - Centered when in hero, shifted right when search is visible */}
           <div className={`hidden md:flex items-center ${isAfterHero ? 'ml-4' : 'flex-1 justify-center'}`}>
-            <DesktopMenu />
+            <DesktopMenu isAfterHero={isAfterHero} />
             <AuthButtons />
           </div>
 
