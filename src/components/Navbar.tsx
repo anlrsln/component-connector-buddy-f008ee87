@@ -5,11 +5,19 @@ import DesktopMenu from './navbar/DesktopMenu';
 import MobileMenu from './navbar/MobileMenu';
 import AuthButtons from './navbar/AuthButtons';
 import { Input } from './ui/input';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "./ui/select";
 
 const Navbar = () => {
   const [isAfterHero, setIsAfterHero] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [searchCategory, setSearchCategory] = useState('products');
   const location = useLocation();
   const isItemsPage = location.pathname === '/items';
   const isProductPage = location.pathname.startsWith('/product/');
@@ -27,7 +35,7 @@ const Navbar = () => {
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
     // Add your search logic here
-    console.log('Searching for:', e.target.value);
+    console.log('Searching for:', e.target.value, 'in category:', searchCategory);
   };
 
   return (
@@ -46,15 +54,30 @@ const Navbar = () => {
           {/* Search Bar - Only visible after hero section */}
           {isAfterHero && (
             <div className="hidden md:flex flex-1 justify-center px-8 max-w-md mx-auto">
-              <div className="relative w-full">
-                <Input
-                  type="text"
-                  placeholder="Search products..."
-                  value={searchQuery}
-                  onChange={handleSearch}
-                  className="w-full pl-10 pr-4 bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-white focus:ring-white"
-                />
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-white/60" />
+              <div className="relative w-full flex gap-2">
+                <Select
+                  defaultValue="products"
+                  onValueChange={(value) => setSearchCategory(value)}
+                >
+                  <SelectTrigger className="w-[140px] bg-white/10 border-white/20 text-white">
+                    <SelectValue placeholder="Category" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="products">Products</SelectItem>
+                    <SelectItem value="sellers">Sellers</SelectItem>
+                    <SelectItem value="hexcode">Hex Code</SelectItem>
+                  </SelectContent>
+                </Select>
+                <div className="relative flex-1">
+                  <Input
+                    type="text"
+                    placeholder={`Search ${searchCategory}...`}
+                    value={searchQuery}
+                    onChange={handleSearch}
+                    className="w-full pl-10 pr-4 bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-white focus:ring-white"
+                  />
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-white/60" />
+                </div>
               </div>
             </div>
           )}
