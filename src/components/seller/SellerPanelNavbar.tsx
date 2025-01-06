@@ -35,12 +35,6 @@ const SellerPanelNavbar = () => {
           <ExternalLink size={18} />
           Visit Site
         </Button>
-        <Button 
-          className="hidden md:flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700"
-        >
-          <Store size={18} />
-          Create Shop
-        </Button>
         <div className="flex items-center gap-2">
           <div className="text-right hidden md:block">
             <div className="font-medium">Jhon Doe</div>
