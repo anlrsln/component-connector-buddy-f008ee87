@@ -103,7 +103,7 @@ const SellerPanel = () => {
         </aside>
 
         <main className="flex-1 p-8">
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center justify-between mb-6 bg-white p-4 rounded-lg">
             <div className="flex items-center gap-4">
               <button
                 onClick={() => setSidebarOpen(!sidebarOpen)}
