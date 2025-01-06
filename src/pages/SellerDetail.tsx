@@ -141,29 +141,6 @@ const SellerDetail = () => {
                 </div>
               </div>
             </div>
-
-            {/* Company Info Section */}
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h2 className="text-xl font-semibold mb-4">Legal Information</h2>
-              <div className="space-y-3">
-                <div className="flex justify-between">
-                  <span className="text-gray-600">Type</span>
-                  <span>Genel merkez - Dağıtım merkezi</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-600">Kuruluş yılı</span>
-                  <span>2006</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-600">Registration no</span>
-                  <span>582781</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-600">Çalışan</span>
-                  <span>23 çalışan</span>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
