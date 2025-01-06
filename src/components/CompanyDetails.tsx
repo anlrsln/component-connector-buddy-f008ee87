@@ -2,7 +2,7 @@ import { Briefcase, Award, Users, Calendar, CreditCard, CheckCircle } from 'luci
 
 const CompanyDetails = () => {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-sm space-y-6 mt-8">
+    <div className="bg-white p-6 rounded-lg shadow-sm space-y-6">
       <h2 className="text-2xl font-semibold text-gray-800">Company Details</h2>
       
       <p className="text-gray-600">
