@@ -3,12 +3,12 @@ import Navbar from '@/components/Navbar';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import CompanyDetails from '@/components/CompanyDetails';
+import Map from '@/components/Map';
 
 const SellerDetail = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <div className="container mx-auto px-4 pt-20">
         {/* Header Section */}
         <div className="bg-white p-6 rounded-lg shadow-sm mb-6">
           <div className="flex justify-between items-start">
@@ -51,12 +51,12 @@ const SellerDetail = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-6">
-          {/* Left Column */}
-          <div className="col-span-2 space-y-6">
-            <CompanyDetails />
+      <div className="grid grid-cols-3 gap-6">
+        {/* Left Column */}
+        <div className="col-span-2 space-y-6">
+          <CompanyDetails />
 
-            {/* Certificates Section */}
+          {/* Certificates Section */}
             <div className="bg-white p-6 rounded-lg shadow-sm">
               <h2 className="text-xl font-semibold mb-4">Sertifikalar</h2>
               <div className="grid grid-cols-2 gap-4">
@@ -78,11 +78,11 @@ const SellerDetail = () => {
                 ))}
               </div>
             </div>
-          </div>
+        </div>
 
-          {/* Right Column */}
-          <div className="space-y-6">
-            {/* Follow Us Section */}
+        {/* Right Column */}
+        <div className="space-y-6">
+          {/* Follow Us Section */}
             <div className="bg-white p-6 rounded-lg shadow-sm">
               <h2 className="text-xl font-semibold mb-4">Follow us - IMMA Global</h2>
               <div className="space-y-4">
@@ -113,10 +113,10 @@ const SellerDetail = () => {
               </div>
             </div>
 
-            {/* Company Info Section */}
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h2 className="text-xl font-semibold mb-4">Legal Information</h2>
-              <div className="space-y-3">
+          {/* Company Info Section */}
+          <div className="bg-white p-6 rounded-lg shadow-sm">
+            <h2 className="text-xl font-semibold mb-4">Legal Information</h2>
+            <div className="space-y-3">
                 <div className="flex justify-between">
                   <span className="text-gray-600">Type</span>
                   <span>Genel merkez - Dağıtım merkezi</span>
@@ -133,8 +133,13 @@ const SellerDetail = () => {
                   <span className="text-gray-600">Çalışan</span>
                   <span>23 çalışan</span>
                 </div>
-              </div>
             </div>
+          </div>
+
+          {/* Map Section */}
+          <div className="bg-white p-6 rounded-lg shadow-sm">
+            <h2 className="text-xl font-semibold mb-4">Location</h2>
+            <Map />
           </div>
         </div>
       </div>
