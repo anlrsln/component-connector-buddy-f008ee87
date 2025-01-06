@@ -64,12 +64,6 @@ const SellerPanel = () => {
     isActive: true
   }];
 
-  const shopManagementButtons = [
-    { icon: Store, label: 'Shops' },
-    { icon: Store, label: 'My Shops' },
-    { icon: ArrowRightLeft, label: 'Shop Transfer Request' }
-  ];
-
   const productManagementButtons = [
     { icon: Package, label: 'Products' },
     { icon: LayoutList, label: 'Layout Type' },
@@ -86,12 +80,6 @@ const SellerPanel = () => {
           <SidebarSection
             title="MAIN"
             buttons={mainButtons}
-            isOpen={sidebarOpen}
-          />
-
-          <SidebarSection
-            title="SHOP MANAGEMENT"
-            buttons={shopManagementButtons}
             isOpen={sidebarOpen}
           />
 
