@@ -131,7 +131,7 @@ const SellerPanel = () => {
           <Card className="mb-6 bg-white">
             <CardHeader className="flex flex-row items-center justify-between">
               <div>
-                <CardTitle>Additional Card Section</CardTitle>
+                <CardTitle>E-Mail Onayı</CardTitle>
                 <CardDescription className="py-2">
                   This is another example of a card with dropdown functionality in the header section.
                 </CardDescription>
