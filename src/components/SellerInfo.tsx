@@ -1,7 +1,10 @@
 import { User, Calendar, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 const SellerInfo = () => {
+  const navigate = useNavigate();
+  
   return (
     <div className="space-y-4">
       <h2 className="text-[#1A5F7A] text-xl font-semibold">Seller Details</h2>
@@ -15,7 +18,12 @@ const SellerInfo = () => {
           />
         </div>
         <div>
-          <h3 className="font-bold text-lg">VCARE MEDICINES</h3>
+          <h3 
+            className="font-bold text-lg cursor-pointer hover:text-primary"
+            onClick={() => navigate('/seller/1')}
+          >
+            VCARE MEDICINES
+          </h3>
         </div>
       </div>
 

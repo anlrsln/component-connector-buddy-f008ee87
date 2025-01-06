@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Star, Mail } from "lucide-react";
 import Navbar from "@/components/Navbar";
+import { useNavigate } from 'react-router-dom';
 
 const sellers = [
   {
@@ -50,6 +51,8 @@ const categories = [
 ];
 
 const SellerListing = () => {
+  const navigate = useNavigate();
+  
   return (
     <>
       <Navbar />
@@ -82,7 +85,12 @@ const SellerListing = () => {
                 
                 <div className="p-6 space-y-4">
                   <div className="flex justify-between items-start">
-                    <h3 className="text-xl font-semibold">{seller.name}</h3>
+                    <h3 
+                      className="text-xl font-semibold cursor-pointer hover:text-primary"
+                      onClick={() => navigate(`/seller/${seller.id}`)}
+                    >
+                      {seller.name}
+                    </h3>
                     <div className="flex items-center gap-1">
                       <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                       <span className="text-sm font-medium">{seller.rating}</span>
