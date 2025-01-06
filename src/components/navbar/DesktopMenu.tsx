@@ -43,7 +43,7 @@ const DesktopMenu = () => {
           >
             <DropdownMenuTrigger asChild>
               <button
-                className="text-white hover:text-accent transition-colors font-medium flex items-center gap-2"
+                className="text-white hover:text-white/90 transition-colors font-medium flex items-center gap-2"
               >
                 <LayoutGrid size={18} />
                 Categories
@@ -77,21 +77,21 @@ const DesktopMenu = () => {
       </div>
       <button
         onClick={() => navigate('/sellers')}
-        className="text-white/80 hover:text-accent transition-colors font-medium flex items-center gap-2"
+        className="text-white/80 hover:text-white transition-colors font-medium flex items-center gap-2"
       >
         <Building2 size={18} />
         Seller
       </button>
       <button
         onClick={() => navigate('/items')}
-        className="text-white/80 hover:text-accent transition-colors font-medium flex items-center gap-2"
+        className="text-white/80 hover:text-white transition-colors font-medium flex items-center gap-2"
       >
         <Package size={18} />
         Products
       </button>
       <button
         onClick={() => navigate('/about')}
-        className="text-white/80 hover:text-accent transition-colors font-medium flex items-center gap-2"
+        className="text-white/80 hover:text-white transition-colors font-medium flex items-center gap-2"
       >
         <Info size={18} />
         About Us
