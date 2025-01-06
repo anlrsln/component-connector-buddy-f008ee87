@@ -6,7 +6,7 @@ import SellerListing from './pages/SellerListing';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/">
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/items" element={<ItemListing />} />
