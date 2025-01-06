@@ -58,7 +58,7 @@ const Navbar = () => {
                   defaultValue="products"
                   onValueChange={(value) => setSearchCategory(value)}
                 >
-                  <SelectTrigger className="w-[140px] bg-white/10 border-white/20 text-white">
+                  <SelectTrigger className="w-[140px] bg-white border-white/20 text-primary">
                     <SelectValue placeholder="Category" />
                   </SelectTrigger>
                   <SelectContent>
@@ -73,9 +73,9 @@ const Navbar = () => {
                     placeholder={`Search ${searchCategory}...`}
                     value={searchQuery}
                     onChange={handleSearch}
-                    className="w-full pl-10 pr-4 bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-white focus:ring-white"
+                    className="w-full pl-10 pr-4 bg-white border-white/20 text-primary placeholder:text-primary/60 focus:border-primary focus:ring-primary"
                   />
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-white/60" />
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-primary/60" />
                 </div>
               </div>
             </div>
