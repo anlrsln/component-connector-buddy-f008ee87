@@ -14,7 +14,7 @@ const SidebarButton: React.FC<SidebarButtonProps> = ({ icon: Icon, label, isActi
     } rounded-md`}
   >
     <Icon size={20} />
-    <span>{label}</span>
+    <span className="font-semibold">{label}</span>
   </button>
 );
 
