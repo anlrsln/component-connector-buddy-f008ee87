@@ -51,12 +51,12 @@ const SellerDetail = () => {
           </div>
         </div>
 
-      <div className="grid grid-cols-3 gap-6">
-        {/* Left Column */}
-        <div className="col-span-2 space-y-6">
-          <CompanyDetails />
+        <div className="grid grid-cols-3 gap-6">
+          {/* Left Column */}
+          <div className="col-span-2 space-y-6">
+            <CompanyDetails />
 
-          {/* Certificates Section */}
+            {/* Certificates Section */}
             <div className="bg-white p-6 rounded-lg shadow-sm">
               <h2 className="text-xl font-semibold mb-4">Sertifikalar</h2>
               <div className="grid grid-cols-2 gap-4">
@@ -78,42 +78,42 @@ const SellerDetail = () => {
                 ))}
               </div>
             </div>
-        </div>
-
-        {/* Right Column */}
-        <div className="space-y-6">
-          {/* Follow Us Section */}
-          <div className="bg-white p-6 rounded-lg shadow-sm">
-            <h2 className="text-xl font-semibold mb-4">Follow us - IMMA Global</h2>
-            <div className="space-y-4">
-              <div className="flex items-center gap-2">
-                <Globe className="w-5 h-5 text-gray-500" />
-                <a href="http://www.immaglobal.com" className="text-blue-500 hover:underline">
-                  http://www.immaglobal.com
-                </a>
-              </div>
-              <div className="flex items-center gap-2">
-                <Linkedin className="w-5 h-5 text-[#0A66C2]" />
-                <a href="#" className="text-blue-500 hover:underline">
-                  LinkedIn Profile
-                </a>
-              </div>
-              <div className="flex items-center gap-2">
-                <Instagram className="w-5 h-5 text-[#E4405F]" />
-                <a href="#" className="text-blue-500 hover:underline">
-                  Instagram Profile
-                </a>
-              </div>
-              <div className="flex items-center gap-2">
-                <Twitter className="w-5 h-5 text-[#1DA1F2]" />
-                <a href="#" className="text-blue-500 hover:underline">
-                  X (Twitter) Profile
-                </a>
-              </div>
-            </div>
           </div>
 
-          {/* Company Info Section */}
+          {/* Right Column */}
+          <div className="space-y-6">
+            {/* Follow Us Section */}
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <h2 className="text-xl font-semibold mb-4">Follow us - IMMA Global</h2>
+              <div className="space-y-4">
+                <div className="flex items-center gap-2">
+                  <Globe className="w-5 h-5 text-gray-500" />
+                  <a href="http://www.immaglobal.com" className="text-blue-500 hover:underline">
+                    http://www.immaglobal.com
+                  </a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Linkedin className="w-5 h-5 text-[#0A66C2]" />
+                  <a href="#" className="text-blue-500 hover:underline">
+                    LinkedIn Profile
+                  </a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Instagram className="w-5 h-5 text-[#E4405F]" />
+                  <a href="#" className="text-blue-500 hover:underline">
+                    Instagram Profile
+                  </a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Twitter className="w-5 h-5 text-[#1DA1F2]" />
+                  <a href="#" className="text-blue-500 hover:underline">
+                    X (Twitter) Profile
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Company Info Section */}
             <div className="bg-white p-6 rounded-lg shadow-sm">
               <h2 className="text-xl font-semibold mb-4">Legal Information</h2>
               <div className="space-y-3">
@@ -135,6 +135,7 @@ const SellerDetail = () => {
                 </div>
               </div>
             </div>
+          </div>
         </div>
       </div>
     </div>
