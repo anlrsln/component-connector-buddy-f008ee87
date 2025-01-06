@@ -31,7 +31,7 @@ const SellerDetail = () => {
               </div>
             </div>
             <div className="flex gap-3">
-              <Button className="bg-teal-600 hover:bg-teal-700">
+              <Button className="bg-accent hover:bg-accent/90">
                 FİRMAYLA İLETİŞİME GEÇ
               </Button>
               <Button variant="outline">
