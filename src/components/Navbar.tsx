@@ -22,15 +22,8 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const getNavbarBackground = () => {
-    if (isProductPage || isItemsPage || isSellersPage) {
-      return 'bg-primary text-primary-foreground';
-    }
-    return isAfterHero ? 'bg-primary text-primary-foreground' : 'bg-transparent';
-  };
-
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${getNavbarBackground()}`}>
+    <nav className="fixed w-full z-50 transition-all duration-300 bg-primary text-primary-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
