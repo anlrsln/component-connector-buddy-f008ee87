@@ -6,7 +6,7 @@ const products = [
     id: "1",
     title: "Professional Camera Kit",
     price: 899.99,
-    image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
+    image: "https://source.unsplash.com/random/800x600?camera",
     category: "Photography",
     rating: 4.8
   },
@@ -14,7 +14,7 @@ const products = [
     id: "2",
     title: "Developer Laptop Pro",
     price: 1299.99,
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+    image: "https://source.unsplash.com/random/800x600?laptop",
     category: "Electronics",
     rating: 4.9
   },
@@ -22,7 +22,7 @@ const products = [
     id: "3",
     title: "Smart Watch Elite",
     price: 299.99,
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
+    image: "https://source.unsplash.com/random/800x600?smartwatch",
     category: "Wearables",
     rating: 4.7
   },
@@ -30,7 +30,7 @@ const products = [
     id: "4",
     title: "Development Tools Suite",
     price: 199.99,
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+    image: "https://source.unsplash.com/random/800x600?coding",
     category: "Software",
     rating: 4.6
   },
@@ -38,7 +38,7 @@ const products = [
     id: "5",
     title: "Wireless Keyboard",
     price: 129.99,
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+    image: "https://source.unsplash.com/random/800x600?keyboard",
     category: "Accessories",
     rating: 4.5
   },
@@ -46,7 +46,7 @@ const products = [
     id: "6",
     title: "Ergonomic Office Chair",
     price: 399.99,
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+    image: "https://source.unsplash.com/random/800x600?chair",
     category: "Furniture",
     rating: 4.8
   }
