@@ -34,7 +34,6 @@ const Navbar = () => {
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
-    // Add your search logic here
     console.log('Searching for:', e.target.value, 'in category:', searchCategory);
   };
 
@@ -53,7 +52,7 @@ const Navbar = () => {
 
           {/* Search Bar - Only visible after hero section */}
           {isAfterHero && (
-            <div className="hidden md:flex flex-1 justify-start pl-8 max-w-md">
+            <div className="hidden md:flex flex-1 max-w-md">
               <div className="relative w-full flex gap-2">
                 <Select
                   defaultValue="products"
@@ -82,9 +81,13 @@ const Navbar = () => {
             </div>
           )}
           
-          {/* Desktop Menu - Centered when in hero, shifted right when search is visible */}
-          <div className={`hidden md:flex items-center ${isAfterHero ? 'ml-4' : 'flex-1 justify-center'}`}>
+          {/* Desktop Menu - Centered */}
+          <div className={`hidden md:flex items-center justify-center flex-1 ${isAfterHero ? 'ml-8' : ''}`}>
             <DesktopMenu isAfterHero={isAfterHero} />
+          </div>
+
+          {/* Auth Buttons */}
+          <div className="hidden md:flex items-center">
             <AuthButtons />
           </div>
 
