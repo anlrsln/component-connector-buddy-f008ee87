@@ -10,7 +10,7 @@ const SellerPanelNavbar = () => {
       {/* Left section with logo */}
       <div className="flex items-center gap-2">
         <Store className="w-6 h-6 text-emerald-600" />
-        <span className="text-xl font-semibold">Pixer</span>
+        <span className="text-xl font-semibold">Commervia</span>
       </div>
 
       {/* Center section with search */}
