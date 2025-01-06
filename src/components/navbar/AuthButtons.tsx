@@ -11,7 +11,7 @@ const AuthButtons = () => {
         onClick={() => navigate('/seller-panel')}
         className="bg-accent hover:bg-accent/90 text-white font-semibold transition-colors px-2 rounded-sm flex items-center justify-center"
       >
-        <UserRound className="mr-1 text-white" />
+        <UserRound className="text-white" />
         Become a Seller
       </Button>
     </div>
