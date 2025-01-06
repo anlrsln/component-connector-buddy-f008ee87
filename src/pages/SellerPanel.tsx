@@ -14,7 +14,19 @@ import SellerPanelNavbar from '../components/seller/SellerPanelNavbar';
 import SidebarSection from '../components/seller/SidebarSection';
 import OrdersTable from '../components/seller/OrdersTable';
 
-const orders = [
+type OrderStatus = 'Cancelled' | 'Completed' | 'Pending';
+
+interface Order {
+  trackingNumber: string;
+  customer: string;
+  email: string;
+  products: number;
+  orderDate: string;
+  total: string;
+  status: OrderStatus;
+}
+
+const orders: Order[] = [
   {
     trackingNumber: '20231117130887',
     customer: 'Customer',
@@ -91,9 +103,7 @@ const SellerPanel = () => {
       <div className="flex">
         {/* Sidebar */}
         <aside className={`${sidebarOpen ? 'w-64' : 'w-20'} bg-white transition-all duration-300 border-r`}>
-          <div className="p-4">
-            <h1 className={`text-xl font-bold ${!sidebarOpen && 'hidden'}`}>Pixer</h1>
-          </div>
+          <h1 className={`text-xl font-bold p-4 ${!sidebarOpen && 'hidden'}`}>Pixer</h1>
           
           <SidebarSection
             title="MAIN"
