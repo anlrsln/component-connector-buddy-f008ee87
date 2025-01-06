@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import CompanyDetails from '@/components/CompanyDetails';
+import SellerProductList from '@/components/SellerProductList';
 import { useState } from 'react';
 
 const SellerDetail = () => {
@@ -14,7 +15,7 @@ const SellerDetail = () => {
         return (
           <div className="bg-white p-6 rounded-lg shadow-sm">
             <h2 className="text-xl font-semibold mb-4">Our Products</h2>
-            {/* Product list content will go here */}
+            <SellerProductList />
           </div>
         );
       default:
