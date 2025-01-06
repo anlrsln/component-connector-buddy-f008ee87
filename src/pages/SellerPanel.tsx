@@ -172,7 +172,7 @@ const SellerPanel = () => {
                 />
                 <Search className="absolute left-3 top-2.5 text-gray-400" size={20} />
               </div>
-              <Button className="bg-emerald-600 hover:bg-emerald-700">
+              <Button className="bg-primary hover:bg-primary-hover text-white">
                 <Plus size={20} />
                 Add Product
               </Button>
