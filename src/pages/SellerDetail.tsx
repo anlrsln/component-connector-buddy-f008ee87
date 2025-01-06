@@ -3,8 +3,25 @@ import Navbar from '@/components/Navbar';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import CompanyDetails from '@/components/CompanyDetails';
+import { useState } from 'react';
 
 const SellerDetail = () => {
+  const [activeTab, setActiveTab] = useState('about');
+
+  const renderContent = () => {
+    switch (activeTab) {
+      case 'products':
+        return (
+          <div className="bg-white p-6 rounded-lg shadow-sm">
+            <h2 className="text-xl font-semibold mb-4">Our Products</h2>
+            {/* Product list content will go here */}
+          </div>
+        );
+      default:
+        return <CompanyDetails />;
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -41,8 +58,20 @@ const SellerDetail = () => {
           </div>
 
           <div className="flex gap-4 mt-6">
-            <Button variant="ghost" className="text-primary">About us</Button>
-            <Button variant="ghost">Our Products</Button>
+            <Button 
+              variant={activeTab === 'about' ? 'default' : 'ghost'} 
+              className={activeTab === 'about' ? 'text-primary' : ''}
+              onClick={() => setActiveTab('about')}
+            >
+              About us
+            </Button>
+            <Button 
+              variant={activeTab === 'products' ? 'default' : 'ghost'}
+              className={activeTab === 'products' ? 'text-primary' : ''}
+              onClick={() => setActiveTab('products')}
+            >
+              Our Products
+            </Button>
             <Button variant="ghost">Blog</Button>
             <Button variant="ghost">Special Offer</Button>
           </div>
@@ -51,7 +80,7 @@ const SellerDetail = () => {
         <div className="grid grid-cols-3 gap-6">
           {/* Left Column */}
           <div className="col-span-2 space-y-6">
-            <CompanyDetails />
+            {renderContent()}
 
             {/* Certificates Section */}
             <div className="bg-white p-6 rounded-lg shadow-sm">
