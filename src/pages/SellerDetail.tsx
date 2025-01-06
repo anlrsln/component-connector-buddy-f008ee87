@@ -2,6 +2,7 @@ import { MapPin, Building, Globe } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import CompanyDetails from '@/components/CompanyDetails';
 
 const SellerDetail = () => {
   return (
@@ -53,28 +54,7 @@ const SellerDetail = () => {
         <div className="grid grid-cols-3 gap-6">
           {/* Left Column */}
           <div className="col-span-2 space-y-6">
-            {/* Management Section */}
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h2 className="text-xl font-semibold mb-4">Yöneticiler IMMA Global Sanayi Mamulleri İmalat Ve Ticaret A.S</h2>
-              <div className="space-y-4">
-                {[
-                  { name: 'Bay Murat Ilica', position: 'Chairman' },
-                  { name: 'Bayan Hatice Senoglu', position: 'Export Representative' },
-                  { name: 'Mr. Hasan Akin', position: 'Kidemli Satin Almaci' },
-                  { name: 'Bay Kasım Dogu', position: 'Procurement Specialist' }
-                ].map((manager, index) => (
-                  <div key={index} className="flex items-center gap-4 p-3 hover:bg-gray-50 rounded-lg">
-                    <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
-                      <Building className="w-6 h-6 text-gray-500" />
-                    </div>
-                    <div>
-                      <p className="font-medium">{manager.name}</p>
-                      <p className="text-gray-600 text-sm">{manager.position}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <CompanyDetails />
 
             {/* Certificates Section */}
             <div className="bg-white p-6 rounded-lg shadow-sm">
