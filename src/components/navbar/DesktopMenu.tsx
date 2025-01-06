@@ -89,10 +89,13 @@ const DesktopMenu = () => {
         <Package size={18} />
         Products
       </button>
-      <a href="#" className="text-white/80 hover:text-accent transition-colors font-medium flex items-center gap-2">
+      <button
+        onClick={() => navigate('/about')}
+        className="text-white/80 hover:text-accent transition-colors font-medium flex items-center gap-2"
+      >
         <Info size={18} />
         About Us
-      </a>
+      </button>
     </div>
   );
 };

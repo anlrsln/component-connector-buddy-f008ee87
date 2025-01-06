@@ -6,6 +6,7 @@ import SellerListing from './pages/SellerListing';
 import SellerPanel from './pages/SellerPanel';
 import CreateProduct from './pages/CreateProduct';
 import SellerDetail from './pages/SellerDetail';
+import AboutUs from './pages/AboutUs';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/seller-panel" element={<SellerPanel />} />
         <Route path="/create-product" element={<CreateProduct />} />
         <Route path="/seller/:id" element={<SellerDetail />} />
+        <Route path="/about" element={<AboutUs />} />
       </Routes>
     </Router>
   );
