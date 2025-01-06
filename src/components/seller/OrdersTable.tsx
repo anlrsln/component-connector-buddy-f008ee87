@@ -20,12 +20,11 @@ const OrdersTable: React.FC<OrdersTableProps> = ({ orders }) => (
     <table className="w-full">
       <thead>
         <tr className="border-b">
-          <th className="text-left p-4">Tracking Number</th>
-          <th className="text-left p-4">Customer</th>
-          <th className="text-left p-4">Products</th>
-          <th className="text-left p-4">Order Date</th>
-          <th className="text-left p-4">Total</th>
-          <th className="text-left p-4">Status</th>
+          <th className="text-left p-4">ID</th>
+          <th className="text-left p-4">Name</th>
+          <th className="text-left p-4">Details</th>
+          <th className="text-left p-4">Icon</th>
+          <th className="text-left p-4">Slug</th>
           <th className="text-left p-4">Actions</th>
         </tr>
       </thead>
