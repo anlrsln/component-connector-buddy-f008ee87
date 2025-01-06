@@ -14,63 +14,41 @@ import SellerPanelNavbar from '../components/seller/SellerPanelNavbar';
 import SidebarSection from '../components/seller/SidebarSection';
 import OrdersTable from '../components/seller/OrdersTable';
 
-type OrderStatus = 'Cancelled' | 'Completed' | 'Pending';
-
-interface Order {
-  trackingNumber: string;
-  customer: string;
-  email: string;
-  products: number;
-  orderDate: string;
-  total: string;
-  status: OrderStatus;
-}
-
-const orders: Order[] = [
+const orders = [
   {
-    trackingNumber: '20231117130887',
-    customer: 'Customer',
-    email: 'customer@demo.com',
-    products: 1,
-    orderDate: 'a year ago',
-    total: '$26.25',
-    status: 'Cancelled'
+    id: 'CAT-001',
+    name: 'Electronics',
+    details: 'All electronic devices and accessories',
+    icon: '💻',
+    slug: 'electronics'
   },
   {
-    trackingNumber: '20231117881331',
-    customer: 'Customer',
-    email: 'customer@demo.com',
-    products: 1,
-    orderDate: 'a year ago',
-    total: '$72.45',
-    status: 'Completed'
+    id: 'CAT-002',
+    name: 'Fashion',
+    details: 'Clothing and accessories',
+    icon: '👕',
+    slug: 'fashion'
   },
   {
-    trackingNumber: '20231117781359',
-    customer: 'Customer',
-    email: 'customer@demo.com',
-    products: 1,
-    orderDate: 'a year ago',
-    total: '$40.95',
-    status: 'Pending'
+    id: 'CAT-003',
+    name: 'Home & Garden',
+    details: 'Home decor and gardening tools',
+    icon: '🏡',
+    slug: 'home-garden'
   },
   {
-    trackingNumber: '20231117818013',
-    customer: 'Customer',
-    email: 'customer@demo.com',
-    products: 1,
-    orderDate: 'a year ago',
-    total: '$30.45',
-    status: 'Cancelled'
+    id: 'CAT-004',
+    name: 'Books',
+    details: 'Physical and digital books',
+    icon: '📚',
+    slug: 'books'
   },
   {
-    trackingNumber: '20231117241177',
-    customer: 'Customer',
-    email: 'customer@demo.com',
-    products: 1,
-    orderDate: 'a year ago',
-    total: '$47.25',
-    status: 'Completed'
+    id: 'CAT-005',
+    name: 'Sports',
+    details: 'Sports equipment and accessories',
+    icon: '⚽',
+    slug: 'sports'
   }
 ];
 
@@ -101,7 +79,6 @@ const SellerPanel = () => {
     <div className="min-h-screen bg-gray-50">
       <SellerPanelNavbar />
       <div className="flex">
-        {/* Sidebar */}
         <aside className={`${sidebarOpen ? 'w-64' : 'w-20'} bg-white transition-all duration-300 border-r`}>
           <SidebarSection
             title="MAIN"
@@ -122,7 +99,6 @@ const SellerPanel = () => {
           />
         </aside>
 
-        {/* Main Content */}
         <main className="flex-1 p-8">
           <div className="flex justify-between items-center mb-8">
             <div className="flex items-center space-x-4">

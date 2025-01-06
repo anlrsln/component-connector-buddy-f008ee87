@@ -2,13 +2,11 @@ import React from 'react';
 import { Eye, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface Order {
-  trackingNumber: string;
-  customer: string;
-  email: string;
-  products: number;
-  orderDate: string;
-  total: string;
-  status: 'Cancelled' | 'Completed' | 'Pending';
+  id: string;
+  name: string;
+  details: string;
+  icon: string;
+  slug: string;
 }
 
 interface OrdersTableProps {
@@ -30,31 +28,17 @@ const OrdersTable: React.FC<OrdersTableProps> = ({ orders }) => (
       </thead>
       <tbody>
         {orders.map((order) => (
-          <tr key={order.trackingNumber} className="border-b">
+          <tr key={order.id} className="border-b">
             <td className="p-4">
               <div className="flex items-center space-x-2">
                 <button className="p-1 hover:bg-gray-100 rounded">+</button>
-                <span>{order.trackingNumber}</span>
+                <span>{order.id}</span>
               </div>
             </td>
-            <td className="p-4">
-              <div>
-                <p>{order.customer}</p>
-                <p className="text-sm text-gray-500">{order.email}</p>
-              </div>
-            </td>
-            <td className="p-4">{order.products}</td>
-            <td className="p-4">{order.orderDate}</td>
-            <td className="p-4">{order.total}</td>
-            <td className="p-4">
-              <span className={`px-3 py-1 rounded-full text-sm ${
-                order.status === 'Completed' ? 'bg-green-100 text-green-600' :
-                order.status === 'Cancelled' ? 'bg-red-100 text-red-600' :
-                'bg-yellow-100 text-yellow-600'
-              }`}>
-                {order.status}
-              </span>
-            </td>
+            <td className="p-4">{order.name}</td>
+            <td className="p-4">{order.details}</td>
+            <td className="p-4">{order.icon}</td>
+            <td className="p-4">{order.slug}</td>
             <td className="p-4">
               <button className="p-2 hover:bg-gray-100 rounded-full">
                 <Eye size={20} className="text-gray-500" />
