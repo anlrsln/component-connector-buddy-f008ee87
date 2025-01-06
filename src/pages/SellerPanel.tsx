@@ -105,7 +105,7 @@ const SellerPanel = () => {
         </aside>
 
         <main className="flex-1 p-8">
-          <Card className="mb-6">
+          <Card className="mb-6 bg-white">
             <CardHeader className="flex flex-row items-center justify-between">
               <div>
                 <CardTitle>Dropdown Card Example</CardTitle>
@@ -128,7 +128,7 @@ const SellerPanel = () => {
             </CardHeader>
           </Card>
 
-          <Card className="mb-6">
+          <Card className="mb-6 bg-white">
             <CardHeader className="flex flex-row items-center justify-between">
               <div>
                 <CardTitle>Additional Card Section</CardTitle>
