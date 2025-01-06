@@ -128,6 +128,29 @@ const SellerPanel = () => {
             </CardHeader>
           </Card>
 
+          <Card className="mb-6">
+            <CardHeader className="flex flex-row items-center justify-between">
+              <div>
+                <CardTitle>Additional Card Section</CardTitle>
+                <CardDescription>
+                  This is another example of a card with dropdown functionality in the header section.
+                </CardDescription>
+              </div>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" className="h-8 w-8 p-0">
+                    <MoreVertical className="h-4 w-4" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  <DropdownMenuItem>Edit</DropdownMenuItem>
+                  <DropdownMenuItem>Share</DropdownMenuItem>
+                  <DropdownMenuItem>Delete</DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </CardHeader>
+          </Card>
+
           <div className="flex items-center justify-between mb-3 bg-white p-4 rounded-lg">
             <div className="flex items-center gap-4">
               <button
